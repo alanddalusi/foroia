@@ -1,0 +1,59 @@
+{
+  "state": "local_review_only_not_applied",
+  "reason": "Corregir el tratamiento de tipos o espacios en el ejemplo y documentar su alcance real.",
+  "slug": "fastapi-validar-peticiones-ia",
+  "preserve": [
+    "slug",
+    "title",
+    "summary",
+    "published_at",
+    "canonical",
+    "media"
+  ],
+  "expected_before_sha256": "ac23ec434fc979c8046c4f3f737ebf9d8eddc29d95c1c6cf9428bed5604d2b63",
+  "before": {
+    "slug": "fastapi-validar-peticiones-ia",
+    "title": "Validar entradas de texto para una API de IA con FastAPI y Pydantic",
+    "section": "programacion",
+    "summary": "Cómo usar modelos Pydantic en FastAPI para declarar y validar el cuerpo de peticiones (tipos, longitudes y metadatos), qué errores devuelve la API y qué aspectos no cubre la validación automática.",
+    "body": "## Qué logra esta validación y por qué importa\nAl declarar el cuerpo de la petición como un modelo Pydantic, FastAPI lee el JSON entrante, convierte tipos y valida los datos antes de ejecutar la lógica de la ruta. Esto permite detectar entradas malformadas o con tipos erróneos temprano y entregar respuestas HTTP claras cuando faltan o no cumplen los requisitos. [1]\n\n## Cómo declarar y validar campos (incluida la longitud)\nDentro de un modelo que hereda de BaseModel puedes usar tipos estándar de Python y Field para añadir validaciones y metadatos —por ejemplo, establecer un máximo de caracteres en un texto—. FastAPI incorpora esos modelos como parámetros de la operación y aplicará las reglas definidas. [1, 2]\n\n## Comportamiento HTTP y errores automáticos\nSi la entrada no cumple las restricciones del modelo, FastAPI devuelve una respuesta de error con detalles sobre qué campo es inválido. El uso de tipos y defaults también da soporte de editor y genera esquemas JSON Schema incluidos en la documentación automática (OpenAPI / Swagger UI). [1]\n\n## Qué cubre y qué no cubre esta validación\nLa validación basada en Pydantic comprueba tipos, valores y restricciones declaradas en los campos del modelo y ayuda a autorizar la estructura esperada del cuerpo. No sustituye comprobaciones específicas de seguridad, saneamiento complejo de texto o reglas de negocio avanzadas que haya que implementar explícitamente en la lógica de la ruta. Tampoco cubre por sí sola el tratamiento de entradas con formatos atípicos fuera del JSON esperado. [1]\n\n## Ejemplo reproducible\n\n```python\nfrom fastapi import FastAPI\nfrom pydantic import BaseModel, ConfigDict, Field\n\napp = FastAPI()\n\nclass PromptRequest(BaseModel):\n    model_config = ConfigDict(extra=\"forbid\")\n    text: str = Field(min_length=1, max_length=500)\n\n@app.post(\"/prepare\")\ndef prepare(payload: PromptRequest):\n    return {\"text\": payload.text.strip()}\n```\n\nEste fragmento ha superado pruebas automáticas en un entorno aislado. No se han llamado servicios externos durante esa comprobación. Entorno comprobado: python 3.12.15, fastapi 0.149.0, pydantic 2.14.1.\n\n[Más guías de programacion](/programacion)\n\nNo se ha probado la interfaz ni un servicio externo; solo el ejemplo aislado si se proporciona.\n\nRedacción y revisión automatizadas con IA. Sin revisión humana previa.",
+    "author_name": "Redacción automatizada · IA",
+    "sources": [
+      {
+        "title": "[1] Request Body",
+        "url": "https://fastapi.tiangolo.com/tutorial/body/",
+        "language": "en"
+      },
+      {
+        "title": "[2] Body - Fields",
+        "url": "https://fastapi.tiangolo.com/tutorial/body-fields/",
+        "language": "en"
+      }
+    ]
+  },
+  "after": {
+    "slug": "fastapi-validar-peticiones-ia",
+    "title": "Validar entradas de texto para una API de IA con FastAPI y Pydantic",
+    "section": "programacion",
+    "summary": "Cómo usar modelos Pydantic en FastAPI para declarar y validar el cuerpo de peticiones (tipos, longitudes y metadatos), qué errores devuelve la API y qué aspectos no cubre la validación automática.",
+    "body": "## Qué logra esta validación y por qué importa\nAl declarar el cuerpo de la petición como un modelo Pydantic, FastAPI lee el JSON entrante, convierte tipos y valida los datos antes de ejecutar la lógica de la ruta. Esto permite detectar entradas malformadas o con tipos erróneos temprano y entregar respuestas HTTP claras cuando faltan o no cumplen los requisitos. [1]\n\n## Cómo declarar y validar campos (incluida la longitud)\nDentro de un modelo que hereda de BaseModel puedes usar tipos estándar de Python y Field para añadir validaciones y metadatos —por ejemplo, establecer un máximo de caracteres en un texto—. FastAPI incorpora esos modelos como parámetros de la operación y aplicará las reglas definidas. [1, 2]\n\n## Comportamiento HTTP y errores automáticos\nSi la entrada no cumple las restricciones del modelo, FastAPI devuelve una respuesta de error con detalles sobre qué campo es inválido. El uso de tipos y defaults también da soporte de editor y genera esquemas JSON Schema incluidos en la documentación automática (OpenAPI / Swagger UI). [1]\n\n## Qué cubre y qué no cubre esta validación\nLa validación basada en Pydantic comprueba tipos, valores y restricciones declaradas en los campos del modelo y valida la estructura esperada del cuerpo. No sustituye comprobaciones específicas de seguridad, saneamiento complejo de texto o reglas de negocio avanzadas que haya que implementar explícitamente en la lógica de la ruta. Tampoco cubre por sí sola el tratamiento de entradas con formatos atípicos fuera del JSON esperado. [1]\n\n## Normaliza antes de comprobar la longitud\n\nValidar un mínimo y después quitar espacios no garantiza que el resultado siga teniendo texto: una entrada formada solo por espacios podría pasar la primera comprobación y quedar vacía. En esta versión, `str_strip_whitespace=True` elimina los espacios exteriores antes de aplicar las restricciones del campo. Así, el mínimo se refiere al texto que realmente procesará la aplicación. [3]\n\n## Ejemplo reproducible\n\n```python\nfrom fastapi import FastAPI\nfrom pydantic import BaseModel, ConfigDict, Field\n\napp = FastAPI()\n\nclass PromptRequest(BaseModel):\n    model_config = ConfigDict(extra=\"forbid\", str_strip_whitespace=True)\n    text: str = Field(min_length=1, max_length=500)\n\n@app.post(\"/prepare\")\ndef prepare(payload: PromptRequest):\n    return {\"text\": payload.text.strip()}\n```\n\nEsta versión se ha ejecutado localmente sin servicios externos: acepta texto normal, elimina espacios exteriores y rechaza entradas vacías, solo espacios, más de 500 caracteres y campos adicionales. No añade autenticación, límites de peticiones ni protección completa de un servicio público. Entorno local: Python 3.13.2, FastAPI 0.149.0, Pydantic 2.14.1.\n\n[Más guías de programacion](/programacion)\n\nNo se ha probado la interfaz ni un servicio externo; solo el ejemplo aislado si se proporciona.\n\nRedacción y revisión automatizadas con IA. Sin revisión humana previa.",
+    "author_name": "Redacción automatizada · IA",
+    "sources": [
+      {
+        "title": "[1] Request Body",
+        "url": "https://fastapi.tiangolo.com/tutorial/body/",
+        "language": "en"
+      },
+      {
+        "title": "[2] Body - Fields",
+        "url": "https://fastapi.tiangolo.com/tutorial/body-fields/",
+        "language": "en"
+      },
+      {
+        "title": "[3] Pydantic: configuración de cadenas y espacios exteriores",
+        "url": "https://pydantic.dev/docs/validation/latest/api/pydantic/config/",
+        "language": "en"
+      }
+    ]
+  }
+}

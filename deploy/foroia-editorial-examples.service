@@ -1,0 +1,11 @@
+[Unit]
+Description=Validate editorial example receipts without executing article code
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/foroia
+ExecStart=/usr/bin/python3 /opt/foroia/scripts/verify_editorial_examples.py --check-receipt --receipt /opt/foroia/deploy/receipts/verified-examples.json
+UMask=0077
+TimeoutStartSec=240

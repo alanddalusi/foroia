@@ -1,0 +1,11 @@
+[Unit]
+Description=Foro IA al Dia - backup diario 03:15 UTC
+
+[Timer]
+OnCalendar=*-*-* 03:15:00 UTC
+Persistent=true
+RandomizedDelaySec=300
+Unit=foroia-backup.service
+
+[Install]
+WantedBy=timers.target

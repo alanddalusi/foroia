@@ -1,0 +1,92 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      retries: 10
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes: [redisdata:/data]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 10
+  mailpit:
+    image: axllent/mailpit:v1.31.6
+    ports: ["127.0.0.1:8025:8025"]
+  api:
+    build: ./api
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      EDITORIAL_API_TOKEN: ${EDITORIAL_API_TOKEN:-}
+      REDIS_URL: redis://redis:6379/0
+      SITE_URL: ${NUXT_PUBLIC_SITE_URL:-http://localhost:3000}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      REGISTRATION_ENABLED: ${REGISTRATION_ENABLED:-true}
+      LEGACY_EDITORIAL_ENABLED: "false"
+      BOOTSTRAP_EMAIL: ${BOOTSTRAP_EMAIL:-editor@localhost.test}
+      BOOTSTRAP_PASSWORD: ${EDITORIAL_PASSWORD:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      RESEARCH_MODEL: ${RESEARCH_MODEL:-gpt-5-mini}
+      RESEARCH_AT: ${RESEARCH_AT:-22:30}
+      RESEARCH_MONTHLY_USD: ${RESEARCH_MONTHLY_USD:-5}
+      RESEARCH_DAILY_USD: ${RESEARCH_DAILY_USD:-0.15}
+      RESEARCH_INPUT_USD_PER_MILLION: ${RESEARCH_INPUT_USD_PER_MILLION:-0.25}
+      RESEARCH_OUTPUT_USD_PER_MILLION: ${RESEARCH_OUTPUT_USD_PER_MILLION:-2}
+      RESEARCH_AUTO_PUBLISH: ${RESEARCH_AUTO_PUBLISH:-true}
+    depends_on:
+      db: {condition: service_healthy}
+      redis: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health',timeout=3)"]
+      interval: 5s
+      retries: 15
+      start_period: 10s
+    ports: ["127.0.0.1:8000:8000"]
+  web:
+    build: ./web
+    environment:
+      NUXT_API_BASE: http://api:8000
+      NUXT_PUBLIC_SITE_URL: ${NUXT_PUBLIC_SITE_URL}
+      NUXT_EDITORIAL_API_TOKEN: ${EDITORIAL_API_TOKEN:-}
+    depends_on:
+      api: {condition: service_healthy}
+    ports: ["127.0.0.1:3000:3000"]
+  mail-worker:
+    build: ./api
+    command: ["python", "-m", "app.mail_worker"]
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      SMTP_FROM: "ForoIA <no-reply@localhost.test>"
+    depends_on:
+      api: {condition: service_healthy}
+      mailpit: {condition: service_started}
+  research-worker:
+    build: ./api
+    command: ["python", "-m", "app.research.worker"]
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      REDIS_URL: redis://redis:6379/0
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      RESEARCH_MODEL: ${RESEARCH_MODEL:-gpt-5-mini}
+      RESEARCH_AT: ${RESEARCH_AT:-22:30}
+      RESEARCH_MONTHLY_USD: ${RESEARCH_MONTHLY_USD:-5}
+      RESEARCH_DAILY_USD: ${RESEARCH_DAILY_USD:-0.15}
+      RESEARCH_INPUT_USD_PER_MILLION: ${RESEARCH_INPUT_USD_PER_MILLION:-0.25}
+      RESEARCH_OUTPUT_USD_PER_MILLION: ${RESEARCH_OUTPUT_USD_PER_MILLION:-2}
+      RESEARCH_AUTO_PUBLISH: ${RESEARCH_AUTO_PUBLISH:-true}
+    depends_on:
+      api: {condition: service_healthy}
+volumes:
+  pgdata:
+  redisdata:

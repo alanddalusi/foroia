@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://pypdf.readthedocs.io/en/stable/user/extract-text.html",
+    "status": 200,
+    "final_url": "https://pypdf.readthedocs.io/en/stable/user/extract-text.html"
+  },
+  {
+    "url": "https://support.google.com/gemininotebook/answer/16179559?hl=es",
+    "status": 200,
+    "final_url": "https://support.google.com/gemininotebook/answer/16179559?hl=es"
+  },
+  {
+    "url": "https://support.google.com/gemininotebook/answer/16206563?hl=es",
+    "status": 200,
+    "final_url": "https://support.google.com/gemininotebook/answer/16206563?hl=es"
+  },
+  {
+    "url": "https://support.google.com/gemininotebook/answer/16215270?hl=es",
+    "status": 200,
+    "final_url": "https://support.google.com/gemininotebook/answer/16215270?hl=es"
+  },
+  {
+    "planned_slug": "resumir-pdf-ia-comprobar-citas",
+    "public_status": 404
+  },
+  {
+    "planned_slug": "notebooklm-pdf-fuentes-citas",
+    "public_status": 404
+  },
+  {
+    "planned_slug": "extraer-texto-pdf-python",
+    "public_status": 404
+  }
+]

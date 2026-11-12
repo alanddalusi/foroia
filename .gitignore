@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+production.env
+.local/
+node_modules/
+.nuxt/
+.output/
+__pycache__/
+.pytest_cache/
+deploy/receipts/*.json
+deploy/receipts/*.tmp

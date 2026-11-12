@@ -1,0 +1,44 @@
+{
+  "state": "local_review_only_not_applied",
+  "reason": "Añadir ejemplo ejecutable y comprobaciones explícitas; limpiar títulos de fuentes que muestran metadatos de documentación.",
+  "slug": "api-claude-python-primera-peticion",
+  "preserve": [
+    "slug",
+    "title",
+    "summary",
+    "published_at",
+    "canonical",
+    "media"
+  ],
+  "expected_before_sha256": "e712818ed85c3502ead56261c7aaa8876f37a1c8042113af9f4078b65d163916",
+  "before": {
+    "slug": "api-claude-python-primera-peticion",
+    "title": "api claude python: primera petición con Python",
+    "section": "programacion",
+    "summary": "Guía breve para configurar la clave, instalar el SDK oficial y enviar la primera petición a Claude desde Python según la documentación oficial de Anthropic.",
+    "body": "## Requisitos previos y opciones de autenticación\nAntes de llamar a la API debe crear una cuenta en la consola de Claude y elegir un método de autenticación: iniciar sesión con la CLI (recomendado para desarrollo local) o generar una API key en la consola. La documentación indica que el CLI facilita el flujo de login y que, si se usa la clave, las SDK y la CLI la leen desde la variable de entorno ANTHROPIC_API_KEY. [1]\n\n## Instalar la CLI (opcional) y preparar el entorno Python\nPara el flujo con CLI la guía muestra cómo instalar el binario 'ant' en macOS y Linux o compilar desde la fuente; además recomienda activar un entorno virtual antes de usar el SDK en Python. Si prefiere no usar la CLI, puede crear la API key y exportarla en ANTHROPIC_API_KEY para que el SDK la detecte. [1]\n\n## Instalar el SDK oficial y ejemplo mínimo en Python\nLa guía oficial indica los pasos para crear un entorno virtual, instalar el paquete 'anthropic' con pip y un ejemplo mínimo en quickstart.py que instancia client = anthropic.Anthropic(), llama a client.messages.create con model, max_tokens y messages, y recorre message.content imprimiendo bloques de tipo text. Ese ejemplo es el método documentado para hacer la primera petición desde Python. [1]\n\n## Qué devuelve Claude y siguientes pasos recomendados\nLas respuestas de la API son JSON con campos como model, id, role y content; la guía muestra un ejemplo de salida y sugiere seguir aprendiendo los patrones del Messages API: conversaciones multivuelta, prompts de sistema, razones de parada y otros patrones de integración. Conviene revisar esos apartados oficiales para diseñar interacciones seguras y coherentes antes de pasar a funciones más avanzadas. [1]\n\n## Para seguir aprendiendo\n\n- [Más guías de programacion](/programacion)\n\nNo se ha probado la interfaz ni un servicio externo; solo el ejemplo aislado si se proporciona.\n\nRedacción y revisión automatizadas con IA. Sin revisión humana previa.",
+    "author_name": "Redacción automatizada · IA",
+    "sources": [
+      {
+        "title": "[1] --- title: Get started with Claude url: https://platform.claude.com/docs/en/get-started description: Make your first API call to Claude and build a simple web s",
+        "url": "https://platform.claude.com/docs/en/get-started.md",
+        "language": "en"
+      }
+    ]
+  },
+  "after": {
+    "slug": "api-claude-python-primera-peticion",
+    "title": "api claude python: primera petición con Python",
+    "section": "programacion",
+    "summary": "Guía breve para configurar la clave, instalar el SDK oficial y enviar la primera petición a Claude desde Python según la documentación oficial de Anthropic.",
+    "body": "## Requisitos previos y opciones de autenticación\nAntes de llamar a la API debe crear una cuenta en la consola de Claude y elegir un método de autenticación: iniciar sesión con la CLI (recomendado para desarrollo local) o generar una API key en la consola. La documentación indica que el CLI facilita el flujo de login y que, si se usa la clave, las SDK y la CLI la leen desde la variable de entorno ANTHROPIC_API_KEY. [1]\n\n## Instalar la CLI (opcional) y preparar el entorno Python\nPara el flujo con CLI la guía muestra cómo instalar el binario 'ant' en macOS y Linux o compilar desde la fuente; además recomienda activar un entorno virtual antes de usar el SDK en Python. Si prefiere no usar la CLI, puede crear la API key y exportarla en ANTHROPIC_API_KEY para que el SDK la detecte. [1]\n\n## Instalar el SDK oficial y ejemplo mínimo en Python\nLa guía oficial indica los pasos para crear un entorno virtual, instalar el paquete 'anthropic' con pip y un ejemplo mínimo en quickstart.py que instancia client = anthropic.Anthropic(), llama a client.messages.create con model, max_tokens y messages, y recorre message.content imprimiendo bloques de tipo text. Ese ejemplo es el método documentado para hacer la primera petición desde Python. [1]\n\n## Qué devuelve Claude y siguientes pasos recomendados\nLas respuestas de la API son JSON con campos como model, id, role y content; la guía muestra un ejemplo de salida y sugiere seguir aprendiendo los patrones del Messages API: conversaciones multivuelta, prompts de sistema, razones de parada y otros patrones de integración. Conviene revisar esos apartados oficiales para diseñar interacciones seguras y coherentes antes de pasar a funciones más avanzadas. [1]\n\n## Ejecuta una comprobación local y prepara la petición\n\nDescarga [primera_peticion_claude.py](/recursos/api-ia/primera_peticion_claude.py). `python primera_peticion_claude.py` ejecuta una demostración local con un cliente ficticio y muestra `Texto de prueba.`. No necesita clave ni contacta con Anthropic.\n\nPara preparar el uso real en un entorno virtual separado, instala el SDK con `python -m pip install anthropic`. Configura `ANTHROPIC_API_KEY` y `ANTHROPIC_MODEL` en tu terminal: el segundo valor debe ser un modelo disponible en tu cuenta. Mantén la clave fuera del archivo y del historial que compartas. [1]\n\nLa función reutilizable de la descarga separa la petición de la lectura del mensaje:\n\n```python\nfrom primera_peticion_claude import request_text\n\n# client es un cliente Anthropic ya configurado.\n# model es un identificador disponible en tu cuenta.\ndef consultar(client, model):\n    return request_text(client, model, \"Explica qu? es una API en una frase.\")\n```\n\nSolo `python primera_peticion_claude.py --live` activa una llamada real de pago. El archivo utiliza el cliente oficial, envía un mensaje de usuario y recoge los bloques de texto. La salida concreta depende del modelo; no presentamos una respuesta inventada como si la hubiera devuelto Claude. [1]\n\nLa comprobación local verifica que se envían `model`, `max_tokens` y `messages`, que se filtran bloques sin texto y que un final distinto de `end_turn` exige tratamiento adicional. Una salida truncada, una llamada a herramienta o un rechazo no deben mostrarse como una respuesta ordinaria completa. Este ejemplo no implementa esos otros recorridos. Consulta la [documentación de stop_reason](https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons) antes de ampliarlo.\n\nLas pruebas de esta guía no contactan con el proveedor. No demuestran que una clave sea válida, que un modelo est? disponible ni que la petición vaya a ser gratuita. Si la llamada falla, distingue los errores de autenticación y parámetros de los fallos temporales antes de reintentar; la [guía de errores de OpenAI y Claude](/articulos/errores-api-openai-claude-distinguir-reintentos) desarrolla esa diferencia.\n\n## Para seguir aprendiendo\n\n- [Más guías de programacion](/programacion)\n\nNo se ha probado la interfaz ni un servicio externo; solo el ejemplo aislado si se proporciona.\n\nRedacción y revisión automatizadas con IA. Sin revisión humana previa.",
+    "author_name": "Redacción automatizada · IA",
+    "sources": [
+      {
+        "title": "[1] Anthropic: primera llamada a la API",
+        "url": "https://platform.claude.com/docs/en/get-started.md",
+        "language": "en"
+      }
+    ]
+  }
+}

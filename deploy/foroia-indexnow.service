@@ -1,0 +1,10 @@
+[Unit]
+Description=Foro IA al Dia - aviso IndexNow de URLs nuevas
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+UMask=0077
+ExecStart=/usr/bin/python3 /opt/foroia/deploy/indexnow.py
+TimeoutStartSec=120

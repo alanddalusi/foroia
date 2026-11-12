@@ -1,0 +1,1248 @@
+{
+  "provenance": "Recorded real OpenAI response and verification diagnostics, production run 9 manual retry at 2026-10-29T09:32 UTC. Not a simulated search result.",
+  "nominations": [
+    {
+      "title": "OpenAI \u2014 Resumen y anuncios de DevDay 2026 (recap publicado 27 oct 2026)",
+      "event": "Recap / listado de anuncios presentados en DevDay 2026 (GPT-6 Astra, herramientas para desarrolladores, APIs, seguridad y otras novedades)",
+      "date": "2026-10-27",
+      "organization": "OpenAI",
+      "relevance": "major_release",
+      "reason": "OpenAI public\u00f3 un resumen oficial (DevDay 2026 Recap) que lista m\u00e1s de 20 anuncios relacionados con nuevos modelos, APIs y herramientas para desarrolladores; es una fuente primaria sobre anuncios de producto y disponibilidad realizados en DevDay.",
+      "urls": [
+        "https://openai.com/news/company-announcements/?display=list"
+      ]
+    },
+    {
+      "title": "Oracle y OpenAI \u2014 Alianza anunciada en Oracle AI World (comunicado 27 oct 2026)",
+      "event": "Anuncio de alianza para integrar modelos OpenAI y tecnolog\u00edas de OpenAI (ChatGPT, Codex) con Oracle Cloud y aplicaciones empresariales",
+      "date": "2026-10-27",
+      "organization": "Oracle / OpenAI",
+      "relevance": "major_release",
+      "reason": "Comunicado oficial de Oracle fechado 27 oct 2026 que describe integraci\u00f3n entre Oracle y OpenAI anunciada en Oracle AI World; importante para empresas hispanohablantes que usan Oracle en entornos empresariales.",
+      "urls": [
+        "https://www.oracle.com/news/announcement/ai-world-oracle-reinvents-enterprise-computing-for-the-ai-era-with-openai-2026-10-27/"
+      ]
+    },
+    {
+      "title": "AMD y Meta \u2014 Ampliaci\u00f3n de asociaci\u00f3n estrat\u00e9gica para infraestructura de 'superinteligencia' (comunicado 27 oct 2026)",
+      "event": "Anuncio de avance en la alianza estrat\u00e9gica: AMD Helios rackscale y EPYC para infraestructuras que potencian la infraestructura de IA de Meta (fecha del comunicado: 27 oct 2026)",
+      "date": "2026-10-27",
+      "organization": "AMD / Meta",
+      "relevance": "major_release",
+      "reason": "Nota de prensa publicada en Nasdaq (27 oct 2026) que detalla integraci\u00f3n de tecnolog\u00edas AMD en la infraestructura de modelos y agentes de Meta (Muse), relevante para servidores, chips y despliegues a escala.",
+      "urls": [
+        "https://www.nasdaq.com/press-release/amd-and-meta-advance-strategic-partnership-power-metas-superintelligence"
+      ]
+    },
+    {
+      "title": "Anthropic \u2014 Publicaci\u00f3n en la p\u00e1gina de noticias indicando que present\u00f3 un Formulario S\u20111 (registraci\u00f3n p\u00fablica) (listado con fecha 27 oct 2026)",
+      "event": "Anthropic registra/ publica informaci\u00f3n sobre la presentaci\u00f3n de su Form S\u20111 para una posible oferta p\u00fablica (S\u20111 en EDGAR y nota en su Newsroom)",
+      "date": "2026-10-26",
+      "organization": "Anthropic, PBC",
+      "relevance": "major_release",
+      "reason": "La p\u00e1gina de noticias de Anthropic y registros en EDGAR muestran la presentaci\u00f3n del Form S\u20111. Aunque el EDGAR muestra fecha del 26 oct 2026 para la entrada, varias notas y recopilaciones p\u00fablicas aparecieron o se actualizaron el 27 oct 2026; incluyo la fuente primaria del S\u20111 en SEC/EDGAR y la p\u00e1gina de noticias de Anthropic.",
+      "urls": [
+        "https://www.anthropic.com/news?date=2026-09-10",
+        "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/R1.htm"
+      ]
+    },
+    {
+      "title": "Cobertura en medios: seguimiento en vivo y recopilaci\u00f3n sobre el S\u20111 de Anthropic (actualizaciones 27 oct 2026)",
+      "event": "Art\u00edculos en prensa y live updates que cubren el S\u20111 de Anthropic (p. ej. Yahoo Finance live updates, otras notas de prensa publicadas 27 oct 2026)",
+      "date": "2026-10-27",
+      "organization": "Varios medios (Yahoo Finance, otros agregadores)",
+      "relevance": "research",
+      "reason": "M\u00faltiples medios publicaron actualizaciones en vivo y res\u00famenes del S\u20111 de Anthropic el 27 oct 2026; sirven como referencias period\u00edsticas secundarias sobre el contenido del formulario presentado en EDGAR.",
+      "urls": [
+        "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html"
+      ]
+    }
+  ],
+  "diagnostics": {
+    "selection": [],
+    "statistics": {
+      "documents": 2,
+      "fetch_counts": {
+        "feed": 11,
+        "index": 1,
+        "article": 13
+      },
+      "fetch_errors": [
+        {
+          "url": "https://openai.com/news/company-announcements/?display=list",
+          "code": "http_status",
+          "stage": "primary_source",
+          "reason": "document_inaccessible",
+          "http_status": 403,
+          "candidate_index": 0
+        },
+        {
+          "url": "https://deepmind.google/blog/rss.xml",
+          "code": "unsupported_encoding",
+          "stage": "related_feed",
+          "reason": "document_inaccessible",
+          "http_status": null
+        },
+        {
+          "url": "https://www.tesla.com/blog",
+          "code": "http_status",
+          "stage": "related_feed",
+          "reason": "document_inaccessible",
+          "http_status": 403
+        },
+        {
+          "url": "https://www.kiplinger.com/investing/ipos/anthropic-ipo-should-you-buy-ant-stock",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://openai.com/news/company-announcements/?display=list",
+          "code": "http_status",
+          "stage": "related_reference",
+          "reason": "document_inaccessible",
+          "http_status": 403
+        },
+        {
+          "url": "https://openai-anthropic-release-record.bercanees.chatgpt.site/",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://t.co/dblE4PeH55",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://stocks.bolewood.com/anthropic-ipo-tape",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://help.openai.com/am-et/articles/6825453-chatgpt-release-notes",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://www.nasdaq.com/press-release/amd-and-meta-advance-strategic-partnership-power-metas-superintelligence",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://www.reddit.com/r/u_Remarkable_Rule7158/comments/1xgp0v5/anthropics_s1_is_now_public_ticker_ant_whats_in/",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://www.oracle.com/news/announcement/ai-world-oracle-reinvents-enterprise-computing-for-the-ai-era-with-openai-2026-10-27/",
+          "code": "http_status",
+          "stage": "related_article",
+          "reason": "document_inaccessible",
+          "http_status": 403,
+          "candidate_index": 0
+        },
+        {
+          "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+          "code": "http_status",
+          "stage": "related_article",
+          "reason": "document_inaccessible",
+          "http_status": 403,
+          "candidate_index": 0
+        },
+        {
+          "url": "https://openai.com/index/retell-ai",
+          "code": "http_status",
+          "stage": "related_article",
+          "reason": "document_inaccessible",
+          "http_status": 403,
+          "candidate_index": 0
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+          "code": "document_unrelated",
+          "stage": "related_article",
+          "reason": "document_unrelated",
+          "http_status": null,
+          "correspondence": {
+            "code": "document_unrelated",
+            "basis": "devday",
+            "related": false,
+            "target_entities": [
+              "openai"
+            ],
+            "document_entities": [
+              "microsoft",
+              "openai"
+            ]
+          },
+          "candidate_index": 0
+        },
+        {
+          "url": "https://www.oracle.com/news/announcement/ai-world-oracle-reinvents-enterprise-computing-for-the-ai-era-with-openai-2026-10-27/",
+          "code": "http_status",
+          "stage": "primary_source",
+          "reason": "document_inaccessible",
+          "http_status": 403,
+          "candidate_index": 1
+        },
+        {
+          "url": "https://www.kiplinger.com/investing/ipos/anthropic-ipo-should-you-buy-ant-stock",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://openai.com/news/company-announcements/?display=list",
+          "code": "http_status",
+          "stage": "related_reference",
+          "reason": "document_inaccessible",
+          "http_status": 403
+        },
+        {
+          "url": "https://openai-anthropic-release-record.bercanees.chatgpt.site/",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://t.co/dblE4PeH55",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://stocks.bolewood.com/anthropic-ipo-tape",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://help.openai.com/am-et/articles/6825453-chatgpt-release-notes",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://www.nasdaq.com/press-release/amd-and-meta-advance-strategic-partnership-power-metas-superintelligence",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://www.reddit.com/r/u_Remarkable_Rule7158/comments/1xgp0v5/anthropics_s1_is_now_public_ticker_ant_whats_in/",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+          "code": "document_unrelated",
+          "stage": "related_article",
+          "reason": "document_unrelated",
+          "http_status": null,
+          "correspondence": {
+            "code": "document_unrelated",
+            "basis": "specific_topic",
+            "related": false,
+            "concepts": [],
+            "shared_anchors": []
+          },
+          "candidate_index": 1
+        },
+        {
+          "url": "https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/",
+          "code": "document_unrelated",
+          "stage": "related_article",
+          "reason": "document_unrelated",
+          "http_status": null,
+          "correspondence": {
+            "code": "document_unrelated",
+            "basis": "specific_topic",
+            "related": false,
+            "concepts": [],
+            "shared_anchors": []
+          },
+          "candidate_index": 1
+        },
+        {
+          "url": "https://www.nasdaq.com/press-release/amd-and-meta-advance-strategic-partnership-power-metas-superintelligence",
+          "code": "domain_not_allowed",
+          "stage": "primary_source",
+          "reason": "domain_not_allowed",
+          "http_status": null,
+          "candidate_index": 2
+        },
+        {
+          "url": "https://www.kiplinger.com/investing/ipos/anthropic-ipo-should-you-buy-ant-stock",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://openai.com/news/company-announcements/?display=list",
+          "code": "http_status",
+          "stage": "related_reference",
+          "reason": "document_inaccessible",
+          "http_status": 403
+        },
+        {
+          "url": "https://openai-anthropic-release-record.bercanees.chatgpt.site/",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://t.co/dblE4PeH55",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://stocks.bolewood.com/anthropic-ipo-tape",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://help.openai.com/am-et/articles/6825453-chatgpt-release-notes",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://www.nasdaq.com/press-release/amd-and-meta-advance-strategic-partnership-power-metas-superintelligence",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://www.reddit.com/r/u_Remarkable_Rule7158/comments/1xgp0v5/anthropics_s1_is_now_public_ticker_ant_whats_in/",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/",
+          "code": "document_unrelated",
+          "stage": "related_article",
+          "reason": "document_unrelated",
+          "http_status": null,
+          "correspondence": {
+            "code": "document_unrelated",
+            "basis": "specific_topic",
+            "related": false,
+            "concepts": [],
+            "shared_anchors": []
+          },
+          "candidate_index": 2
+        },
+        {
+          "url": "https://ai.meta.com/blog/assistive-robotics-university-of-pittsburgh-sam-dino/",
+          "code": "document_unrelated",
+          "stage": "related_article",
+          "reason": "document_unrelated",
+          "http_status": null,
+          "correspondence": {
+            "code": "document_unrelated",
+            "basis": "specific_topic",
+            "related": false,
+            "concepts": [],
+            "shared_anchors": []
+          },
+          "candidate_index": 2
+        },
+        {
+          "url": "https://ai.meta.com/blog/genesis-mission-lawrence-berkeley-national-laboratory-segment-anything-dino/",
+          "code": "document_unrelated",
+          "stage": "related_article",
+          "reason": "document_unrelated",
+          "http_status": null,
+          "correspondence": {
+            "code": "document_unrelated",
+            "basis": "specific_topic",
+            "related": false,
+            "concepts": [],
+            "shared_anchors": []
+          },
+          "candidate_index": 2
+        },
+        {
+          "url": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
+          "code": "source_too_large",
+          "stage": "related_article",
+          "reason": "document_inaccessible",
+          "http_status": null,
+          "candidate_index": 2
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+          "code": "domain_not_allowed",
+          "stage": "primary_source",
+          "reason": "domain_not_allowed",
+          "http_status": null,
+          "candidate_index": 4
+        },
+        {
+          "url": "https://www.kiplinger.com/investing/ipos/anthropic-ipo-should-you-buy-ant-stock",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://openai.com/news/company-announcements/?display=list",
+          "code": "http_status",
+          "stage": "related_reference",
+          "reason": "document_inaccessible",
+          "http_status": 403
+        },
+        {
+          "url": "https://openai-anthropic-release-record.bercanees.chatgpt.site/",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://t.co/dblE4PeH55",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://stocks.bolewood.com/anthropic-ipo-tape",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://help.openai.com/am-et/articles/6825453-chatgpt-release-notes",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://www.nasdaq.com/press-release/amd-and-meta-advance-strategic-partnership-power-metas-superintelligence",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://www.reddit.com/r/u_Remarkable_Rule7158/comments/1xgp0v5/anthropics_s1_is_now_public_ticker_ant_whats_in/",
+          "code": "domain_not_allowed",
+          "stage": "related_reference",
+          "reason": "domain_not_allowed",
+          "http_status": null
+        },
+        {
+          "url": "https://www.axios.com/2026/10/26/claude-anthropic-s1-ipo-invest",
+          "code": "http_status",
+          "stage": "related_article",
+          "reason": "document_inaccessible",
+          "http_status": 403,
+          "candidate_index": 4
+        },
+        {
+          "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-prepares-for-potential-usd2-trillion-ipo-valuation-after-reporting-billions-in-revenue-company-warns-ai-could-pose-catastrophic-existential-risks-to-humanity",
+          "code": "source_too_large",
+          "stage": "related_article",
+          "reason": "document_inaccessible",
+          "http_status": null,
+          "candidate_index": 4
+        }
+      ],
+      "fetch_failures": 62,
+      "candidate_count": 5,
+      "generation_calls_avoided": 5
+    },
+    "opportunities": [
+      {
+        "date": "2026-10-27",
+        "urls": [
+          "https://openai.com/news/company-announcements/?display=list"
+        ],
+        "event": "Recap / listado de anuncios presentados en DevDay 2026 (GPT-6 Astra, herramientas para desarrolladores, APIs, seguridad y otras novedades)",
+        "title": "OpenAI \u2014 Resumen y anuncios de DevDay 2026 (recap publicado 27 oct 2026)",
+        "reason": "OpenAI public\u00f3 un resumen oficial (DevDay 2026 Recap) que lista m\u00e1s de 20 anuncios relacionados con nuevos modelos, APIs y herramientas para desarrolladores; es una fuente primaria sobre anuncios de producto y disponibilidad realizados en DevDay.",
+        "relevance": "major_release",
+        "diagnostics": [
+          {
+            "url": "https://openai.com/news/company-announcements/?display=list",
+            "code": "http_status",
+            "stage": "primary_source",
+            "reason": "document_inaccessible",
+            "http_status": 403,
+            "candidate_index": 0
+          },
+          {
+            "url": "https://deepmind.google/blog/rss.xml",
+            "code": "unsupported_encoding",
+            "stage": "related_feed",
+            "reason": "document_inaccessible",
+            "http_status": null
+          },
+          {
+            "url": "https://www.tesla.com/blog",
+            "code": "http_status",
+            "stage": "related_feed",
+            "reason": "document_inaccessible",
+            "http_status": 403
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/ipos/anthropic-ipo-should-you-buy-ant-stock",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://openai.com/news/company-announcements/?display=list",
+            "code": "http_status",
+            "stage": "related_reference",
+            "reason": "document_inaccessible",
+            "http_status": 403
+          },
+          {
+            "url": "https://openai-anthropic-release-record.bercanees.chatgpt.site/",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://t.co/dblE4PeH55",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://stocks.bolewood.com/anthropic-ipo-tape",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://help.openai.com/am-et/articles/6825453-chatgpt-release-notes",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://www.nasdaq.com/press-release/amd-and-meta-advance-strategic-partnership-power-metas-superintelligence",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://www.reddit.com/r/u_Remarkable_Rule7158/comments/1xgp0v5/anthropics_s1_is_now_public_ticker_ant_whats_in/",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://www.oracle.com/news/announcement/ai-world-oracle-reinvents-enterprise-computing-for-the-ai-era-with-openai-2026-10-27/",
+            "code": "http_status",
+            "stage": "related_article",
+            "reason": "document_inaccessible",
+            "http_status": 403,
+            "candidate_index": 0
+          },
+          {
+            "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+            "code": "http_status",
+            "stage": "related_article",
+            "reason": "document_inaccessible",
+            "http_status": 403,
+            "candidate_index": 0
+          },
+          {
+            "url": "https://openai.com/index/retell-ai",
+            "code": "http_status",
+            "stage": "related_article",
+            "reason": "document_inaccessible",
+            "http_status": 403,
+            "candidate_index": 0
+          },
+          {
+            "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+            "code": "document_unrelated",
+            "stage": "related_article",
+            "reason": "document_unrelated",
+            "http_status": null,
+            "correspondence": {
+              "code": "document_unrelated",
+              "basis": "devday",
+              "related": false,
+              "target_entities": [
+                "openai"
+              ],
+              "document_entities": [
+                "microsoft",
+                "openai"
+              ]
+            },
+            "candidate_index": 0
+          }
+        ],
+        "organization": "OpenAI",
+        "verification": {
+          "version": 1,
+          "candidates": [],
+          "selected_topic_id": null,
+          "excluded_documents": [],
+          "rejected_candidates": 0,
+          "selected_source_ids": [],
+          "selected_organizations": [],
+          "generation_calls_avoided": 1,
+          "generation_calls_started": 0,
+          "candidate_drafts_suppressed": 0
+        },
+        "candidate_ids": [],
+        "reason_for_decision": "document_unrelated",
+        "verified_source_urls": []
+      },
+      {
+        "date": "2026-10-27",
+        "urls": [
+          "https://www.oracle.com/news/announcement/ai-world-oracle-reinvents-enterprise-computing-for-the-ai-era-with-openai-2026-10-27/"
+        ],
+        "event": "Anuncio de alianza para integrar modelos OpenAI y tecnolog\u00edas de OpenAI (ChatGPT, Codex) con Oracle Cloud y aplicaciones empresariales",
+        "title": "Oracle y OpenAI \u2014 Alianza anunciada en Oracle AI World (comunicado 27 oct 2026)",
+        "reason": "Comunicado oficial de Oracle fechado 27 oct 2026 que describe integraci\u00f3n entre Oracle y OpenAI anunciada en Oracle AI World; importante para empresas hispanohablantes que usan Oracle en entornos empresariales.",
+        "relevance": "major_release",
+        "diagnostics": [
+          {
+            "url": "https://www.oracle.com/news/announcement/ai-world-oracle-reinvents-enterprise-computing-for-the-ai-era-with-openai-2026-10-27/",
+            "code": "http_status",
+            "stage": "primary_source",
+            "reason": "document_inaccessible",
+            "http_status": 403,
+            "candidate_index": 1
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/ipos/anthropic-ipo-should-you-buy-ant-stock",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://openai.com/news/company-announcements/?display=list",
+            "code": "http_status",
+            "stage": "related_reference",
+            "reason": "document_inaccessible",
+            "http_status": 403
+          },
+          {
+            "url": "https://openai-anthropic-release-record.bercanees.chatgpt.site/",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://t.co/dblE4PeH55",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://stocks.bolewood.com/anthropic-ipo-tape",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://help.openai.com/am-et/articles/6825453-chatgpt-release-notes",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://www.nasdaq.com/press-release/amd-and-meta-advance-strategic-partnership-power-metas-superintelligence",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://www.reddit.com/r/u_Remarkable_Rule7158/comments/1xgp0v5/anthropics_s1_is_now_public_ticker_ant_whats_in/",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/",
+            "code": "document_unrelated",
+            "stage": "related_article",
+            "reason": "document_unrelated",
+            "http_status": null,
+            "correspondence": {
+              "code": "document_unrelated",
+              "basis": "specific_topic",
+              "related": false,
+              "concepts": [],
+              "shared_anchors": []
+            },
+            "candidate_index": 1
+          },
+          {
+            "url": "https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/",
+            "code": "document_unrelated",
+            "stage": "related_article",
+            "reason": "document_unrelated",
+            "http_status": null,
+            "correspondence": {
+              "code": "document_unrelated",
+              "basis": "specific_topic",
+              "related": false,
+              "concepts": [],
+              "shared_anchors": []
+            },
+            "candidate_index": 1
+          }
+        ],
+        "organization": "Oracle / OpenAI",
+        "verification": {
+          "version": 1,
+          "candidates": [],
+          "selected_topic_id": null,
+          "excluded_documents": [],
+          "rejected_candidates": 0,
+          "selected_source_ids": [],
+          "selected_organizations": [],
+          "generation_calls_avoided": 1,
+          "generation_calls_started": 0,
+          "candidate_drafts_suppressed": 0
+        },
+        "candidate_ids": [],
+        "reason_for_decision": "document_unrelated",
+        "verified_source_urls": []
+      },
+      {
+        "date": "2026-10-27",
+        "urls": [
+          "https://www.nasdaq.com/press-release/amd-and-meta-advance-strategic-partnership-power-metas-superintelligence"
+        ],
+        "event": "Anuncio de avance en la alianza estrat\u00e9gica: AMD Helios rackscale y EPYC para infraestructuras que potencian la infraestructura de IA de Meta (fecha del comunicado: 27 oct 2026)",
+        "title": "AMD y Meta \u2014 Ampliaci\u00f3n de asociaci\u00f3n estrat\u00e9gica para infraestructura de 'superinteligencia' (comunicado 27 oct 2026)",
+        "reason": "Nota de prensa publicada en Nasdaq (27 oct 2026) que detalla integraci\u00f3n de tecnolog\u00edas AMD en la infraestructura de modelos y agentes de Meta (Muse), relevante para servidores, chips y despliegues a escala.",
+        "relevance": "major_release",
+        "diagnostics": [
+          {
+            "url": "https://www.nasdaq.com/press-release/amd-and-meta-advance-strategic-partnership-power-metas-superintelligence",
+            "code": "domain_not_allowed",
+            "stage": "primary_source",
+            "reason": "domain_not_allowed",
+            "http_status": null,
+            "candidate_index": 2
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/ipos/anthropic-ipo-should-you-buy-ant-stock",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://openai.com/news/company-announcements/?display=list",
+            "code": "http_status",
+            "stage": "related_reference",
+            "reason": "document_inaccessible",
+            "http_status": 403
+          },
+          {
+            "url": "https://openai-anthropic-release-record.bercanees.chatgpt.site/",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://t.co/dblE4PeH55",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://stocks.bolewood.com/anthropic-ipo-tape",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://help.openai.com/am-et/articles/6825453-chatgpt-release-notes",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://www.nasdaq.com/press-release/amd-and-meta-advance-strategic-partnership-power-metas-superintelligence",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://www.reddit.com/r/u_Remarkable_Rule7158/comments/1xgp0v5/anthropics_s1_is_now_public_ticker_ant_whats_in/",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/",
+            "code": "document_unrelated",
+            "stage": "related_article",
+            "reason": "document_unrelated",
+            "http_status": null,
+            "correspondence": {
+              "code": "document_unrelated",
+              "basis": "specific_topic",
+              "related": false,
+              "concepts": [],
+              "shared_anchors": []
+            },
+            "candidate_index": 2
+          },
+          {
+            "url": "https://ai.meta.com/blog/assistive-robotics-university-of-pittsburgh-sam-dino/",
+            "code": "document_unrelated",
+            "stage": "related_article",
+            "reason": "document_unrelated",
+            "http_status": null,
+            "correspondence": {
+              "code": "document_unrelated",
+              "basis": "specific_topic",
+              "related": false,
+              "concepts": [],
+              "shared_anchors": []
+            },
+            "candidate_index": 2
+          },
+          {
+            "url": "https://ai.meta.com/blog/genesis-mission-lawrence-berkeley-national-laboratory-segment-anything-dino/",
+            "code": "document_unrelated",
+            "stage": "related_article",
+            "reason": "document_unrelated",
+            "http_status": null,
+            "correspondence": {
+              "code": "document_unrelated",
+              "basis": "specific_topic",
+              "related": false,
+              "concepts": [],
+              "shared_anchors": []
+            },
+            "candidate_index": 2
+          },
+          {
+            "url": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
+            "code": "source_too_large",
+            "stage": "related_article",
+            "reason": "document_inaccessible",
+            "http_status": null,
+            "candidate_index": 2
+          }
+        ],
+        "organization": "AMD / Meta",
+        "verification": {
+          "version": 1,
+          "candidates": [],
+          "selected_topic_id": null,
+          "excluded_documents": [],
+          "rejected_candidates": 0,
+          "selected_source_ids": [],
+          "selected_organizations": [],
+          "generation_calls_avoided": 1,
+          "generation_calls_started": 0,
+          "candidate_drafts_suppressed": 0
+        },
+        "candidate_ids": [],
+        "reason_for_decision": "domain_not_allowed",
+        "verified_source_urls": []
+      },
+      {
+        "date": "2026-10-26",
+        "urls": [
+          "https://www.anthropic.com/news?date=2026-09-10",
+          "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/R1.htm"
+        ],
+        "event": "Anthropic registra/ publica informaci\u00f3n sobre la presentaci\u00f3n de su Form S\u20111 para una posible oferta p\u00fablica (S\u20111 en EDGAR y nota en su Newsroom)",
+        "title": "Anthropic \u2014 Publicaci\u00f3n en la p\u00e1gina de noticias indicando que present\u00f3 un Formulario S\u20111 (registraci\u00f3n p\u00fablica) (listado con fecha 27 oct 2026)",
+        "reason": "La p\u00e1gina de noticias de Anthropic y registros en EDGAR muestran la presentaci\u00f3n del Form S\u20111. Aunque el EDGAR muestra fecha del 26 oct 2026 para la entrada, varias notas y recopilaciones p\u00fablicas aparecieron o se actualizaron el 27 oct 2026; incluyo la fuente primaria del S\u20111 en SEC/EDGAR y la p\u00e1gina de noticias de Anthropic.",
+        "relevance": "major_release",
+        "diagnostics": [],
+        "existing_url": "/articulos/anthropic-s1-ipo-ant-2026-10",
+        "organization": "Anthropic, PBC",
+        "candidate_ids": [],
+        "reason_for_decision": "already_published"
+      },
+      {
+        "date": "2026-10-27",
+        "urls": [
+          "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html"
+        ],
+        "event": "Art\u00edculos en prensa y live updates que cubren el S\u20111 de Anthropic (p. ej. Yahoo Finance live updates, otras notas de prensa publicadas 27 oct 2026)",
+        "title": "Cobertura en medios: seguimiento en vivo y recopilaci\u00f3n sobre el S\u20111 de Anthropic (actualizaciones 27 oct 2026)",
+        "reason": "M\u00faltiples medios publicaron actualizaciones en vivo y res\u00famenes del S\u20111 de Anthropic el 27 oct 2026; sirven como referencias period\u00edsticas secundarias sobre el contenido del formulario presentado en EDGAR.",
+        "relevance": "research",
+        "diagnostics": [
+          {
+            "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+            "code": "domain_not_allowed",
+            "stage": "primary_source",
+            "reason": "domain_not_allowed",
+            "http_status": null,
+            "candidate_index": 4
+          },
+          {
+            "url": "https://www.kiplinger.com/investing/ipos/anthropic-ipo-should-you-buy-ant-stock",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://openai.com/news/company-announcements/?display=list",
+            "code": "http_status",
+            "stage": "related_reference",
+            "reason": "document_inaccessible",
+            "http_status": 403
+          },
+          {
+            "url": "https://openai-anthropic-release-record.bercanees.chatgpt.site/",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://t.co/dblE4PeH55",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://finance.yahoo.com/technology/live/anthropic-ipo-live-updates-frontier-ai-lab-discloses-revenue-and-risks-in-highly-anticipated-s-1-filing-141702607.html",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://stocks.bolewood.com/anthropic-ipo-tape",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://help.openai.com/am-et/articles/6825453-chatgpt-release-notes",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://www.nasdaq.com/press-release/amd-and-meta-advance-strategic-partnership-power-metas-superintelligence",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://www.reddit.com/r/u_Remarkable_Rule7158/comments/1xgp0v5/anthropics_s1_is_now_public_ticker_ant_whats_in/",
+            "code": "domain_not_allowed",
+            "stage": "related_reference",
+            "reason": "domain_not_allowed",
+            "http_status": null
+          },
+          {
+            "url": "https://www.axios.com/2026/10/26/claude-anthropic-s1-ipo-invest",
+            "code": "http_status",
+            "stage": "related_article",
+            "reason": "document_inaccessible",
+            "http_status": 403,
+            "candidate_index": 4
+          },
+          {
+            "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-prepares-for-potential-usd2-trillion-ipo-valuation-after-reporting-billions-in-revenue-company-warns-ai-could-pose-catastrophic-existential-risks-to-humanity",
+            "code": "source_too_large",
+            "stage": "related_article",
+            "reason": "document_inaccessible",
+            "http_status": null,
+            "candidate_index": 4
+          }
+        ],
+        "organization": "Varios medios (Yahoo Finance, otros agregadores)",
+        "verification": {
+          "version": 1,
+          "candidates": [
+            {
+              "title": "VCs will make billions on Anthropic\u2019s IPO, but Amazon is set to make much (much) more",
+              "reason": "insufficient_independent_topic_sources",
+              "status": "rejected",
+              "topic_id": "t_070c3ef67e8ad78156ee9781",
+              "relations": [
+                {
+                  "left": 83170053447323,
+                  "right": 87083363771061,
+                  "related": true,
+                  "concepts": [
+                    "initial_public_offering"
+                  ],
+                  "preliminary": false,
+                  "shared_anchors": [
+                    "anthropic"
+                  ],
+                  "context_overlap": 0.427,
+                  "direct_reference": true
+                }
+              ],
+              "source_ids": [
+                83170053447323,
+                87083363771061
+              ],
+              "organizations": [
+                "techcrunch"
+              ]
+            }
+          ],
+          "selected_topic_id": null,
+          "excluded_documents": [],
+          "rejected_candidates": 1,
+          "selected_source_ids": [],
+          "selected_organizations": [],
+          "generation_calls_avoided": 1,
+          "generation_calls_started": 0,
+          "candidate_drafts_suppressed": 1
+        },
+        "candidate_ids": [],
+        "reason_for_decision": "independent_corroboration_missing",
+        "verified_source_urls": [
+          "https://techcrunch.com/2026/10/27/whos-really-in-charge-at-anthropic-after-the-ipo/",
+          "https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/"
+        ]
+      }
+    ],
+    "index_expansion": [],
+    "recovery_version": 2,
+    "related_recovery": [
+      {
+        "url": "https://techcrunch.com/2026/10/27/whos-really-in-charge-at-anthropic-after-the-ipo/",
+        "reason": "independent_corroboration_missing",
+        "candidate_index": 4
+      },
+      {
+        "url": "https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/",
+        "reason": "independent_corroboration_missing",
+        "candidate_index": 4
+      }
+    ]
+  }
+}

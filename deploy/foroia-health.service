@@ -1,0 +1,11 @@
+[Unit]
+Description=Foro IA al Dia - salud de servicios, HTTPS y backups
+Requires=docker.service
+After=docker.service network-online.target
+
+[Service]
+Type=oneshot
+User=root
+UMask=0077
+ExecStart=/usr/bin/bash /opt/foroia/deploy/health.sh
+TimeoutStartSec=60

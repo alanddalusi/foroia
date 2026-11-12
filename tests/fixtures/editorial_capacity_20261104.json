@@ -1,0 +1,70 @@
+{
+  "observation_date": "2026-11-04",
+  "origin": "46 anonymized GenerationUsage records; reported tokens and configured tariff, not provider invoice",
+  "caps_origin": "Existing prepare_request and night_web.maximum on isolated official-announcement and Python tutorial fixtures; representative caps, not a universal maximum",
+  "samples": {
+    "Draft": [
+      5317,
+      5963,
+      7594,
+      6832,
+      4588,
+      4915,
+      5130,
+      5287,
+      6961,
+      4052,
+      4858,
+      5609,
+      3861,
+      3825,
+      6897,
+      6969,
+      6616
+    ],
+    "Review": [
+      6995,
+      7824,
+      7573,
+      10707,
+      5571,
+      5930,
+      7818,
+      9441,
+      6017,
+      6453,
+      4697,
+      9122,
+      10281
+    ],
+    "NewsResearch": [
+      22558,
+      17624,
+      17455,
+      15815,
+      17193,
+      17220,
+      26333,
+      17056,
+      16442,
+      25774,
+      15871
+    ],
+    "SourceRecovery": [
+      15636,
+      23215,
+      14554,
+      15098,
+      14233
+    ]
+  },
+  "caps": {
+    "news_draft": 14978,
+    "news_review": 13540,
+    "news_correction": 11892,
+    "practical_draft": 15261,
+    "practical_review": 14099,
+    "practical_correction": 12226,
+    "search": 54427
+  }
+}

@@ -1,0 +1,160 @@
+name: foroia-production
+
+x-api-env: &api-env
+  DATABASE_URL: ${DATABASE_URL:?Configurar DATABASE_URL de produccion}
+  REDIS_URL: redis://redis:6379/0
+  EDITORIAL_API_TOKEN: ${EDITORIAL_API_TOKEN:?Configurar token privado}
+  SITE_URL: https://foroiaaldia.com
+  COOKIE_SECURE: "true"
+  LEGACY_EDITORIAL_ENABLED: "false"
+  REGISTRATION_ENABLED: ${REGISTRATION_ENABLED:-false}
+  ACCOUNT_EMAIL_ENABLED: ${ACCOUNT_EMAIL_ENABLED:-false}
+  ALLOWED_HOSTS: api,localhost,127.0.0.1
+  BOOTSTRAP_EMAIL: ${BOOTSTRAP_EMAIL:?Configurar correo administrador}
+  BOOTSTRAP_PASSWORD: ${BOOTSTRAP_PASSWORD:?Configurar password administrador}
+
+x-research-env: &research-env
+  DATABASE_URL: ${DATABASE_URL:?Configurar DATABASE_URL de produccion}
+  REDIS_URL: redis://redis:6379/0
+  OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+  RESEARCH_MODEL: gpt-5-mini
+  RESEARCH_AT: "22:30"
+  RESEARCH_MONTHLY_USD: ${RESEARCH_MONTHLY_USD:-10}
+  RESEARCH_DAILY_USD: ${RESEARCH_DAILY_USD:-0.20}
+  RESEARCH_INPUT_USD_PER_MILLION: "0.25"
+  RESEARCH_OUTPUT_USD_PER_MILLION: "2"
+  RESEARCH_AUTO_PUBLISH: "true"
+  RESEARCH_TWO_LANES: ${RESEARCH_TWO_LANES:-false}
+  RESEARCH_PRACTICAL_PUBLICATIONS: ${RESEARCH_PRACTICAL_PUBLICATIONS:-1}
+
+x-common: &common
+  restart: unless-stopped
+  logging:
+    driver: json-file
+    options:
+      max-size: "10m"
+      max-file: "3"
+
+services:
+  db:
+    <<: *common
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: foroia
+      POSTGRES_USER: foroia
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Configurar password PostgreSQL}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    networks: [backend]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U foroia -d foroia"]
+      interval: 5s
+      retries: 20
+
+  redis:
+    <<: *common
+    image: redis:7-alpine
+    command: [redis-server, --appendonly, "yes", --maxmemory, 256mb, --maxmemory-policy, noeviction]
+    volumes: [redisdata:/data]
+    networks: [backend]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      retries: 20
+
+  api:
+    <<: *common
+    build: ./api
+    environment:
+      <<: [*api-env, *research-env]
+    networks: [backend]
+    depends_on:
+      db: {condition: service_healthy}
+      redis: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 10s
+      start_period: 30s
+      retries: 15
+
+  web:
+    <<: *common
+    build: ./web
+    environment:
+      NUXT_API_BASE: http://api:8000
+      NUXT_PUBLIC_SITE_URL: https://foroiaaldia.com
+      NUXT_EDITORIAL_API_TOKEN: ${EDITORIAL_API_TOKEN:?Configurar token privado}
+      NUXT_ADS_PUBLISHER_ID: ${ADSENSE_PUBLISHER_ID:-}
+      NUXT_TRUSTED_PROXY_HEADERS: "true"
+      NUXT_PUBLIC_REGISTRATION_ENABLED: ${REGISTRATION_ENABLED:-false}
+      NUXT_PUBLIC_ACCOUNT_EMAIL_ENABLED: ${ACCOUNT_EMAIL_ENABLED:-false}
+      NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${GOOGLE_SITE_VERIFICATION:-}
+      NUXT_PUBLIC_GA4_ID: ${GA4_ID:-}
+      NUXT_PUBLIC_ANALYTICS_ENABLED: ${ANALYTICS_ENABLED:-false}
+      NUXT_PUBLIC_LEGAL_NAME: ${LEGAL_NAME:-}
+      NUXT_PUBLIC_LEGAL_ADDRESS: ${LEGAL_ADDRESS:-}
+      NUXT_PUBLIC_LEGAL_TAX_ID: ${LEGAL_TAX_ID:-}
+    networks: [edge, backend]
+    depends_on:
+      api: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:3000/').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 15s
+      start_period: 30s
+      retries: 10
+
+  caddy:
+    <<: *common
+    image: caddy:2-alpine
+    environment:
+      # Mantenimiento por defecto hasta validar correo, backups y paginas legales.
+      SITE_MAINTENANCE: ${SITE_MAINTENANCE:-true}
+    ports: ["80:80", "443:443", "443:443/udp"]
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddydata:/data
+      - caddyconfig:/config
+    networks: [edge]
+    depends_on:
+      web: {condition: service_healthy}
+
+  mail-worker:
+    <<: *common
+    build: ./api
+    command: [python, -m, app.mail_worker]
+    environment:
+      DATABASE_URL: ${DATABASE_URL:?Configurar DATABASE_URL}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_STARTTLS: ${SMTP_STARTTLS:-true}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_FROM: ${SMTP_FROM:-Foro IA al Día <admin@foroiaaldia.com>}
+    networks: [backend]
+    depends_on:
+      api: {condition: service_healthy}
+
+  research-worker:
+    <<: *common
+    build: ./api
+    command: [python, -m, app.research.worker]
+    # Opt-in: no duplicar el trabajador local ni comenzar a gastar al instalar.
+    profiles: [research]
+    environment:
+      <<: *research-env
+      SITE_URL: https://foroiaaldia.com
+      EDITORIAL_EXAMPLE_RECEIPT: /app/receipts/verified-examples.json
+    volumes:
+      - ./deploy/receipts:/app/receipts:ro
+    networks: [backend]
+    depends_on:
+      api: {condition: service_healthy}
+
+networks:
+  edge:
+  backend:
+
+volumes:
+  pgdata:
+  redisdata:
+  caddydata:
+  caddyconfig:

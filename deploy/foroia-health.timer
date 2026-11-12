@@ -1,0 +1,11 @@
+[Unit]
+Description=Foro IA al Dia - comprobacion cada cinco minutos
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+AccuracySec=30s
+Unit=foroia-health.service
+
+[Install]
+WantedBy=timers.target

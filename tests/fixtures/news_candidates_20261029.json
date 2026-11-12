@@ -1,0 +1,347 @@
+{
+  "provenance": "Recorded nominations and diagnostics from production run 9. Original fetched HTML was not retained; this fixture does not reconstruct document contents or infer unrecorded HTTP statuses.",
+  "run_id": 9,
+  "editorial_date": "2026-10-29",
+  "nominations": [
+    {
+      "title": "Anthropic files Form S-1 with the SEC (confirms intention to pursue IPO)",
+      "event": "Filing of S\u00e2\u20ac\u20181 registration statement (Form S\u00e2\u20ac\u20181) posted to the SEC EDGAR archive",
+      "date": "2026-10-26",
+      "organization": "Anthropic, PBC",
+      "relevance": "major_release",
+      "reason": "Registro formal en la SEC de una S\u00e2\u20ac\u20181 es un paso concreto y verificable hacia una salida a bolsa; relevante para mercado de capitales y la industria de modelos de IA.",
+      "urls": [
+        "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/0001628280-26-067168-index.htm",
+        "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
+      ]
+    },
+    {
+      "title": "OpenAI DevDay 2026 \u00e2\u20ac\u201d listado de anuncios (incluye GPT\u00e2\u20ac\u20186 Astra, nuevas APIs y herramientas)",
+      "event": "OpenAI DevDay 2026 \u00e2\u20ac\u201d recopilaci\u00c3\u00b3n de m\u00c3\u00a1s de 20 anuncios publicados por OpenAI",
+      "date": "2026-10-27",
+      "organization": "OpenAI",
+      "relevance": "major_release",
+      "reason": "OpenAI public\u00c3\u00b3 un resumen oficial (DevDay 2026 Recap) el 27 de octubre con varios lanzamientos de modelos y herramientas (mencionado por la propia OpenAI). Es un anuncio directo de producto/modelo por la empresa desarrolladora.",
+      "urls": [
+        "https://openai.com/news/company-announcements/?display=list"
+      ]
+    },
+    {
+      "title": "NVIDIA: anuncios p\u00c3\u00bablicos del 26\u00e2\u20ac\u201c27 oct \u00e2\u20ac\u201d Vera Rubin availability y expansi\u00c3\u00b3n con Oracle OCI",
+      "event": "NVIDIA anuncia disponibilidad y acuerdos de infraestructura (Vera Rubin NVL72) y expansi\u00c3\u00b3n de OCI Superclusters",
+      "date": "2026-10-26",
+      "organization": "NVIDIA (coanuncio con Google Cloud / Oracle Cloud Infrastructure en fechas 26\u00e2\u20ac\u201c27 oct)",
+      "relevance": "major_release",
+      "reason": "NVIDIA public\u00c3\u00b3 en su newsroom anuncios del 26\u00e2\u20ac\u201c27 de octubre sobre la disponibilidad de infraestructura Vera Rubin y acuerdos para escala con OCI, noticias concretas sobre hardware/infrastructura para entrenamiento e inferencia de modelos de IA.",
+      "urls": [
+        "https://nvidianews.nvidia.com/news/latest?page=2"
+      ]
+    },
+    {
+      "title": "xAI / Grok: Grok Voice 3.0 y otros lanzamientos en octubre (registro de producto, anuncio 27 oct)",
+      "event": "Anuncio de producto \u00e2\u20ac\u201d Grok Voice 3.0 y actualizaciones de Grok (registro en la secci\u00c3\u00b3n de noticias de xAI / x.ai)",
+      "date": "2026-10-27",
+      "organization": "xAI (Grok)",
+      "relevance": "major_release",
+      "reason": "La web de xAI (x.ai) lista un anuncio de producto fechado el 27 de octubre (Grok Voice 3.0). Es una publicaci\u00c3\u00b3n oficial de la compa\u00c3\u00b1\u00c3\u00ada sobre una herramienta/servicio concreto.",
+      "urls": [
+        "https://x.ai/company",
+        "https://x.ai/news/partnernetworkannouncement"
+      ]
+    },
+    {
+      "title": "Google (Alphabet) Q3 2026 report \u00e2\u20ac\u201d menci\u00c3\u00b3n de hit de usuarios en la app Gemini (hito de 1.000 millones de usuarios)",
+      "event": "Publicaci\u00c3\u00b3n de la carta/entrada con resultados y notas del CEO sobre Q3 2026 (incluye dato: Gemini app alcanz\u00c3\u00b3 1.000 millones de usuarios)",
+      "date": "2026-10-28",
+      "organization": "Google / Alphabet",
+      "relevance": "major_release",
+      "reason": "La entrada oficial de Google sobre resultados Q3 (28 oct 2026) contiene un dato concreto y reciente sobre la adopci\u00c3\u00b3n de Gemini; es un anuncio cuantitativo publicado por la compa\u00c3\u00b1\u00c3\u00ada que puede influir en percepci\u00c3\u00b3n del producto y su despliegue.",
+      "urls": [
+        "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/"
+      ]
+    }
+  ],
+  "diagnostics": {
+    "web": {
+      "tool": "web_search",
+      "model": "gpt-5-mini",
+      "state": "response",
+      "reason": "web_candidates_found",
+      "settled": true,
+      "cost_basis": "reported_tokens_and_tool_calls",
+      "ledger_key": "3db4967f7b4630620181d251af93fdadbe85c8d7b55a5fd2302ca3a199eb028e",
+      "started_at": "2026-10-28T23:00:48.929071+00:00",
+      "input_bound": 138211,
+      "empty_reason": "",
+      "search_calls": 1,
+      "window_hours": 24,
+      "tool_microusd": 10000,
+      "search_summary": "B\u00c3\u00basqueda orientada a anuncios fechados entre 2026-10-26 y 2026-10-28 (inclusive). Consult\u00c3\u00a9 EDGAR/SEC para documentos legales (Anthropic S\u00e2\u20ac\u20181) con fecha 2026-10-26; newsroom oficiales de empresas (OpenAI, NVIDIA, xAI/x.ai, Google) filtrando por fechas 26\u00e2\u20ac\u201c28 de octubre de 2026; y cobertura agregada para verificar contexto editorial. Consultas clave (ejemplos): \"Anthropic S-1 October 26 2026 site:sec.gov\", \"OpenAI DevDay Oct 27 2026 OpenAI newsroom\", \"NVIDIA Vera Rubin October 26 2026 newsroom\", \"xAI Grok Voice Oct 27 2026 site:x.ai\", \"Google Q3 2026 Gemini one billion users Oct 28 2026 blog.google\". Verifiqu\u00c3\u00a9 las fechas en las p\u00c3\u00a1ginas oficiales (SEC, OpenAI, NVIDIA, x.ai, blog.google) y us\u00c3\u00a9 p\u00c3\u00a1ginas de newsroom/EDGAR como fuentes primarias. Enlaces consultados se incluyen en cada candidata. Tambi\u00c3\u00a9n recog\u00c3\u00ad referencias complementarias de prensa y agregadores en caso de necesidad de corroboraci\u00c3\u00b3n (p. ej. Tech & Business newswire, AP, Axios) pero prioric\u00c3\u00a9 la fuente original de la empresa o el registro legal.",
+      "research_status": "candidates_found",
+      "billing_verified": false,
+      "reserved_microusd": 54553,
+      "accounted_microusd": 15815,
+      "invalid_candidates": [],
+      "provider_discarded": [],
+      "returned_candidates": 5,
+      "verification_status": "no_verified_candidates",
+      "verified_candidates": 0,
+      "extended_window_hours": 48,
+      "accepted_candidate_schemas": 5,
+      "observed_tool_limit_exceeded": false
+    },
+    "selection": [],
+    "statistics": {
+      "documents": 4,
+      "fetch_errors": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/0001628280-26-067168-index.htm",
+          "code": "source_error",
+          "http_status": null
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+          "code": "source_error",
+          "http_status": null
+        },
+        {
+          "url": "https://www.anthropic.com/news/public-benefit-fund",
+          "code": "unverified_or_stale_date",
+          "stage": "related_article",
+          "http_status": null
+        },
+        {
+          "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+          "code": "unverified_or_stale_date",
+          "stage": "related_article",
+          "http_status": null
+        },
+        {
+          "url": "https://nvidianews.nvidia.com/news/latest",
+          "code": "unverified_or_stale_date",
+          "http_status": null
+        },
+        {
+          "url": "https://openai.com/index/oracle-apps-in-chatgpt",
+          "code": "http_status",
+          "stage": "related_article",
+          "http_status": 403
+        },
+        {
+          "url": "https://x.ai/company",
+          "code": "unverified_or_stale_date",
+          "http_status": null
+        },
+        {
+          "url": "https://x.ai/news/partnernetworkannouncement",
+          "code": "unverified_or_stale_date",
+          "http_status": null
+        }
+      ],
+      "fetch_failures": 8,
+      "candidate_count": 5
+    },
+    "opportunities": [
+      {
+        "date": "2026-10-26",
+        "urls": [
+          "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/0001628280-26-067168-index.htm",
+          "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
+        ],
+        "event": "Filing of S\u00e2\u20ac\u20181 registration statement (Form S\u00e2\u20ac\u20181) posted to the SEC EDGAR archive",
+        "title": "Anthropic files Form S-1 with the SEC (confirms intention to pursue IPO)",
+        "reason": "Registro formal en la SEC de una S\u00e2\u20ac\u20181 es un paso concreto y verificable hacia una salida a bolsa; relevante para mercado de capitales y la industria de modelos de IA.",
+        "relevance": "major_release",
+        "organization": "Anthropic, PBC",
+        "verification": {
+          "version": 1,
+          "candidates": [
+            {
+              "title": "VCs will make billions on Anthropic\u00e2\u20ac\u2122s IPO, but Amazon is set to make much (much) more",
+              "reason": "insufficient_independent_topic_sources",
+              "status": "rejected",
+              "topic_id": "t_070c3ef67e8ad78156ee9781",
+              "relations": [
+                {
+                  "left": 83170053447323,
+                  "right": 87083363771061,
+                  "related": true,
+                  "concepts": [
+                    "initial_public_offering"
+                  ],
+                  "preliminary": false,
+                  "shared_anchors": [
+                    "anthropic"
+                  ],
+                  "context_overlap": 0.458,
+                  "direct_reference": false
+                }
+              ],
+              "source_ids": [
+                83170053447323,
+                87083363771061
+              ],
+              "organizations": [
+                "techcrunch"
+              ]
+            }
+          ],
+          "selected_topic_id": null,
+          "excluded_documents": [],
+          "rejected_candidates": 1,
+          "selected_source_ids": [],
+          "selected_organizations": [],
+          "generation_calls_avoided": 1,
+          "generation_calls_started": 0,
+          "candidate_drafts_suppressed": 1
+        },
+        "candidate_ids": [],
+        "reason_for_decision": "insufficient_independent_topic_sources"
+      },
+      {
+        "date": "2026-10-27",
+        "urls": [
+          "https://openai.com/news/company-announcements/?display=list"
+        ],
+        "event": "OpenAI DevDay 2026 \u00e2\u20ac\u201d recopilaci\u00c3\u00b3n de m\u00c3\u00a1s de 20 anuncios publicados por OpenAI",
+        "title": "OpenAI DevDay 2026 \u00e2\u20ac\u201d listado de anuncios (incluye GPT\u00e2\u20ac\u20186 Astra, nuevas APIs y herramientas)",
+        "reason": "OpenAI public\u00c3\u00b3 un resumen oficial (DevDay 2026 Recap) el 27 de octubre con varios lanzamientos de modelos y herramientas (mencionado por la propia OpenAI). Es un anuncio directo de producto/modelo por la empresa desarrolladora.",
+        "relevance": "major_release",
+        "organization": "OpenAI",
+        "verification": {
+          "version": 1,
+          "candidates": [],
+          "selected_topic_id": null,
+          "excluded_documents": [],
+          "rejected_candidates": 0,
+          "selected_source_ids": [],
+          "selected_organizations": [],
+          "generation_calls_avoided": 1,
+          "generation_calls_started": 0,
+          "candidate_drafts_suppressed": 0
+        },
+        "candidate_ids": [],
+        "reason_for_decision": "insufficient_independent_topic_sources"
+      },
+      {
+        "date": "2026-10-26",
+        "urls": [
+          "https://nvidianews.nvidia.com/news/latest?page=2"
+        ],
+        "event": "NVIDIA anuncia disponibilidad y acuerdos de infraestructura (Vera Rubin NVL72) y expansi\u00c3\u00b3n de OCI Superclusters",
+        "title": "NVIDIA: anuncios p\u00c3\u00bablicos del 26\u00e2\u20ac\u201c27 oct \u00e2\u20ac\u201d Vera Rubin availability y expansi\u00c3\u00b3n con Oracle OCI",
+        "reason": "NVIDIA public\u00c3\u00b3 en su newsroom anuncios del 26\u00e2\u20ac\u201c27 de octubre sobre la disponibilidad de infraestructura Vera Rubin y acuerdos para escala con OCI, noticias concretas sobre hardware/infrastructura para entrenamiento e inferencia de modelos de IA.",
+        "relevance": "major_release",
+        "organization": "NVIDIA (coanuncio con Google Cloud / Oracle Cloud Infrastructure en fechas 26\u00e2\u20ac\u201c27 oct)",
+        "verification": {
+          "version": 1,
+          "candidates": [
+            {
+              "title": "AI for Science expands to foundations and research institutions",
+              "reason": "insufficient_independent_topic_sources",
+              "status": "rejected",
+              "topic_id": "t_e63c44ee253751eb72aef3f2",
+              "relations": [],
+              "source_ids": [
+                253146528884023
+              ],
+              "organizations": [
+                "anthropic"
+              ]
+            }
+          ],
+          "selected_topic_id": null,
+          "excluded_documents": [],
+          "rejected_candidates": 1,
+          "selected_source_ids": [],
+          "selected_organizations": [],
+          "generation_calls_avoided": 1,
+          "generation_calls_started": 0,
+          "candidate_drafts_suppressed": 1
+        },
+        "candidate_ids": [],
+        "reason_for_decision": "insufficient_independent_topic_sources"
+      },
+      {
+        "date": "2026-10-27",
+        "urls": [
+          "https://x.ai/company",
+          "https://x.ai/news/partnernetworkannouncement"
+        ],
+        "event": "Anuncio de producto \u00e2\u20ac\u201d Grok Voice 3.0 y actualizaciones de Grok (registro en la secci\u00c3\u00b3n de noticias de xAI / x.ai)",
+        "title": "xAI / Grok: Grok Voice 3.0 y otros lanzamientos en octubre (registro de producto, anuncio 27 oct)",
+        "reason": "La web de xAI (x.ai) lista un anuncio de producto fechado el 27 de octubre (Grok Voice 3.0). Es una publicaci\u00c3\u00b3n oficial de la compa\u00c3\u00b1\u00c3\u00ada sobre una herramienta/servicio concreto.",
+        "relevance": "major_release",
+        "organization": "xAI (Grok)",
+        "verification": {
+          "version": 1,
+          "candidates": [],
+          "selected_topic_id": null,
+          "excluded_documents": [],
+          "rejected_candidates": 0,
+          "selected_source_ids": [],
+          "selected_organizations": [],
+          "generation_calls_avoided": 1,
+          "generation_calls_started": 0,
+          "candidate_drafts_suppressed": 0
+        },
+        "candidate_ids": [],
+        "reason_for_decision": "insufficient_independent_topic_sources"
+      },
+      {
+        "date": "2026-10-28",
+        "urls": [
+          "https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/"
+        ],
+        "event": "Publicaci\u00c3\u00b3n de la carta/entrada con resultados y notas del CEO sobre Q3 2026 (incluye dato: Gemini app alcanz\u00c3\u00b3 1.000 millones de usuarios)",
+        "title": "Google (Alphabet) Q3 2026 report \u00e2\u20ac\u201d menci\u00c3\u00b3n de hit de usuarios en la app Gemini (hito de 1.000 millones de usuarios)",
+        "reason": "La entrada oficial de Google sobre resultados Q3 (28 oct 2026) contiene un dato concreto y reciente sobre la adopci\u00c3\u00b3n de Gemini; es un anuncio cuantitativo publicado por la compa\u00c3\u00b1\u00c3\u00ada que puede influir en percepci\u00c3\u00b3n del producto y su despliegue.",
+        "relevance": "major_release",
+        "organization": "Google / Alphabet",
+        "verification": {
+          "version": 1,
+          "candidates": [
+            {
+              "title": "Q3 2026 earnings call: Remarks from our CEO",
+              "reason": "insufficient_independent_topic_sources",
+              "status": "rejected",
+              "topic_id": "t_1b154ea43af2f865be681d86",
+              "relations": [],
+              "source_ids": [
+                29778327649010
+              ],
+              "organizations": [
+                "google"
+              ]
+            }
+          ],
+          "selected_topic_id": null,
+          "excluded_documents": [],
+          "rejected_candidates": 1,
+          "selected_source_ids": [],
+          "selected_organizations": [],
+          "generation_calls_avoided": 1,
+          "generation_calls_started": 0,
+          "candidate_drafts_suppressed": 1
+        },
+        "candidate_ids": [],
+        "reason_for_decision": "insufficient_independent_topic_sources"
+      }
+    ],
+    "index_expansion": [],
+    "related_recovery": [
+      {
+        "url": "https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/",
+        "reason": "insufficient_corroboration"
+      },
+      {
+        "url": "https://techcrunch.com/2026/10/27/whos-really-in-charge-at-anthropic-after-the-ipo/",
+        "reason": "insufficient_corroboration"
+      },
+      {
+        "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions",
+        "reason": "insufficient_corroboration"
+      }
+    ]
+  }
+}

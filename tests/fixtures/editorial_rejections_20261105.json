@@ -1,0 +1,2631 @@
+{
+  "origin": "Production read-only snapshot 2026-11-05; only public-content material; no credentials or user data.",
+  "cases": [
+    {
+      "id": 3,
+      "topic": "C\u00f3mo guardar respuestas de un asistente de IA en SQLite sin duplicados",
+      "reason": "editorial_review_rejected",
+      "attempts": 1,
+      "versions": [
+        {
+          "validation_error": null,
+          "validation_details": null,
+          "review": {
+            "checks": [
+              {
+                "supported": true,
+                "target_id": "title",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_1252a91b0802745f55464b024475b17e",
+                  "e_80d09cbe91f7092fc0a7f44a44915a74",
+                  "e_849ce6ced0693522aeade70cd25bec6f",
+                  "e_94a0a735a4e91b584b2f095f79182f67",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "summary",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_1252a91b0802745f55464b024475b17e",
+                  "e_80d09cbe91f7092fc0a7f44a44915a74",
+                  "e_849ce6ced0693522aeade70cd25bec6f",
+                  "e_94a0a735a4e91b584b2f095f79182f67",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.heading",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s1",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s2",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.heading",
+                "fragment_ids": [
+                  "e_1252a91b0802745f55464b024475b17e",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf",
+                  "e_eedbf619199817780379d678a0c70170"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s1",
+                "fragment_ids": [
+                  "e_1252a91b0802745f55464b024475b17e",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s2",
+                "fragment_ids": [
+                  "e_eedbf619199817780379d678a0c70170",
+                  "e_1252a91b0802745f55464b024475b17e"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s3",
+                "fragment_ids": [
+                  "e_c4986dc2c5770668dfc44ad64f9165bf",
+                  "e_849ce6ced0693522aeade70cd25bec6f"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.heading",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s1",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s2",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.heading",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_849ce6ced0693522aeade70cd25bec6f"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s1",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_849ce6ced0693522aeade70cd25bec6f"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s2",
+                "fragment_ids": [
+                  "e_849ce6ced0693522aeade70cd25bec6f",
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p5.heading",
+                "fragment_ids": [
+                  "e_80d09cbe91f7092fc0a7f44a44915a74",
+                  "e_94a0a735a4e91b584b2f095f79182f67"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p5.s1",
+                "fragment_ids": [
+                  "e_80d09cbe91f7092fc0a7f44a44915a74",
+                  "e_94a0a735a4e91b584b2f095f79182f67"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p5.s2",
+                "fragment_ids": [
+                  "e_80d09cbe91f7092fc0a7f44a44915a74",
+                  "e_94a0a735a4e91b584b2f095f79182f67"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p6.heading",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_1252a91b0802745f55464b024475b17e"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p6.s1",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_1252a91b0802745f55464b024475b17e"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p6.s2",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_1252a91b0802745f55464b024475b17e"
+                ]
+              }
+            ],
+            "useful": true,
+            "natural": true,
+            "reasons": [],
+            "spanish": true,
+            "approved": true,
+            "original": false,
+            "supported": true,
+            "safe_topic": true,
+            "non_repetitive": true,
+            "well_structured": true,
+            "attribution_clear": true,
+            "no_invented_experience": true
+          }
+        },
+        {
+          "validation_error": null,
+          "validation_details": null,
+          "review": {
+            "checks": [
+              {
+                "supported": false,
+                "target_id": "title",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_1252a91b0802745f55464b024475b17e",
+                  "e_80d09cbe91f7092fc0a7f44a44915a74",
+                  "e_849ce6ced0693522aeade70cd25bec6f",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf",
+                  "e_eedbf619199817780379d678a0c70170"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "summary",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_1252a91b0802745f55464b024475b17e",
+                  "e_80d09cbe91f7092fc0a7f44a44915a74",
+                  "e_849ce6ced0693522aeade70cd25bec6f",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf",
+                  "e_eedbf619199817780379d678a0c70170"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p1.heading",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p1.s1",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p1.s2",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.heading",
+                "fragment_ids": [
+                  "e_849ce6ced0693522aeade70cd25bec6f",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf",
+                  "e_eedbf619199817780379d678a0c70170"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s1",
+                "fragment_ids": [
+                  "e_849ce6ced0693522aeade70cd25bec6f",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf",
+                  "e_eedbf619199817780379d678a0c70170"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s2",
+                "fragment_ids": [
+                  "e_849ce6ced0693522aeade70cd25bec6f",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf",
+                  "e_eedbf619199817780379d678a0c70170"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s3",
+                "fragment_ids": [
+                  "e_849ce6ced0693522aeade70cd25bec6f",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf",
+                  "e_eedbf619199817780379d678a0c70170"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.heading",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s1",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s2",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p4.heading",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_849ce6ced0693522aeade70cd25bec6f"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p4.s1",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_849ce6ced0693522aeade70cd25bec6f"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p4.s2",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_849ce6ced0693522aeade70cd25bec6f"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p5.heading",
+                "fragment_ids": [
+                  "e_1252a91b0802745f55464b024475b17e",
+                  "e_80d09cbe91f7092fc0a7f44a44915a74"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p5.s1",
+                "fragment_ids": [
+                  "e_1252a91b0802745f55464b024475b17e",
+                  "e_80d09cbe91f7092fc0a7f44a44915a74"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p5.s2",
+                "fragment_ids": [
+                  "e_1252a91b0802745f55464b024475b17e",
+                  "e_80d09cbe91f7092fc0a7f44a44915a74"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p6.heading",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p6.s1",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p6.s2",
+                "fragment_ids": [
+                  "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+                  "e_c4986dc2c5770668dfc44ad64f9165bf"
+                ]
+              }
+            ],
+            "useful": false,
+            "natural": true,
+            "reasons": [
+              "Faltan comprobaciones de afirmaciones o evidencias citadas v\u00e1lidas. Revisar: title, summary, p1.heading, p1.s1, p1.s2, p4.heading, p4.s1, p4.s2, p5.heading, p5.s1, p5.s2, p6.heading.",
+              "Varias afirmaciones editoriales (qu\u00e9 son \u201cdatos no confiables\u201d, alcance pr\u00e1ctico para equipos, y recomendaciones sobre clave primaria/UPSERT) no est\u00e1n \u00edntegramente respaldadas por los fragmentos de la documentaci\u00f3n citada; el borrador mezcla buenas pr\u00e1cticas extra\u00eddas de la documentaci\u00f3n con afirmaciones de producto/alcance que requieren evidencia adicional.",
+              "El t\u00edtulo y el resumen afirman que la gu\u00eda evita duplicados. El documento muestra ejemplos de INSERT y placeholders, pero no aporta en las evidencias proporcionadas una referencia expl\u00edcita a la instrucci\u00f3n SQLite \"INSERT OR REPLACE\" ni a la l\u00f3gica de declarar una columna como PRIMARY KEY para obtener el comportamiento descrito.",
+              "El apartado de limitaciones menciona validaci\u00f3n de contenido, versionado hist\u00f3rico y concurrencia avanzada. La documentaci\u00f3n citada cubre el par\u00e1metro check_same_thread y threadsafety, pero no soporta \u00edntegramente la lista de limitaciones ni la recomendaci\u00f3n concreta de usar una tabla separada de versiones.",
+              "Varios objetivos (p1.heading, p1.s1, p1.s2, p4.*, p5.*, p6.* y el t\u00edtulo/summary) contienen afirmaciones que no est\u00e1n completamente verificadas por los fragmentos citados. Hay solapamiento entre recomendaciones pr\u00e1cticas y contenidos de la documentaci\u00f3n oficial, pero no coincidencia total frase por frase."
+            ],
+            "spanish": true,
+            "approved": false,
+            "original": true,
+            "supported": false,
+            "safe_topic": true,
+            "non_repetitive": true,
+            "well_structured": false,
+            "attribution_clear": true,
+            "no_invented_experience": true
+          }
+        }
+      ],
+      "failure": {
+        "code": "editorial_review_rejected",
+        "details": []
+      },
+      "correction_feedback": {
+        "code": "review_rejected",
+        "reasons": [],
+        "editing_plan": {
+          "headings": [
+            "Qu\u00e9 problema resuelve y qu\u00e9 se entiende por \u201cdatos no confiables\u201d",
+            "Principios b\u00e1sicos con el m\u00f3dulo sqlite3",
+            "Usar placeholders para evitar inyecci\u00f3n y problemas de formato",
+            "Estrat\u00e9gia sencilla para evitar duplicados",
+            "Limitaciones y riesgos que quedan sin resolver por esta gu\u00eda",
+            "Qu\u00e9 cambia y para qui\u00e9n"
+          ],
+          "acceptance": "Debe superar nuevamente la validaci\u00f3n local y la revisi\u00f3n completa; no se aprueba por agotar intentos.",
+          "prose_words": 368,
+          "local_issues": [],
+          "section_count": 6,
+          "required_actions": []
+        },
+        "editorial_checks": {
+          "natural": true,
+          "non_repetitive": true,
+          "well_structured": true,
+          "attribution_clear": true
+        },
+        "unsupported_targets": []
+      },
+      "retained_proposal": true,
+      "verification_error": null
+    },
+    {
+      "id": 4,
+      "topic": "C\u00f3mo comparar respuestas de IA sin errores por espacios y Unicode",
+      "reason": "editorial_review_rejected",
+      "attempts": 1,
+      "versions": [
+        {
+          "validation_error": "editorial_style_rejected",
+          "validation_details": [
+            {
+              "code": "oversegmented",
+              "message": "Agrupa los apartados breves relacionados en menos secciones con desarrollo suficiente."
+            }
+          ],
+          "review": null
+        },
+        {
+          "validation_error": null,
+          "validation_details": null,
+          "review": {
+            "checks": [
+              {
+                "supported": true,
+                "target_id": "title",
+                "fragment_ids": [
+                  "e_120c3adc040f31f20876ca684c4daaf4",
+                  "e_60893190fdf71b09ebbc53f14f6e8547",
+                  "e_71136fb7b220679ce8debce04a230d05",
+                  "e_b9d0a3d9d4d8175877d962a14b913024",
+                  "e_f03f764d20f2b0ad9a3f9fc5a4d7dd61",
+                  "e_f92504efa75aefcc3662a065f2a5d8d5"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "summary",
+                "fragment_ids": [
+                  "e_120c3adc040f31f20876ca684c4daaf4",
+                  "e_60893190fdf71b09ebbc53f14f6e8547",
+                  "e_71136fb7b220679ce8debce04a230d05",
+                  "e_b9d0a3d9d4d8175877d962a14b913024",
+                  "e_f03f764d20f2b0ad9a3f9fc5a4d7dd61",
+                  "e_f92504efa75aefcc3662a065f2a5d8d5"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.heading",
+                "fragment_ids": [
+                  "e_b9d0a3d9d4d8175877d962a14b913024",
+                  "e_f92504efa75aefcc3662a065f2a5d8d5"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s1",
+                "fragment_ids": [
+                  "e_b9d0a3d9d4d8175877d962a14b913024",
+                  "e_f92504efa75aefcc3662a065f2a5d8d5"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s2",
+                "fragment_ids": [
+                  "e_b9d0a3d9d4d8175877d962a14b913024",
+                  "e_f92504efa75aefcc3662a065f2a5d8d5"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s3",
+                "fragment_ids": [
+                  "e_b9d0a3d9d4d8175877d962a14b913024",
+                  "e_71136fb7b220679ce8debce04a230d05"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.heading",
+                "fragment_ids": [
+                  "e_60893190fdf71b09ebbc53f14f6e8547",
+                  "e_b9d0a3d9d4d8175877d962a14b913024"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p2.s1",
+                "fragment_ids": [
+                  "e_60893190fdf71b09ebbc53f14f6e8547",
+                  "e_b9d0a3d9d4d8175877d962a14b913024"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s2",
+                "fragment_ids": [
+                  "test_f034ac1df06e92da76d9d82da3a3ab7bda8bd7e402340f80de3c4610dbc8f171",
+                  "e_60893190fdf71b09ebbc53f14f6e8547"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.heading",
+                "fragment_ids": [
+                  "e_71136fb7b220679ce8debce04a230d05",
+                  "e_f03f764d20f2b0ad9a3f9fc5a4d7dd61"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s1",
+                "fragment_ids": [
+                  "e_71136fb7b220679ce8debce04a230d05",
+                  "e_f03f764d20f2b0ad9a3f9fc5a4d7dd61"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p3.s2",
+                "fragment_ids": [
+                  "e_71136fb7b220679ce8debce04a230d05",
+                  "e_f03f764d20f2b0ad9a3f9fc5a4d7dd61"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p4.heading",
+                "fragment_ids": [
+                  "e_120c3adc040f31f20876ca684c4daaf4",
+                  "e_b9d0a3d9d4d8175877d962a14b913024"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p4.s1",
+                "fragment_ids": [
+                  "e_120c3adc040f31f20876ca684c4daaf4",
+                  "e_b9d0a3d9d4d8175877d962a14b913024"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p4.s2",
+                "fragment_ids": [
+                  "e_120c3adc040f31f20876ca684c4daaf4",
+                  "e_b9d0a3d9d4d8175877d962a14b913024"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p4.s3",
+                "fragment_ids": [
+                  "e_120c3adc040f31f20876ca684c4daaf4",
+                  "e_b9d0a3d9d4d8175877d962a14b913024"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p4.s4",
+                "fragment_ids": [
+                  "e_120c3adc040f31f20876ca684c4daaf4",
+                  "e_b9d0a3d9d4d8175877d962a14b913024"
+                ]
+              }
+            ],
+            "useful": false,
+            "natural": true,
+            "reasons": [
+              "Faltan comprobaciones de afirmaciones o evidencias citadas v\u00e1lidas. Revisar: p2.s1, p3.s2, p4.heading, p4.s1, p4.s2, p4.s3, p4.s4.",
+              "Faltan evidencias para varias afirmaciones pr\u00e1cticas claves. Por ejemplo, el texto recomienda usar casefold() y colapsar espacios, pero ninguno de los fragmentos proporcionados contiene literalmente la referencia a str.casefold() ni a la estrategia de colapsar espacios; hay que a\u00f1adir la documentaci\u00f3n de str.casefold() y/o fragmentos que muestren ejemplos de normalizaci\u00f3n combinada con casefold o manipulaci\u00f3n de espacios.",
+              "El apartado 'El ejemplo verificado acompa\u00f1a tests...' afirma cobertura concreta (caracteres de ancho completo y espacios m\u00faltiples). Esa cobertura s\u00ed est\u00e1 presente en el test verificado, pero el test no est\u00e1 referenciado entre los fragmentos iniciales para ese objetivo; incluya el fragmento del test verificado junto a la afirmaci\u00f3n para que quede respaldada.",
+              "La frase 'Incluso tras normalizar, dos cadenas que parecen iguales al lector pueden seguir sin compararse como iguales por detalles sint\u00e1cticos o porque su significado difiere (p. ej. palabras con o sin tilde que cambian sentido)' no est\u00e1 respaldada por las fuentes aportadas. Para mantenerla debe a\u00f1adirse una referencia que ejemplifique diferencias sem\u00e1nticas persistentes tras normalizar (p. ej. documentaci\u00f3n ling\u00fc\u00edstica o ejemplos verificables), o reescribir la frase para limitarse a la observaci\u00f3n t\u00e9cnica que s\u00ed aparece en la documentaci\u00f3n.",
+              "Las cuatro entradas de la checklist contienen recomendaciones operacionales (documentar reglas irrelevantes, a\u00f1adir transformaciones controladas, mantener tests, reservar muestreo humano). Estas pr\u00e1cticas son sensatas, pero no est\u00e1n respaldadas por los fragmentos de documentaci\u00f3n t\u00e9cnica incluidos. Para publicar este checklist como verificado, incorpore fuentes adicionales (p. ej. gu\u00edas de pruebas de software o secciones de la documentaci\u00f3n que recomienden testing y muestreo humano) o marque las recomendaciones como opini\u00f3n editorial no verificada.",
+              "Estructura: el borrador mezcla afirmaciones directamente respaldadas por la documentaci\u00f3n de unicodedata (normalizaci\u00f3n y sus formas) con consejos pr\u00e1cticos que no tienen citas pertinentes. Para aprobarlo, se debe separar claramente lo que est\u00e1 documentado (con sus citas literales en evidence.quote) y lo que es recomendaci\u00f3n del autor, a\u00f1adiendo las referencias que respalden esas recomendaciones."
+            ],
+            "spanish": true,
+            "approved": false,
+            "original": true,
+            "supported": false,
+            "safe_topic": true,
+            "non_repetitive": true,
+            "well_structured": false,
+            "attribution_clear": true,
+            "no_invented_experience": true
+          }
+        }
+      ],
+      "failure": {
+        "code": "editorial_review_rejected",
+        "details": []
+      },
+      "correction_feedback": {
+        "code": "editorial_style_rejected",
+        "details": [
+          {
+            "code": "oversegmented",
+            "message": "Agrupa los apartados breves relacionados en menos secciones con desarrollo suficiente."
+          }
+        ],
+        "reasons": [
+          "Corrige el fallo determinista sin inventar evidencias."
+        ],
+        "editing_plan": {
+          "headings": [
+            "Qu\u00e9 problema resuelve la normalizaci\u00f3n",
+            "Una clave pr\u00e1ctica de comparaci\u00f3n (ejemplo verificado)",
+            "Qu\u00e9 hace y qu\u00e9 no hace la normalizaci\u00f3n",
+            "Limitaciones y casos en que hay que revisar manualmente",
+            "Checklist pr\u00e1ctica antes de automatizar comparaciones"
+          ],
+          "acceptance": "Debe superar nuevamente la validaci\u00f3n local y la revisi\u00f3n completa; no se aprueba por agotar intentos.",
+          "prose_words": 287,
+          "local_issues": [
+            {
+              "code": "oversegmented",
+              "message": "Agrupa los apartados breves relacionados en menos secciones con desarrollo suficiente."
+            }
+          ],
+          "section_count": 5,
+          "required_actions": [
+            "Agrupa los apartados relacionados en dos a cuatro secciones desarrolladas. No a\u00f1adas relleno para alcanzar 350 palabras. Conserva hechos, evidencias y ejemplos verificados."
+          ]
+        }
+      },
+      "retained_proposal": true,
+      "verification_error": null
+    },
+    {
+      "id": 5,
+      "topic": "Validar respuestas estructuradas de IA con Pydantic",
+      "reason": "publication_check_failed",
+      "attempts": 1,
+      "versions": [
+        {
+          "validation_error": null,
+          "validation_details": null,
+          "review": {
+            "checks": [
+              {
+                "supported": true,
+                "target_id": "title",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_62d6307b0157c4c34f37b0d20737f41f",
+                  "e_7da722f7c279d6b04faf66e1aed55123",
+                  "e_877139930fd8fdce1fba077bad3db217",
+                  "e_d11e1e5b388eeb31e3ab16ab831db9b8",
+                  "e_fc0d8698a3429fe371336ca88c7020bb"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "summary",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_62d6307b0157c4c34f37b0d20737f41f",
+                  "e_7da722f7c279d6b04faf66e1aed55123",
+                  "e_877139930fd8fdce1fba077bad3db217",
+                  "e_d11e1e5b388eeb31e3ab16ab831db9b8",
+                  "e_fc0d8698a3429fe371336ca88c7020bb"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.heading",
+                "fragment_ids": [
+                  "e_62d6307b0157c4c34f37b0d20737f41f",
+                  "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s1",
+                "fragment_ids": [
+                  "e_62d6307b0157c4c34f37b0d20737f41f",
+                  "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s2",
+                "fragment_ids": [
+                  "e_62d6307b0157c4c34f37b0d20737f41f",
+                  "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.heading",
+                "fragment_ids": [
+                  "e_fc0d8698a3429fe371336ca88c7020bb"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s1",
+                "fragment_ids": [
+                  "e_fc0d8698a3429fe371336ca88c7020bb"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s2",
+                "fragment_ids": [
+                  "e_fc0d8698a3429fe371336ca88c7020bb"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.heading",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_7da722f7c279d6b04faf66e1aed55123",
+                  "e_877139930fd8fdce1fba077bad3db217"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s1",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_7da722f7c279d6b04faf66e1aed55123",
+                  "e_877139930fd8fdce1fba077bad3db217"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s2",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_7da722f7c279d6b04faf66e1aed55123",
+                  "e_877139930fd8fdce1fba077bad3db217"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s3",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_7da722f7c279d6b04faf66e1aed55123",
+                  "e_877139930fd8fdce1fba077bad3db217"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.heading",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s1",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s2",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s3",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s4",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p5.heading",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_fc70514ba49d3945efc1442b731acf48"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p5.s1",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_fc70514ba49d3945efc1442b731acf48"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p5.s2",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_fc70514ba49d3945efc1442b731acf48"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p5.s3",
+                "fragment_ids": [
+                  "e_26a25fee6d43a24df6c973a440f00922",
+                  "e_fc70514ba49d3945efc1442b731acf48"
+                ]
+              }
+            ],
+            "useful": true,
+            "natural": true,
+            "reasons": [
+              "Las afirmaciones clave (qu\u00e9 valida BaseModel, extra='forbid', comportamiento por defecto frente a strict, y l\u00edmites de campo) est\u00e1n directamente respaldadas por la documentaci\u00f3n oficial de Pydantic citada en los fragments. El art\u00edculo explica con precisi\u00f3n alcance y l\u00edmites del esquema (forma y tipos, no veracidad sem\u00e1ntica) y a\u00f1ade recomendaciones editoriales claramente marcadas como tales. La estructura cumple el requisito editorial de 3\u20135 secciones con foco pr\u00e1ctico y no inventa experiencias.",
+              "El t\u00edtulo y el resumen reflejan exactamente lo que demuestran los fragmentos: imponer un contrato de esquema con extra='forbid' y strict, qu\u00e9 valida y qu\u00e9 comprobar aparte. Las recomendaciones operativas (instrumentar m\u00e9tricas, desplegar con monitorizaci\u00f3n) se presentan como sugerencias; donde se afirma un riesgo (fallos al activar strict) hay fragmentos que soportan esa advertencia.",
+              "No hay afirmaciones sobre pruebas en un servicio externo ni testimonios. El ejemplo verificado y el test incluido cubren los escenarios mencionados (tipo incorrecto, lista vac\u00eda, campo extra) y est\u00e1n referenciados en verified_test_evidence."
+            ],
+            "spanish": true,
+            "approved": true,
+            "original": true,
+            "supported": true,
+            "safe_topic": true,
+            "non_repetitive": true,
+            "well_structured": true,
+            "attribution_clear": true,
+            "no_invented_experience": true
+          }
+        }
+      ],
+      "failure": null,
+      "correction_feedback": null,
+      "retained_proposal": true,
+      "verification_error": "publication_not_indexable"
+    },
+    {
+      "id": 7,
+      "topic": "Separar instrucciones, contexto y datos en un prompt",
+      "reason": "duplicate_topic",
+      "attempts": 2,
+      "versions": [
+        {
+          "validation_error": "duplicate_topic",
+          "validation_details": [],
+          "review": null
+        }
+      ],
+      "failure": null,
+      "correction_feedback": null,
+      "retained_proposal": true,
+      "verification_error": null
+    },
+    {
+      "id": 8,
+      "topic": "Dise\u00f1ar prompts de Gemini con ejemplos y criterios de evaluaci\u00f3n",
+      "reason": "invalid_example",
+      "attempts": 1,
+      "versions": [],
+      "failure": null,
+      "correction_feedback": null,
+      "retained_proposal": false,
+      "verification_error": null
+    },
+    {
+      "id": 10,
+      "topic": "C\u00f3mo revisar una respuesta JSON de IA: formato, esquema y fuentes",
+      "reason": "editorial_style_rejected",
+      "attempts": 1,
+      "versions": [
+        {
+          "validation_error": null,
+          "validation_details": null,
+          "review": {
+            "checks": [
+              {
+                "supported": true,
+                "target_id": "title",
+                "fragment_ids": [
+                  "e_0611e388a056532bcfc64afac9eb2b5a",
+                  "e_06365e5de08727bbc3821496f47a6102",
+                  "e_0d18d3c77f84e0073a8bcb83efdb8b9c",
+                  "e_1cf47448042b58d09e595bd47efab74a",
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_48b4d262215b08d55868fc06f575067e"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "summary",
+                "fragment_ids": [
+                  "e_0611e388a056532bcfc64afac9eb2b5a",
+                  "e_06365e5de08727bbc3821496f47a6102",
+                  "e_0d18d3c77f84e0073a8bcb83efdb8b9c",
+                  "e_1cf47448042b58d09e595bd47efab74a",
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_48b4d262215b08d55868fc06f575067e"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.heading",
+                "fragment_ids": [
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_4b2ef3049a74e8d9be0520b7196d2947",
+                  "e_a829d36d939d5b5131af00e3bd93c049"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s1",
+                "fragment_ids": [
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_4b2ef3049a74e8d9be0520b7196d2947",
+                  "e_a829d36d939d5b5131af00e3bd93c049"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s2",
+                "fragment_ids": [
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_4b2ef3049a74e8d9be0520b7196d2947",
+                  "e_a829d36d939d5b5131af00e3bd93c049"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.heading",
+                "fragment_ids": [
+                  "e_0d18d3c77f84e0073a8bcb83efdb8b9c",
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_c0b2a0af08eefcf0461c2b9b8d48f471"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s1",
+                "fragment_ids": [
+                  "e_0d18d3c77f84e0073a8bcb83efdb8b9c",
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_c0b2a0af08eefcf0461c2b9b8d48f471"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s2",
+                "fragment_ids": [
+                  "e_0d18d3c77f84e0073a8bcb83efdb8b9c",
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_c0b2a0af08eefcf0461c2b9b8d48f471"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.heading",
+                "fragment_ids": [
+                  "e_06365e5de08727bbc3821496f47a6102",
+                  "e_a87122335cbabea148cf8541ce49dc58",
+                  "e_f7185e232ad119488072e7e11783f48d"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s1",
+                "fragment_ids": [
+                  "e_06365e5de08727bbc3821496f47a6102",
+                  "e_a87122335cbabea148cf8541ce49dc58",
+                  "e_f7185e232ad119488072e7e11783f48d"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s2",
+                "fragment_ids": [
+                  "e_06365e5de08727bbc3821496f47a6102",
+                  "e_a87122335cbabea148cf8541ce49dc58",
+                  "e_f7185e232ad119488072e7e11783f48d"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.heading",
+                "fragment_ids": [
+                  "e_0611e388a056532bcfc64afac9eb2b5a",
+                  "e_06365e5de08727bbc3821496f47a6102",
+                  "e_48b4d262215b08d55868fc06f575067e"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s1",
+                "fragment_ids": [
+                  "e_0611e388a056532bcfc64afac9eb2b5a",
+                  "e_06365e5de08727bbc3821496f47a6102",
+                  "e_48b4d262215b08d55868fc06f575067e"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s2",
+                "fragment_ids": [
+                  "e_0611e388a056532bcfc64afac9eb2b5a",
+                  "e_06365e5de08727bbc3821496f47a6102",
+                  "e_48b4d262215b08d55868fc06f575067e"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p5.heading",
+                "fragment_ids": [
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_4d10e16596206acf0de9c2add1546dd7",
+                  "e_50317b827cbe448f5147ea9acc0d405f"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p5.s1",
+                "fragment_ids": [
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_4d10e16596206acf0de9c2add1546dd7",
+                  "e_50317b827cbe448f5147ea9acc0d405f"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p6.heading",
+                "fragment_ids": [
+                  "e_1cf47448042b58d09e595bd47efab74a",
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_8c2fc710d77dd59f500ca588badff11c"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p6.s1",
+                "fragment_ids": [
+                  "e_1cf47448042b58d09e595bd47efab74a",
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_8c2fc710d77dd59f500ca588badff11c"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p6.s2",
+                "fragment_ids": [
+                  "e_1cf47448042b58d09e595bd47efab74a",
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_8c2fc710d77dd59f500ca588badff11c"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p6.s3",
+                "fragment_ids": [
+                  "e_1cf47448042b58d09e595bd47efab74a",
+                  "e_1eeb6274d18ec8aa895427430e2b391c",
+                  "e_8c2fc710d77dd59f500ca588badff11c"
+                ]
+              }
+            ],
+            "useful": true,
+            "natural": true,
+            "reasons": [
+              "Falta atribuci\u00f3n visible al presentar la gu\u00eda: el texto no identifica expl\u00edcitamente las fuentes (por ejemplo, la documentaci\u00f3n de Python y la gu\u00eda de Structured Outputs de OpenAI) en la introducci\u00f3n. Seg\u00fan las normas editoriales, la fuente debe estar clara al presentar la informaci\u00f3n y las promesas o limitaciones deben atribuirse.",
+              "Cada p\u00e1rrafo del contenido visible debe incluir extractos literales cortos (evidence.quote) procedentes de las fuentes que respalden todas sus afirmaciones; el borrador aporta evidencias en metadatos, pero el texto publicado no contiene esas citas literales en cada p\u00e1rrafo como exige la pol\u00edtica.",
+              "Aunque las afirmaciones t\u00e9cnicas est\u00e1n cubiertas por las fuentes aportadas, el t\u00edtulo y el resumen dependen de la relaci\u00f3n entre formato, esquema y veracidad; el art\u00edculo debe mostrar expl\u00edcitamente en el primer p\u00e1rrafo a qu\u00e9 fuente corresponde cada afirmaci\u00f3n principal para cumplir la regla de atribuci\u00f3n clara.",
+              "Recomendaci\u00f3n de mejora: a\u00f1adir en el cuerpo, al menos una cita literal corta por p\u00e1rrafo (tal como aparece en las evidencias) que respalde cada afirmaci\u00f3n concreta; y en la entradilla nombrar las dos fuentes principales (documentaci\u00f3n de Python y gu\u00eda de OpenAI) para dejar la atribuci\u00f3n clara."
+            ],
+            "spanish": true,
+            "approved": false,
+            "original": true,
+            "supported": true,
+            "safe_topic": true,
+            "non_repetitive": true,
+            "well_structured": true,
+            "attribution_clear": false,
+            "no_invented_experience": true
+          }
+        },
+        {
+          "validation_error": "editorial_style_rejected",
+          "validation_details": [
+            {
+              "code": "oversegmented",
+              "message": "Agrupa los apartados breves relacionados en menos secciones con desarrollo suficiente."
+            }
+          ],
+          "review": null
+        }
+      ],
+      "failure": null,
+      "correction_feedback": {
+        "code": "editorial_review_rejected",
+        "reasons": [
+          "Falta atribuci\u00f3n visible al presentar la gu\u00eda: el texto no identifica expl\u00edcitamente las fuentes (por ejemplo, la documentaci\u00f3n de Python y la gu\u00eda de Structured Outputs de OpenAI) en la introducci\u00f3n. Seg\u00fan las normas editoriales, la fuente debe estar clara al presentar la informaci\u00f3n y las promesas o limitaciones deben atribuirse.",
+          "Cada p\u00e1rrafo del contenido visible debe incluir extractos literales cortos (evidence.quote) procedentes de las fuentes que respalden todas sus afirmaciones; el borrador aporta evidencias en metadatos, pero el texto publicado no contiene esas citas literales en cada p\u00e1rrafo como exige la pol\u00edtica.",
+          "Aunque las afirmaciones t\u00e9cnicas est\u00e1n cubiertas por las fuentes aportadas, el t\u00edtulo y el resumen dependen de la relaci\u00f3n entre formato, esquema y veracidad; el art\u00edculo debe mostrar expl\u00edcitamente en el primer p\u00e1rrafo a qu\u00e9 fuente corresponde cada afirmaci\u00f3n principal para cumplir la regla de atribuci\u00f3n clara.",
+          "Recomendaci\u00f3n de mejora: a\u00f1adir en el cuerpo, al menos una cita literal corta por p\u00e1rrafo (tal como aparece en las evidencias) que respalde cada afirmaci\u00f3n concreta; y en la entradilla nombrar las dos fuentes principales (documentaci\u00f3n de Python y gu\u00eda de OpenAI) para dejar la atribuci\u00f3n clara."
+        ],
+        "unsupported_targets": []
+      },
+      "retained_proposal": true,
+      "verification_error": null
+    },
+    {
+      "id": 14,
+      "topic": "Introducing GPT-6.1 Terra",
+      "reason": "insufficient_independent_topic_sources",
+      "attempts": 0,
+      "versions": [],
+      "failure": null,
+      "correction_feedback": null,
+      "retained_proposal": false,
+      "verification_error": null
+    },
+    {
+      "id": 32,
+      "topic": "What Google Cloud announced in AI this month",
+      "reason": "official_attribution_missing",
+      "attempts": 1,
+      "versions": [
+        {
+          "validation_error": "insufficient_content",
+          "validation_details": [],
+          "review": null
+        },
+        {
+          "validation_error": "official_attribution_missing",
+          "validation_details": [],
+          "review": null
+        }
+      ],
+      "failure": {
+        "code": "official_attribution_missing",
+        "details": []
+      },
+      "correction_feedback": {
+        "code": "insufficient_content",
+        "details": [],
+        "reasons": [
+          "Corrige el fallo determinista sin inventar evidencias."
+        ],
+        "editing_plan": {
+          "headings": [
+            "Fuente y alcance del anuncio",
+            "Principales lanzamientos destacados",
+            "Herramientas, gu\u00edas y ecosistema"
+          ],
+          "acceptance": "Debe superar nuevamente la validaci\u00f3n local y la revisi\u00f3n completa; no se aprueba por agotar intentos.",
+          "prose_words": 141,
+          "local_issues": [],
+          "section_count": 3,
+          "required_actions": []
+        }
+      },
+      "retained_proposal": true,
+      "verification_error": null
+    },
+    {
+      "id": 33,
+      "topic": "Cities Worldwide Build and Scale AI Services With NVIDIA Physical and Agentic AI",
+      "reason": "editorial_style_rejected",
+      "attempts": 1,
+      "versions": [
+        {
+          "validation_error": "official_scope_requires_corroboration",
+          "validation_details": [],
+          "review": null
+        },
+        {
+          "validation_error": "editorial_style_rejected",
+          "validation_details": [
+            {
+              "code": "oversegmented",
+              "message": "Agrupa los apartados breves relacionados en menos secciones con desarrollo suficiente."
+            }
+          ],
+          "review": null
+        }
+      ],
+      "failure": {
+        "code": "editorial_style_rejected",
+        "details": []
+      },
+      "correction_feedback": {
+        "code": "official_scope_requires_corroboration",
+        "details": [],
+        "reasons": [
+          "Corrige el fallo determinista sin inventar evidencias."
+        ],
+        "editing_plan": {
+          "headings": [
+            "Fuente y alcance del anuncio",
+            "Qu\u00e9 propone NVIDIA y por qu\u00e9 importa",
+            "Ejemplos citados por NVIDIA",
+            "Casos de uso y resultados declarados",
+            "C\u00f3mo afecta a gobiernos locales y desarrolladores",
+            "L\u00edmites y qu\u00e9 no est\u00e1 verificado",
+            "D\u00f3nde se present\u00f3 y pr\u00f3ximos pasos"
+          ],
+          "acceptance": "Debe superar nuevamente la validaci\u00f3n local y la revisi\u00f3n completa; no se aprueba por agotar intentos.",
+          "prose_words": 358,
+          "local_issues": [],
+          "section_count": 7,
+          "required_actions": []
+        }
+      },
+      "retained_proposal": true,
+      "verification_error": null
+    },
+    {
+      "id": 34,
+      "topic": "C\u00f3mo usar la API de OpenAI con Python desde cero",
+      "reason": "editorial_review_rejected",
+      "attempts": 1,
+      "versions": [
+        {
+          "validation_error": null,
+          "validation_details": null,
+          "review": {
+            "checks": [
+              {
+                "supported": true,
+                "target_id": "title",
+                "fragment_ids": [
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c",
+                  "e_7ee2210c53c4510ff175ef3c6242b517",
+                  "e_1ea01264810582a96e23af27839f8be8",
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c",
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "summary",
+                "fragment_ids": [
+                  "e_80432ffb61f4ff50374fce8bd9bc855b",
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c",
+                  "e_1ea01264810582a96e23af27839f8be8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.heading",
+                "fragment_ids": [
+                  "e_81fe8fa5644ef3d806c40b7d72205819",
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s1",
+                "fragment_ids": [
+                  "e_80432ffb61f4ff50374fce8bd9bc855b",
+                  "e_1ea01264810582a96e23af27839f8be8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s2",
+                "fragment_ids": [
+                  "e_7ee2210c53c4510ff175ef3c6242b517",
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p1.s3",
+                "fragment_ids": [
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.heading",
+                "fragment_ids": [
+                  "e_7ee2210c53c4510ff175ef3c6242b517",
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c",
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s1",
+                "fragment_ids": [
+                  "e_81fe8fa5644ef3d806c40b7d72205819",
+                  "e_7ee2210c53c4510ff175ef3c6242b517"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s2",
+                "fragment_ids": [
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c",
+                  "e_7ee2210c53c4510ff175ef3c6242b517"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s3",
+                "fragment_ids": [
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c",
+                  "e_1ea01264810582a96e23af27839f8be8",
+                  "e_7ee2210c53c4510ff175ef3c6242b517"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.heading",
+                "fragment_ids": [
+                  "e_80432ffb61f4ff50374fce8bd9bc855b",
+                  "e_1ea01264810582a96e23af27839f8be8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s1",
+                "fragment_ids": [
+                  "e_80432ffb61f4ff50374fce8bd9bc855b"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s2",
+                "fragment_ids": [
+                  "e_1ea01264810582a96e23af27839f8be8",
+                  "e_80432ffb61f4ff50374fce8bd9bc855b"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s3",
+                "fragment_ids": [
+                  "e_1ea01264810582a96e23af27839f8be8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.heading",
+                "fragment_ids": [
+                  "e_1ea01264810582a96e23af27839f8be8",
+                  "e_80432ffb61f4ff50374fce8bd9bc855b"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s1",
+                "fragment_ids": [
+                  "e_1ea01264810582a96e23af27839f8be8",
+                  "e_80432ffb61f4ff50374fce8bd9bc855b"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s2",
+                "fragment_ids": [
+                  "e_1ea01264810582a96e23af27839f8be8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s3",
+                "fragment_ids": [
+                  "e_1ea01264810582a96e23af27839f8be8",
+                  "e_80432ffb61f4ff50374fce8bd9bc855b"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p5.heading",
+                "fragment_ids": [
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p5.s1",
+                "fragment_ids": [
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p5.s2",
+                "fragment_ids": [
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              }
+            ],
+            "useful": true,
+            "natural": true,
+            "reasons": [
+              "Faltan comprobaciones de afirmaciones o evidencias citadas v\u00e1lidas. Revisar: p1.s3, p5.s1, p5.s2.",
+              "Algunas afirmaciones del borrador no est\u00e1n \u00edntegramente respaldadas por los fragmentos suministrados. Concretamente, las oraciones que expresan beneficios o ausencias en la documentaci\u00f3n (p1.s3, p5.s1 y p5.s2) requieren evidencias expl\u00edcitas; ahora mismo faltan fragmentos que prueben esas frases tal cual.",
+              "Por este motivo no puedo aprobar el art\u00edculo en su forma actual. Corregirlo requiere o bien ajustar las frases para que sean marcadas expl\u00edcitamente como recomendaciones editoriales sin afirmar que la documentaci\u00f3n las cubre o las omite, o bien a\u00f1adir fragmentos documentales que verifiquen esas afirmaciones.",
+              "Explicaci\u00f3n de c\u00f3mo corregir cada fallo (detallado en checks): para cada afirmaci\u00f3n no soportada indique en el texto que es una recomendaci\u00f3n editorial y a\u00f1ada fuentes sobre gesti\u00f3n de secretos / rotaci\u00f3n de claves si pretende decir que la documentaci\u00f3n 'no prescribe' esos pasos."
+            ],
+            "spanish": true,
+            "approved": false,
+            "original": true,
+            "supported": false,
+            "safe_topic": true,
+            "non_repetitive": true,
+            "well_structured": true,
+            "attribution_clear": true,
+            "no_invented_experience": true
+          }
+        },
+        {
+          "validation_error": null,
+          "validation_details": null,
+          "review": {
+            "checks": [
+              {
+                "supported": true,
+                "target_id": "title",
+                "fragment_ids": [
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c",
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c",
+                  "e_71776cb555ce37b7ab83eb0d8343aa78"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "summary",
+                "fragment_ids": [
+                  "e_80432ffb61f4ff50374fce8bd9bc855b",
+                  "e_1ea01264810582a96e23af27839f8be8",
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.heading",
+                "fragment_ids": [
+                  "e_71776cb555ce37b7ab83eb0d8343aa78"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s1",
+                "fragment_ids": [
+                  "e_71776cb555ce37b7ab83eb0d8343aa78",
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p1.s2",
+                "fragment_ids": [
+                  "e_71776cb555ce37b7ab83eb0d8343aa78"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.heading",
+                "fragment_ids": [
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c",
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s1",
+                "fragment_ids": [
+                  "e_81fe8fa5644ef3d806c40b7d72205819",
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s2",
+                "fragment_ids": [
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c",
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p2.s3",
+                "fragment_ids": [
+                  "e_19b0e4b29e16f48cc7a6f37d45384c5c",
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.heading",
+                "fragment_ids": [
+                  "e_1ea01264810582a96e23af27839f8be8",
+                  "e_80432ffb61f4ff50374fce8bd9bc855b"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s1",
+                "fragment_ids": [
+                  "e_80432ffb61f4ff50374fce8bd9bc855b",
+                  "e_1ea01264810582a96e23af27839f8be8"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p3.s2",
+                "fragment_ids": [
+                  "e_1ea01264810582a96e23af27839f8be8",
+                  "e_35bef85cc2e0319c9c48c7df56cf2465"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.heading",
+                "fragment_ids": [
+                  "e_1ea01264810582a96e23af27839f8be8",
+                  "e_35bef85cc2e0319c9c48c7df56cf2465"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s1",
+                "fragment_ids": [
+                  "e_1ea01264810582a96e23af27839f8be8",
+                  "e_35bef85cc2e0319c9c48c7df56cf2465"
+                ]
+              },
+              {
+                "supported": true,
+                "target_id": "p4.s2",
+                "fragment_ids": [
+                  "e_1ea01264810582a96e23af27839f8be8",
+                  "e_35bef85cc2e0319c9c48c7df56cf2465"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p5.heading",
+                "fragment_ids": [
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p5.s1",
+                "fragment_ids": [
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p5.s2",
+                "fragment_ids": [
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              },
+              {
+                "supported": false,
+                "target_id": "p5.s3",
+                "fragment_ids": [
+                  "e_81fe8fa5644ef3d806c40b7d72205819"
+                ]
+              }
+            ],
+            "useful": false,
+            "natural": true,
+            "reasons": [
+              "Faltan comprobaciones de afirmaciones o evidencias citadas v\u00e1lidas. Revisar: p5.heading, p5.s1, p5.s2, p5.s3.",
+              "Algunas afirmaciones editoriales no est\u00e1n respaldadas por los fragmentos suministrados: las recomendaciones sobre gesti\u00f3n de secretos en producci\u00f3n (p5.s1, p5.s2, p5.s3) y el propio encabezado 'L\u00edmites y recomendaciones editoriales' carecen de evidencia en los fragmentos referenciados.",
+              "El p\u00e1rrafo de 'L\u00edmites y recomendaciones editoriales' presenta recomendaciones (\u00abconviene considerar\u2026\u00bb) como asesoramiento pr\u00e1ctico sin citar una gu\u00eda oficial o fragmento que las respalde. Hay que marcar estas frases expl\u00edcitamente como recomendaciones editoriales y, si se quiere afirmarlas como hecho, aportar fuentes de seguridad/DevOps que lo corroboren.",
+              "El contenido general est\u00e1 bien alineado con la documentaci\u00f3n oficial para los pasos t\u00e9cnicos (creaci\u00f3n de clave, exportar variable, instalar SDK y ejecutar el ejemplo), pero la presencia de afirmaciones no verificadas impide aprobar el art\u00edculo. Corrija p5.* o aporte fragmentos que muestren que la documentaci\u00f3n r\u00e1pida no cubre producci\u00f3n.",
+              "Estructura: la secci\u00f3n editorial (p5) debe ampliarse con fuentes concretas o reducirse a una nota breve claramente marcada como consejo editorial, para cumplir la regla de que cada afirmaci\u00f3n est\u00e9 respaldada por los fragmentos dados."
+            ],
+            "spanish": true,
+            "approved": false,
+            "original": true,
+            "supported": false,
+            "safe_topic": true,
+            "non_repetitive": true,
+            "well_structured": false,
+            "attribution_clear": true,
+            "no_invented_experience": true
+          }
+        }
+      ],
+      "failure": {
+        "code": "editorial_review_rejected",
+        "details": []
+      },
+      "correction_feedback": {
+        "code": "review_rejected",
+        "reasons": [
+          "Faltan comprobaciones de afirmaciones o evidencias citadas v\u00e1lidas. Revisar: p1.s3, p5.s1, p5.s2.",
+          "Algunas afirmaciones del borrador no est\u00e1n \u00edntegramente respaldadas por los fragmentos suministrados. Concretamente, las oraciones que expresan beneficios o ausencias en la documentaci\u00f3n (p1.s3, p5.s1 y p5.s2) requieren evidencias expl\u00edcitas; ahora mismo faltan fragmentos que prueben esas frases tal cual.",
+          "Por este motivo no puedo aprobar el art\u00edculo en su forma actual. Corregirlo requiere o bien ajustar las frases para que sean marcadas expl\u00edcitamente como recomendaciones editoriales sin afirmar que la documentaci\u00f3n las cubre o las omite, o bien a\u00f1adir fragmentos documentales que verifiquen esas afirmaciones.",
+          "Explicaci\u00f3n de c\u00f3mo corregir cada fallo (detallado en checks): para cada afirmaci\u00f3n no soportada indique en el texto que es una recomendaci\u00f3n editorial y a\u00f1ada fuentes sobre gesti\u00f3n de secretos / rotaci\u00f3n de claves si pretende decir que la documentaci\u00f3n 'no prescribe' esos pasos."
+        ],
+        "editing_plan": {
+          "headings": [
+            "Qu\u00e9 vamos a hacer y por qu\u00e9 importa",
+            "Crear la API key y exportarla como variable de entorno",
+            "Instalar el SDK de OpenAI para Python e introducir el ejemplo oficial",
+            "Ejecutar la petici\u00f3n y verificar la salida",
+            "L\u00edmites y recomendaciones editoriales"
+          ],
+          "acceptance": "Debe superar nuevamente la validaci\u00f3n local y la revisi\u00f3n completa; no se aprueba por agotar intentos.",
+          "invariants": [
+            "Mant\u00e9n al menos 387 palabras de cuerpo salvo que elimines afirmaciones sin respaldo.",
+            "Usa entre dos y cuatro secciones en noticias y hasta cinco en gu\u00edas.",
+            "No introduzcas comparaciones, rumores ni datos nuevos sin fragmento."
+          ],
+          "prose_words": 387,
+          "local_issues": [],
+          "section_count": 5,
+          "required_actions": [
+            "Resuelve cada motivo concreto del revisor en el texto; no basta con cambiar citas o signos de puntuaci\u00f3n.",
+            "Estas afirmaciones no tienen respaldo en los fragmentos. Para cada una: reescr\u00edbela para decir solo lo que dice un fragmento, ap\u00f3yala en otro fragmento disponible o en el ejemplo verificado, o elim\u00ednala. Una recomendaci\u00f3n propia debe presentarse como recomendaci\u00f3n, no como hecho documentado. Afirmaciones: p1.s3: \u00abMantener la clave fuera del c\u00f3digo reduce la exposici\u00f3n accidental en repositorios y facilita cambiar credenciales sin tocar archivos fuente.\u00bb | p5.s1: \u00abLa documentaci\u00f3n cubre el flujo b\u00e1sico pero no prescribe c\u00f3mo rotar claves, almacenar secretos en entornos de producci\u00f3n, ni pol\u00edticas de control de acceso espe\u00bb | p5.s2: \u00abSi necesita despliegues en CI/CD o contenedores, recomendamos buscar gu\u00edas adicionales sobre gesti\u00f3n de secretos y permisos en su plataforma (esto es una recome\u00bb"
+          ]
+        },
+        "editorial_checks": {
+          "natural": true,
+          "non_repetitive": true,
+          "well_structured": true,
+          "attribution_clear": true
+        },
+        "unsupported_targets": [
+          {
+            "supported": false,
+            "target_id": "p1.s3",
+            "fragment_ids": [
+              "e_81fe8fa5644ef3d806c40b7d72205819"
+            ]
+          },
+          {
+            "supported": false,
+            "target_id": "p5.s1",
+            "fragment_ids": [
+              "e_81fe8fa5644ef3d806c40b7d72205819"
+            ]
+          },
+          {
+            "supported": false,
+            "target_id": "p5.s2",
+            "fragment_ids": [
+              "e_81fe8fa5644ef3d806c40b7d72205819"
+            ]
+          }
+        ]
+      },
+      "retained_proposal": true,
+      "verification_error": null
+    }
+  ],
+  "pydantic_candidate": {
+    "id": 5,
+    "fingerprint": "f575665a35bf3974e0d17d28ed04c1e89503ae5b7136eb5e76a6054d113cd844",
+    "engine": "evergreen",
+    "kind": "tutorial",
+    "topic": "Validar respuestas estructuradas de IA con Pydantic",
+    "section": "programacion",
+    "intent": "Rechazar campos adicionales y tipos incorrectos mediante un esquema expl\u00edcito.",
+    "keyword": "validar respuestas ia pydantic",
+    "priority": 80,
+    "state": "rejected",
+    "reason": "publication_check_failed",
+    "attempts": 1,
+    "next_attempt_at": null,
+    "article_id": 16,
+    "target_article_id": null,
+    "published_at": null,
+    "details": {
+      "blueprint": "pydantic-responses",
+      "publication_snapshot": {
+        "id": 16,
+        "body": "## Qu\u00e9 valida un modelo Pydantic y por qu\u00e9 es \u00fatil para respuestas de IA\nPydantic permite declarar modelos (clases que heredan de BaseModel) que definen campos y sus tipos; al validar datos no confiables devuelve una instancia con campos que cumplen esos tipos y formatos, o lanza un ValidationError si falla la validaci\u00f3n. Esto convierte a los modelos en contratos \u00fatiles para respuestas estructuradas de IA: garantizan que el objeto que procesas tenga las claves y los tipos esperados antes de seguir con la l\u00f3gica de la aplicaci\u00f3n. [1]\n\n## Rechazar campos adicionales: la opci\u00f3n extra y extra='forbid'\nPor defecto Pydantic ignora campos extra que no est\u00e9n declarados en el modelo, pero la configuraci\u00f3n model_config = ConfigDict(extra='forbid') hace que la validaci\u00f3n falle si aparecen claves no esperadas. Para respuestas de IA esto permite forzar un contrato estricto: si el modelo de generaci\u00f3n a\u00f1ade campos imprevistos, la validaci\u00f3n falla y puedes registrar o rechazar la respuesta en lugar de procesarla ciegamente. [1]\n\n## Evitar coerciones inesperadas: strict mode y opciones por campo o modelo\nPydantic, en su modo por defecto, intenta convertir tipos cuando es posible (por ejemplo, '123' \u2192 int). Si quieres que la validaci\u00f3n falle cuando el tipo no coincide exactamente, conviene activar strict mode: puede habilitarse a nivel de validaci\u00f3n, de campo (Field(strict=True) o tipos StrictInt/StrictStr) o a nivel de modelo con ConfigDict(strict=True). Esto reduce aceptaciones silenciosas de valores con tipos incorrectos, pero exige auditar los emisores de datos porque entradas previamente aceptadas pueden empezar a fallar. [2]\n\n## Qu\u00e9 queda fuera del contrato y recomendaciones editoriales de verificaci\u00f3n\nPydantic garantiza conformidad de forma y tipos, no la veracidad ni la coherencia sem\u00e1ntica del contenido. Es decir, la validaci\u00f3n asegura que 'title' sea una cadena y 'points' una lista, pero no comprueba que el texto sea correcto, actualizado o libre de invenci\u00f3n. Conviene combinar el esquema con comprobaciones adicionales: reglas de negocio (longitud m\u00ednima/m\u00e1xima), listas de valores permitidos, verificaciones sem\u00e1nticas externas o pasos humanos para casos cr\u00edticos. Recomendamos instrumentar m\u00e9tricas de validaci\u00f3n y tratar las validaciones estrictas como cambios desplegables con monitorizaci\u00f3n, porque activar strict puede provocar fallos en integraciones existentes. [2, 1]\n\n## Ejemplo de contrato y pruebas m\u00ednimas (patr\u00f3n verificado)\nUn contrato compacto y eficaz para respuestas tipo resumen declara model_config = ConfigDict(extra='forbid', strict=True), un t\u00edtulo str con l\u00edmites de longitud y una lista de puntos con tama\u00f1o controlado. El ejemplo verificado incluido demuestra la validaci\u00f3n de payloads v\u00e1lidos y la detecci\u00f3n de tres fallos t\u00edpicos: tipo incorrecto, lista vac\u00eda y campos extras. Usar pruebas unitarias que validen la aceptaci\u00f3n y el rechazo esperado ayuda a evitar regresiones al cambiar strict o la configuraci\u00f3n de campos. [2, 1]\n\n## Ejemplo reproducible\n\n```python\nfrom pydantic import BaseModel, ConfigDict, Field\n\nclass Summary(BaseModel):\n    model_config = ConfigDict(extra=\"forbid\", strict=True)\n    title: str = Field(min_length=3, max_length=120)\n    points: list[str] = Field(min_length=1, max_length=5)\n```\n\nEste fragmento ha superado pruebas autom\u00e1ticas en un entorno aislado. No se han llamado servicios externos durante esa comprobaci\u00f3n. Entorno comprobado: python 3.12.15, pydantic 2.14.1.\n\n## Para seguir aprendiendo\n\n- [M\u00e1s gu\u00edas de programacion](/programacion)\n- [Validar entradas de texto para una API de IA con FastAPI y Pydantic](/articulos/fastapi-validar-peticiones-ia)\n- [Validar un JSON generado por IA antes de procesarlo en Python](/articulos/validar-json-ia-python)\n\nNo se ha probado la interfaz ni un servicio externo; solo el ejemplo aislado si se proporciona.\n\nRedacci\u00f3n y revisi\u00f3n automatizadas con IA. Sin revisi\u00f3n humana previa.",
+        "slug": "validar-respuestas-ia-pydantic-esquema-limites",
+        "title": "Validar respuestas IA con Pydantic: esquema y l\u00edmites",
+        "status": "published",
+        "section": "programacion",
+        "sources": [
+          {
+            "url": "https://pydantic.dev/docs/validation/latest/concepts/models/",
+            "title": "[1] Models API Documentation pydantic.main.BaseModel One of the primary ways of defining schema in Pydantic is via models. Models are simply classes which inherit f",
+            "language": "en"
+          },
+          {
+            "url": "https://pydantic.dev/docs/validation/latest/concepts/strict_mode/",
+            "title": "[2] Strict Mode API Documentation pydantic.types.Strict By default, Pydantic will attempt to coerce values to the desired type when possible. For example, you can p",
+            "language": "en"
+          }
+        ],
+        "summary": "C\u00f3mo imponer un contrato de esquema a respuestas estructuradas de un modelo usando Pydantic (extra='forbid' y strict), qu\u00e9 valida exactamente y qu\u00e9 conviene revisar fuera del esquema.",
+        "updated_at": "2026-11-05T15:42:17.863832+00:00",
+        "author_name": "Redacci\u00f3n automatizada \u00b7 IA",
+        "reviewed_at": "2026-11-05T15:42:17.860880+00:00",
+        "reviewed_by": "automation",
+        "published_at": "2026-11-05T15:42:17.860893+00:00",
+        "comments_enabled": true
+      },
+      "verification_error": "publication_not_indexable",
+      "verification_attempts": 1,
+      "resume_report": {
+        "proposal": {
+          "slug": "validar-respuestas-ia-pydantic-esquema-limites",
+          "title": "Validar respuestas IA con Pydantic: esquema y l\u00edmites",
+          "section": "programacion",
+          "summary": "C\u00f3mo imponer un contrato de esquema a respuestas estructuradas de un modelo usando Pydantic (extra='forbid' y strict), qu\u00e9 valida exactamente y qu\u00e9 conviene revisar fuera del esquema.",
+          "paragraphs": [
+            {
+              "text": "Pydantic permite declarar modelos (clases que heredan de BaseModel) que definen campos y sus tipos; al validar datos no confiables devuelve una instancia con campos que cumplen esos tipos y formatos, o lanza un ValidationError si falla la validaci\u00f3n. Esto convierte a los modelos en contratos \u00fatiles para respuestas estructuradas de IA: garantizan que el objeto que procesas tenga las claves y los tipos esperados antes de seguir con la l\u00f3gica de la aplicaci\u00f3n.",
+              "heading": "Qu\u00e9 valida un modelo Pydantic y por qu\u00e9 es \u00fatil para respuestas de IA",
+              "evidence": [
+                {
+                  "quote": "Models API Documentation pydantic.main.BaseModel One of the primary ways of defining schema in Pydantic is via models. Models are simply classes which inherit from BaseModel and define fields as annotated attributes. You can think of models as similar to structs in languages like C, or as the requirements of a single endpoint in an API. Models share many similarities with",
+                  "source_id": 213815157128674
+                },
+                {
+                  "quote": "the resultant model instance will conform to the field types defined on the model. Basic model usage from pydantic import BaseModel, ConfigDict class User(BaseModel): id: int name: str = 'Jane Doe' model_config = ConfigDict(str_max_length=10) # (1) Pydantic models support a variety of configuration values (see here for the available configuration values). In this example, User",
+                  "source_id": 213815157128674
+                }
+              ]
+            },
+            {
+              "text": "Por defecto Pydantic ignora campos extra que no est\u00e9n declarados en el modelo, pero la configuraci\u00f3n model_config = ConfigDict(extra='forbid') hace que la validaci\u00f3n falle si aparecen claves no esperadas. Para respuestas de IA esto permite forzar un contrato estricto: si el modelo de generaci\u00f3n a\u00f1ade campos imprevistos, la validaci\u00f3n falla y puedes registrar o rechazar la respuesta en lugar de procesarla ciegamente.",
+              "heading": "Rechazar campos adicionales: la opci\u00f3n extra y extra='forbid'",
+              "evidence": [
+                {
+                  "quote": "ConfigDict(extra='allow') m = Model(x=1, y='a') # (1) assert m.model_dump() == {'x': 1, 'y': 'a'} assert m.__pydantic_extra__ == {'y': 'a'} If extra was set to 'forbid' , this would fail. The configuration can take three values: 'ignore' : Providing extra data is ignored (the default). 'forbid' : Providing extra data is not permitted. 'allow' : Providing extra data is allowed",
+                  "source_id": 213815157128674
+                }
+              ]
+            },
+            {
+              "text": "Pydantic, en su modo por defecto, intenta convertir tipos cuando es posible (por ejemplo, '123' \u2192 int). Si quieres que la validaci\u00f3n falle cuando el tipo no coincide exactamente, conviene activar strict mode: puede habilitarse a nivel de validaci\u00f3n, de campo (Field(strict=True) o tipos StrictInt/StrictStr) o a nivel de modelo con ConfigDict(strict=True). Esto reduce aceptaciones silenciosas de valores con tipos incorrectos, pero exige auditar los emisores de datos porque entradas previamente aceptadas pueden empezar a fallar.",
+              "heading": "Evitar coerciones inesperadas: strict mode y opciones por campo o modelo",
+              "evidence": [
+                {
+                  "quote": "Strict Mode API Documentation pydantic.types.Strict By default, Pydantic will attempt to coerce values to the desired type when possible. For example, you can pass the string '123' as the input for the int number type , and it will be converted to the value 123 . This coercion behavior is useful in many scenarios \u2014 think: UUIDs, URL parameters, HTTP headers, environment",
+                  "source_id": 168467038635331
+                },
+                {
+                  "quote": "Annotated[int, Strict()] . As a configuration value Strict mode behavior can be controlled at the configuration level. When used on a Pydantic model (or model like class such as dataclasses ), strictness can still be overridden at the field level : from pydantic import BaseModel, ConfigDict, Field class User(BaseModel): model_config = ConfigDict(strict=True) name: str age: int",
+                  "source_id": 168467038635331
+                },
+                {
+                  "quote": "be applied for such fields, even when the validation methods are called in lax mode. from pydantic import BaseModel, Field, ValidationError class User(BaseModel): name: str age: int = Field(strict=True) # (1) user = User(name='John', age=42) print(user) #> name='John' age=42 try: another_user = User(name='John', age='42') except ValidationError as e: print(e) \"\"\" 1 validation",
+                  "source_id": 168467038635331
+                }
+              ]
+            },
+            {
+              "text": "Pydantic garantiza conformidad de forma y tipos, no la veracidad ni la coherencia sem\u00e1ntica del contenido. Es decir, la validaci\u00f3n asegura que 'title' sea una cadena y 'points' una lista, pero no comprueba que el texto sea correcto, actualizado o libre de invenci\u00f3n. Conviene combinar el esquema con comprobaciones adicionales: reglas de negocio (longitud m\u00ednima/m\u00e1xima), listas de valores permitidos, verificaciones sem\u00e1nticas externas o pasos humanos para casos cr\u00edticos. Recomendamos instrumentar m\u00e9tricas de validaci\u00f3n y tratar las validaciones estrictas como cambios desplegables con monitorizaci\u00f3n, porque activar strict puede provocar fallos en integraciones existentes.",
+              "heading": "Qu\u00e9 queda fuera del contrato y recomendaciones editoriales de verificaci\u00f3n",
+              "evidence": [
+                {
+                  "quote": "Strict Mode API Documentation pydantic.types.Strict By default, Pydantic will attempt to coerce values to the desired type when possible. For example, you can pass the string '123' as the input for the int number type , and it will be converted to the value 123 . This coercion behavior is useful in many scenarios \u2014 think: UUIDs, URL parameters, HTTP headers, environment",
+                  "source_id": 168467038635331
+                },
+                {
+                  "quote": "the resultant model instance will conform to the field types defined on the model. Basic model usage from pydantic import BaseModel, ConfigDict class User(BaseModel): id: int name: str = 'Jane Doe' model_config = ConfigDict(str_max_length=10) # (1) Pydantic models support a variety of configuration values (see here for the available configuration values). In this example, User",
+                  "source_id": 213815157128674
+                }
+              ]
+            },
+            {
+              "text": "Un contrato compacto y eficaz para respuestas tipo resumen declara model_config = ConfigDict(extra='forbid', strict=True), un t\u00edtulo str con l\u00edmites de longitud y una lista de puntos con tama\u00f1o controlado. El ejemplo verificado incluido demuestra la validaci\u00f3n de payloads v\u00e1lidos y la detecci\u00f3n de tres fallos t\u00edpicos: tipo incorrecto, lista vac\u00eda y campos extras. Usar pruebas unitarias que validen la aceptaci\u00f3n y el rechazo esperado ayuda a evitar regresiones al cambiar strict o la configuraci\u00f3n de campos.",
+              "heading": "Ejemplo de contrato y pruebas m\u00ednimas (patr\u00f3n verificado)",
+              "evidence": [
+                {
+                  "quote": "Strict Mode API Documentation pydantic.types.Strict By default, Pydantic will attempt to coerce values to the desired type when possible. For example, you can pass the string '123' as the input for the int number type , and it will be converted to the value 123 . This coercion behavior is useful in many scenarios \u2014 think: UUIDs, URL parameters, HTTP headers, environment",
+                  "source_id": 168467038635331
+                },
+                {
+                  "quote": "a model with two fields: id , which is an integer (defined using the int type) and is required name , which is a string (defined using the str type) and is not required (it has a default value). The documentation on types expands on the supported types. Fields can be customized in a number of ways using the Field() function. See the documentation on fields for more",
+                  "source_id": 213815157128674
+                }
+              ]
+            }
+          ]
+        },
+        "review": {
+          "checks": [
+            {
+              "supported": true,
+              "target_id": "title",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_62d6307b0157c4c34f37b0d20737f41f",
+                "e_7da722f7c279d6b04faf66e1aed55123",
+                "e_877139930fd8fdce1fba077bad3db217",
+                "e_d11e1e5b388eeb31e3ab16ab831db9b8",
+                "e_fc0d8698a3429fe371336ca88c7020bb"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "summary",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_62d6307b0157c4c34f37b0d20737f41f",
+                "e_7da722f7c279d6b04faf66e1aed55123",
+                "e_877139930fd8fdce1fba077bad3db217",
+                "e_d11e1e5b388eeb31e3ab16ab831db9b8",
+                "e_fc0d8698a3429fe371336ca88c7020bb"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p1.heading",
+              "fragment_ids": [
+                "e_62d6307b0157c4c34f37b0d20737f41f",
+                "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p1.s1",
+              "fragment_ids": [
+                "e_62d6307b0157c4c34f37b0d20737f41f",
+                "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p1.s2",
+              "fragment_ids": [
+                "e_62d6307b0157c4c34f37b0d20737f41f",
+                "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p2.heading",
+              "fragment_ids": [
+                "e_fc0d8698a3429fe371336ca88c7020bb"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p2.s1",
+              "fragment_ids": [
+                "e_fc0d8698a3429fe371336ca88c7020bb"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p2.s2",
+              "fragment_ids": [
+                "e_fc0d8698a3429fe371336ca88c7020bb"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p3.heading",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_7da722f7c279d6b04faf66e1aed55123",
+                "e_877139930fd8fdce1fba077bad3db217"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p3.s1",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_7da722f7c279d6b04faf66e1aed55123",
+                "e_877139930fd8fdce1fba077bad3db217"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p3.s2",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_7da722f7c279d6b04faf66e1aed55123",
+                "e_877139930fd8fdce1fba077bad3db217"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p3.s3",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_7da722f7c279d6b04faf66e1aed55123",
+                "e_877139930fd8fdce1fba077bad3db217"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p4.heading",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p4.s1",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p4.s2",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p4.s3",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p4.s4",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p5.heading",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_fc70514ba49d3945efc1442b731acf48"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p5.s1",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_fc70514ba49d3945efc1442b731acf48"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p5.s2",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_fc70514ba49d3945efc1442b731acf48"
+              ]
+            },
+            {
+              "supported": true,
+              "target_id": "p5.s3",
+              "fragment_ids": [
+                "e_26a25fee6d43a24df6c973a440f00922",
+                "e_fc70514ba49d3945efc1442b731acf48"
+              ]
+            }
+          ],
+          "useful": true,
+          "natural": true,
+          "reasons": [
+            "Las afirmaciones clave (qu\u00e9 valida BaseModel, extra='forbid', comportamiento por defecto frente a strict, y l\u00edmites de campo) est\u00e1n directamente respaldadas por la documentaci\u00f3n oficial de Pydantic citada en los fragments. El art\u00edculo explica con precisi\u00f3n alcance y l\u00edmites del esquema (forma y tipos, no veracidad sem\u00e1ntica) y a\u00f1ade recomendaciones editoriales claramente marcadas como tales. La estructura cumple el requisito editorial de 3\u20135 secciones con foco pr\u00e1ctico y no inventa experiencias.",
+            "El t\u00edtulo y el resumen reflejan exactamente lo que demuestran los fragmentos: imponer un contrato de esquema con extra='forbid' y strict, qu\u00e9 valida y qu\u00e9 comprobar aparte. Las recomendaciones operativas (instrumentar m\u00e9tricas, desplegar con monitorizaci\u00f3n) se presentan como sugerencias; donde se afirma un riesgo (fallos al activar strict) hay fragmentos que soportan esa advertencia.",
+            "No hay afirmaciones sobre pruebas en un servicio externo ni testimonios. El ejemplo verificado y el test incluido cubren los escenarios mencionados (tipo incorrecto, lista vac\u00eda, campo extra) y est\u00e1n referenciados en verified_test_evidence."
+          ],
+          "spanish": true,
+          "approved": true,
+          "original": true,
+          "supported": true,
+          "safe_topic": true,
+          "non_repetitive": true,
+          "well_structured": true,
+          "attribution_clear": true,
+          "no_invented_experience": true
+        },
+        "policy": {
+          "kind": "tutorial",
+          "topic": "Validar respuestas estructuradas de IA con Pydantic",
+          "intent": "Rechazar campos adicionales y tipos incorrectos mediante un esquema expl\u00edcito.",
+          "keyword": "validar respuestas ia pydantic",
+          "section": "programacion",
+          "candidate_id": 5,
+          "ai_application": "Aplicar un contrato a la respuesta estructurada de un modelo y explicar qu\u00e9 errores factuales no detecta el esquema.",
+          "internal_links": [
+            [
+              "M\u00e1s gu\u00edas de programacion",
+              "/programacion"
+            ],
+            [
+              "Validar entradas de texto para una API de IA con FastAPI y Pydantic",
+              "/articulos/fastapi-validar-peticiones-ia"
+            ],
+            [
+              "Validar un JSON generado por IA antes de procesarlo en Python",
+              "/articulos/validar-json-ia-python"
+            ]
+          ],
+          "external_testing": "No se ha probado la interfaz ni un servicio externo; solo el ejemplo aislado si se proporciona.",
+          "min_organizations": 1,
+          "editorial_opportunity": {
+            "trend": null,
+            "intent": "Rechazar campos adicionales y tipos incorrectos mediante un esquema expl\u00edcito.",
+            "version": 2,
+            "audience": "Personas hispanohablantes que buscan resolver esta tarea; nivel introductorio e intermedio.",
+            "language": "es",
+            "assessment": {
+              "freshness": {
+                "status": "sources_verified",
+                "assessed_at": "2026-11-05T15:41:41.567199+00:00"
+              },
+              "example_id": "pydantic_response",
+              "originality": {
+                "basis": "Solapamiento l\u00e9xico local, no an\u00e1lisis sem\u00e1ntico completo.",
+                "status": "overlap_review_needed"
+              },
+              "search_intent": "Rechazar campos adicionales y tipos incorrectos mediante un esquema expl\u00edcito.",
+              "site_coverage": {
+                "basis": "Muestra local de t\u00edtulos publicados; no mide competencia en Google ni experiencia pr\u00e1ctica.",
+                "related_published_articles": 2
+              },
+              "editorial_basis": "curated_user_problem",
+              "traffic_potential": {
+                "basis": "Sin datos de consultas, impresiones o vol\u00famenes importados; no se estima tr\u00e1fico.",
+                "status": "not_measured",
+                "search_volume": null
+              },
+              "practical_application": "Aplicar un contrato a la respuesta estructurada de un modelo y explicar qu\u00e9 errores factuales no detecta el esquema.",
+              "requires_editorial_reframing": false
+            },
+            "assessed_at": "2026-11-05T15:41:41.567199+00:00",
+            "demand_source": "editorial_hypothesis",
+            "evidence_urls": [
+              "https://pydantic.dev/docs/validation/latest/concepts/models/",
+              "https://pydantic.dev/docs/validation/latest/concepts/strict_mode/"
+            ],
+            "search_volume": null,
+            "seo_difficulty": null,
+            "evidence_status": "verified",
+            "primary_keyword": "validar respuestas ia pydantic",
+            "related_content": [
+              {
+                "url": "/articulos/fastapi-validar-peticiones-ia",
+                "score": 0.333,
+                "title": "Validar entradas de texto para una API de IA con FastAPI y Pydantic",
+                "summary": "C\u00f3mo usar modelos Pydantic en FastAPI para declarar y validar el cuerpo de peticiones (tipos, longitudes y metadatos), qu\u00e9 errores devuelve la API y qu\u00e9 aspectos no cubre la validaci\u00f3n autom\u00e1tica.",
+                "article_id": 15
+              },
+              {
+                "url": "/articulos/validar-json-ia-python",
+                "score": 0.286,
+                "title": "Validar un JSON generado por IA antes de procesarlo en Python",
+                "summary": "Pasos pr\u00e1cticos para detectar JSON malformado, limitar tama\u00f1o y comprobar tipos m\u00ednimos con la API json de la biblioteca est\u00e1ndar de Python antes de usar una respuesta de IA; incluye advertencias sobre excepciones, valores especiales (NaN/Infinity) y l\u00edmites para evitar consumo excesivo de recursos.",
+                "article_id": 5
+              }
+            ],
+            "recommended_kind": "tutorial",
+            "target_countries": [
+              "ES",
+              "MX",
+              "CO",
+              "AR",
+              "PE",
+              "CL"
+            ],
+            "regional_versions": false,
+            "related_questions": [
+              "\u00bfC\u00f3mo validar respuestas ia pydantic?"
+            ],
+            "semantic_variants": [
+              "Pydantic",
+              "validaci\u00f3n de esquemas"
+            ],
+            "unavailable_reason": "Dato no disponible: sin API de demanda ni vol\u00famenes medidos.",
+            "cannibalization_risk": "possible"
+          }
+        },
+        "evidence_catalogue": [
+          {
+            "id": 213815157128674,
+            "url": "https://pydantic.dev/docs/validation/latest/concepts/models/",
+            "kind": "official_documentation",
+            "text": "Models API Documentation pydantic.main.BaseModel One of the primary ways of defining schema in Pydantic is via models. Models are simply classes which inherit from BaseModel and define fields as annotated attributes. You can think of models as similar to structs in languages like C, or as the requirements of a single endpoint in an API. Models share many similarities with Python\u2019s dataclasses , but have been designed with some subtle-yet-important differences that streamline certain workflows related to validation, serialization, and JSON schema generation. You can find more discussion of this in the Dataclasses section of the docs. Untrusted data can be passed to a model and, after parsing and validation, Pydantic guarantees that the fields of the resultant model instance will conform to the field types defined on the model. Basic model usage from pydantic import BaseModel, ConfigDict class User(BaseModel): id: int name: str = 'Jane Doe' model_config = ConfigDict(str_max_length=10) # (1) Pydantic models support a variety of configuration values (see here for the available configuration values). In this example, User is a model with two fields: id , which is an integer (defined using the int type) and is required name , which is a string (defined using the str type) and is not required (it has a default value). The documentation on types expands on the supported types. Fields can be customized in a number of ways using the Field() function. See the documentation on field\n\nModels API Documentation pydantic.main.BaseModel One of the primary ways of defining schema in Pydantic is via models. Models are simply classes which inherit from BaseModel and define fields as annotated attributes. You can think of models as similar to structs in languages like C, or as the requirements of a single endpoint in an API. Models share many similarities with Python\u2019s dataclasses , but have been designed with some subtle-yet-important differences that streamline certain workflows related to validation, serialization, and JSON schema generation. You can find more discussion of this in the Dataclasses section of the docs. Untrusted data can be passed to a model and, after parsing and validation, Pydantic guarantees that the fields of the resultant model instance will conform to the field types defined on the model. Basic model usage from pydantic import BaseModel, ConfigDict class User(BaseModel): id: int name: str = 'Jane Doe' model_config = ConfigDict(str_max_length=10) # (1) Pydantic models support a variety of configuration values (see here for the available configuration values). In this example, User is a model with two fields: id , which is an integer (defined using the int type) and is required name , which is a string (defined using the str type) and is not required (it has a default value). The documentation on types expands on the supported types. Fields can be customized in a number of ways using the Field() function. See the documentation on fields for more information. The model can then be instantiated: user = User(id='123') user is an instance of User . Initialization of the object will perform all parsing and validation. If no ValidationError exception is raised, you know the resulting model instance is valid. Fields of a model can be accessed as normal attributes of the user object: assert user.name == 'Jane Doe' # (1) assert user.id == 123 # (2) assert isinstance(user.id, int) name wasn't set when user was initialized, so the default value was used. The model_fields_set attribute can be inspected to check the field names explicitly set during instantiation. Note that the string '123' was coerced to an integer and its value is 123 . More details on Pydantic's coercion logic can be found in the data conversion section. The model instance can be serialized using the model_dump() method: assert user.model_dump() == {'id': 123, 'name': 'Jane Doe'} Calling dict on the instance will also provide a dictionary, but nested fields will not be recursively converted into dictionaries. model_dump() also provides numerous arguments to customize the serialization result. By default, models are mutable and field values can be changed through attribute assignment: user.id = 321 assert user.id == 321 Model methods and properties The example above only shows the tip of the iceberg of what models can do. Model classes possess the following methods and attributes: model_validate() : Validates the given object against the Pydantic model. See Validating data . model_validate_json() : Validates the given JSON data against the Pydantic model. See Validating data . model_construct() : Creates models without running validation. See Creating models without validation . model_dump() : Returns a dictionary of the model\u2019s fields and values. See Serialization . model_dump_json() : Returns a JSON string representation of model_dump() . See Serialization . model_copy() : Returns a copy (by default, shallow copy) of the model. See Model copy . model_json_schema() : Returns a jsonable dictionary representing the model\u2019s JSON Schema. See JSON Schema . model_fields : A mapping between field names and their definitions ( FieldInfo instances). model_computed_fields : A mapping between computed field names and their definitions ( ComputedFieldInfo instances). model_parametrized_name() : Computes the class name for parametrizations of generic classes. model_post_init() : Performs additional actions after the model is instantiated and all field validators are applied. model_rebuild() : Rebuilds the model schema, which also supports building recursive generic models. See Rebuilding model schema . Model instances possess the following attributes: model_extra : The extra fields set during validation. model_fields_set : The set of fields which were explicitly provided when the model was initialized. Data conversion Pydantic may cast input data to force it to conform to model field types, and in some cases this may result in a loss of information. For example: from pydantic import BaseModel class Model(BaseModel): a: int b: float c: str print(Model(a=3.000, b='2.72', c=b'binary data').model_dump()) #> {'a': 3, 'b': 2.72, 'c': 'binary data'} This is a deliberate decision of Pydantic, and is frequently the most useful approach. See this issue for a longer discussion on the subject. Nevertheless, Pydantic provides a strict mode , where no data conversion is performed. Values must be of the same type as the declared field type. This is also the case for collections. In most cases, you shouldn\u2019t make use of abstract container classes and just use a concrete type, such as list : from pydantic import BaseModel class Model(BaseModel): items: list[int] # (1) print(Model(items=(1, 2, 3))) #> items=[1, 2, 3] In this case, you might be tempted to use the abstract Sequence type to allow both lists and tuples. But Pydantic takes care of converting the tuple input to a list, so in most cases this isn't necessary. Besides, using these abstract types can also lead to poor validation performance , and in general using concrete container types will avoid unnecessary checks. Extra data By default, Pydantic models won\u2019t error when you provide extra data , and these values will simply be ignored: from pydantic import BaseModel class Model(BaseModel): x: int m = Model(x=1, y='a') assert m.model_dump() == {'x': 1} The extra configuration value can be used to control this behavior: from pydantic import BaseModel, ConfigDict class Model(BaseModel): x: int model_config = ConfigDict(extra='allow') m = Model(x=1, y='a') # (1) assert m.model_dump() == {'x': 1, 'y': 'a'} assert m.__pydantic_extra__ == {'y': 'a'} If extra was set to 'forbid' , this would fail. The configuration can take three values: 'ignore' : Providing extra data is ignored (the default). 'forbid' : Providing extra data is not permitted. 'allow' : Providing extra data is allowed and stored in the __pydantic_extra__ dictionary attribute. The __pydantic_extra__ can explicitly be annotated to provide validation for extra fields. The validation methods (e.g. model_validate() ) have an optional extra argument that will override the extra configuration value of the model for that validation call. Any key that isn\u2019t used to populate a field is considered extra data. This includes keys matching an alias of a field that ended up not being used, because an alias with a higher priority was provided: from pydantic import AliasChoices, BaseModel, ConfigDict, Field class User(BaseModel): model_config = ConfigDict(extra='allow') name: str = Field(validation_alias=AliasChoices('first_name', 'fname')) user = User.model_validate({'fname': 'J', 'first_name': 'John'}) print(user.name) #> John print(user.__pydantic_extra__) #> {'fname': 'J'} Extra data is validated after all the fields (see field ordering ). Pydantic dataclasses also support extra data (see the dataclass configuration section). For more details, refer to the extra API documentation. Nested models M",
+            "title": "Models API Documentation pydantic.main.BaseModel One of the primary ways of defining schema in Pydantic is via models. Models are simply classes which inherit f",
+            "language": "en",
+            "platform": "pydantic.dev",
+            "cache_hit": true,
+            "date_kind": "retrieved",
+            "fragments": [
+              {
+                "end": 374,
+                "text": "Models API Documentation pydantic.main.BaseModel One of the primary ways of defining schema in Pydantic is via models. Models are simply classes which inherit from BaseModel and define fields as annotated attributes. You can think of models as similar to structs in languages like C, or as the requirements of a single endpoint in an API. Models share many similarities with",
+                "start": 0,
+                "fragment_id": "e_62d6307b0157c4c34f37b0d20737f41f"
+              },
+              {
+                "end": 754,
+                "text": "Python\u2019s dataclasses , but have been designed with some subtle-yet-important differences that streamline certain workflows related to validation, serialization, and JSON schema generation. You can find more discussion of this in the Dataclasses section of the docs. Untrusted data can be passed to a model and, after parsing and validation, Pydantic guarantees that the fields of",
+                "start": 375,
+                "fragment_id": "e_09d3910ce1fcdbc07af1d9efb034fe19"
+              },
+              {
+                "end": 1134,
+                "text": "the resultant model instance will conform to the field types defined on the model. Basic model usage from pydantic import BaseModel, ConfigDict class User(BaseModel): id: int name: str = 'Jane Doe' model_config = ConfigDict(str_max_length=10) # (1) Pydantic models support a variety of configuration values (see here for the available configuration values). In this example, User",
+                "start": 755,
+                "fragment_id": "e_d11e1e5b388eeb31e3ab16ab831db9b8"
+              },
+              {
+                "end": 1507,
+                "text": "is a model with two fields: id , which is an integer (defined using the int type) and is required name , which is a string (defined using the str type) and is not required (it has a default value). The documentation on types expands on the supported types. Fields can be customized in a number of ways using the Field() function. See the documentation on field\n\nModels API",
+                "start": 1135,
+                "fragment_id": "e_b3c24a00382ad4ced3ba24505749c079"
+              },
+              {
+                "end": 1880,
+                "text": "Documentation pydantic.main.BaseModel One of the primary ways of defining schema in Pydantic is via models. Models are simply classes which inherit from BaseModel and define fields as annotated attributes. You can think of models as similar to structs in languages like C, or as the requirements of a single endpoint in an API. Models share many similarities with Python\u2019s",
+                "start": 1508,
+                "fragment_id": "e_c7bba965f3be75421a6e72923ca91f69"
+              },
+              {
+                "end": 2255,
+                "text": "dataclasses , but have been designed with some subtle-yet-important differences that streamline certain workflows related to validation, serialization, and JSON schema generation. You can find more discussion of this in the Dataclasses section of the docs. Untrusted data can be passed to a model and, after parsing and validation, Pydantic guarantees that the fields of the",
+                "start": 1881,
+                "fragment_id": "e_c95ece0423fc5a32f8b28deceee95e21"
+              },
+              {
+                "end": 2634,
+                "text": "resultant model instance will conform to the field types defined on the model. Basic model usage from pydantic import BaseModel, ConfigDict class User(BaseModel): id: int name: str = 'Jane Doe' model_config = ConfigDict(str_max_length=10) # (1) Pydantic models support a variety of configuration values (see here for the available configuration values). In this example, User is",
+                "start": 2256,
+                "fragment_id": "e_20ffca5e8dc731374e6ba47f694a32df"
+              },
+              {
+                "end": 3002,
+                "text": "a model with two fields: id , which is an integer (defined using the int type) and is required name , which is a string (defined using the str type) and is not required (it has a default value). The documentation on types expands on the supported types. Fields can be customized in a number of ways using the Field() function. See the documentation on fields for more",
+                "start": 2635,
+                "fragment_id": "e_fc70514ba49d3945efc1442b731acf48"
+              },
+              {
+                "end": 3376,
+                "text": "information. The model can then be instantiated: user = User(id='123') user is an instance of User . Initialization of the object will perform all parsing and validation. If no ValidationError exception is raised, you know the resulting model instance is valid. Fields of a model can be accessed as normal attributes of the user object: assert user.name == 'Jane Doe' # (1)",
+                "start": 3003,
+                "fragment_id": "e_60a45a711efaa4fb779587f646ab8f45"
+              },
+              {
+                "end": 3754,
+                "text": "assert user.id == 123 # (2) assert isinstance(user.id, int) name wasn't set when user was initialized, so the default value was used. The model_fields_set attribute can be inspected to check the field names explicitly set during instantiation. Note that the string '123' was coerced to an integer and its value is 123 . More details on Pydantic's coercion logic can be found in",
+                "start": 3377,
+                "fragment_id": "e_5b8eb2a9735ea46ce0c87c3346696e89"
+              },
+              {
+                "end": 4131,
+                "text": "the data conversion section. The model instance can be serialized using the model_dump() method: assert user.model_dump() == {'id': 123, 'name': 'Jane Doe'} Calling dict on the instance will also provide a dictionary, but nested fields will not be recursively converted into dictionaries. model_dump() also provides numerous arguments to customize the serialization result. By",
+                "start": 3755,
+                "fragment_id": "e_2c9f897e3f71b2665fb9de89b6f2df5e"
+              },
+              {
+                "end": 4510,
+                "text": "default, models are mutable and field values can be changed through attribute assignment: user.id = 321 assert user.id == 321 Model methods and properties The example above only shows the tip of the iceberg of what models can do. Model classes possess the following methods and attributes: model_validate() : Validates the given object against the Pydantic model. See Validating",
+                "start": 4132,
+                "fragment_id": "e_f2c0e4d63edd4d6a22939f28333dcc6c"
+              },
+              {
+                "end": 4890,
+                "text": "data . model_validate_json() : Validates the given JSON data against the Pydantic model. See Validating data . model_construct() : Creates models without running validation. See Creating models without validation . model_dump() : Returns a dictionary of the model\u2019s fields and values. See Serialization . model_dump_json() : Returns a JSON string representation of model_dump() .",
+                "start": 4511,
+                "fragment_id": "e_3ee7aa8e7d57ee567c8b083d8580a1f2"
+              },
+              {
+                "end": 5270,
+                "text": "See Serialization . model_copy() : Returns a copy (by default, shallow copy) of the model. See Model copy . model_json_schema() : Returns a jsonable dictionary representing the model\u2019s JSON Schema. See JSON Schema . model_fields : A mapping between field names and their definitions ( FieldInfo instances). model_computed_fields : A mapping between computed field names and their",
+                "start": 4891,
+                "fragment_id": "e_ca36d4e0bc59a03f20301d06cca5a4ed"
+              },
+              {
+                "end": 5646,
+                "text": "definitions ( ComputedFieldInfo instances). model_parametrized_name() : Computes the class name for parametrizations of generic classes. model_post_init() : Performs additional actions after the model is instantiated and all field validators are applied. model_rebuild() : Rebuilds the model schema, which also supports building recursive generic models. See Rebuilding model",
+                "start": 5271,
+                "fragment_id": "e_6622fad96eed3e8cdeb754dff75b1d1e"
+              },
+              {
+                "end": 6022,
+                "text": "schema . Model instances possess the following attributes: model_extra : The extra fields set during validation. model_fields_set : The set of fields which were explicitly provided when the model was initialized. Data conversion Pydantic may cast input data to force it to conform to model field types, and in some cases this may result in a loss of information. For example:",
+                "start": 5647,
+                "fragment_id": "e_031ae1d1490b581e13db18b824709e7e"
+              },
+              {
+                "end": 6402,
+                "text": "from pydantic import BaseModel class Model(BaseModel): a: int b: float c: str print(Model(a=3.000, b='2.72', c=b'binary data').model_dump()) #> {'a': 3, 'b': 2.72, 'c': 'binary data'} This is a deliberate decision of Pydantic, and is frequently the most useful approach. See this issue for a longer discussion on the subject. Nevertheless, Pydantic provides a strict mode , where",
+                "start": 6023,
+                "fragment_id": "e_647fcc68ec90980969f58e0d0225a3be"
+              },
+              {
+                "end": 6782,
+                "text": "no data conversion is performed. Values must be of the same type as the declared field type. This is also the case for collections. In most cases, you shouldn\u2019t make use of abstract container classes and just use a concrete type, such as list : from pydantic import BaseModel class Model(BaseModel): items: list[int] # (1) print(Model(items=(1, 2, 3))) #> items=[1, 2, 3] In this",
+                "start": 6403,
+                "fragment_id": "e_2d659c59f403a9d87d5447876b3c9a0d"
+              },
+              {
+                "end": 7162,
+                "text": "case, you might be tempted to use the abstract Sequence type to allow both lists and tuples. But Pydantic takes care of converting the tuple input to a list, so in most cases this isn't necessary. Besides, using these abstract types can also lead to poor validation performance , and in general using concrete container types will avoid unnecessary checks. Extra data By default,",
+                "start": 6783,
+                "fragment_id": "e_7868538770204f66d58e0659d7f335f7"
+              },
+              {
+                "end": 7536,
+                "text": "Pydantic models won\u2019t error when you provide extra data , and these values will simply be ignored: from pydantic import BaseModel class Model(BaseModel): x: int m = Model(x=1, y='a') assert m.model_dump() == {'x': 1} The extra configuration value can be used to control this behavior: from pydantic import BaseModel, ConfigDict class Model(BaseModel): x: int model_config =",
+                "start": 7163,
+                "fragment_id": "e_f556d1d178d7b82325c14e332b79f3fc"
+              },
+              {
+                "end": 7915,
+                "text": "ConfigDict(extra='allow') m = Model(x=1, y='a') # (1) assert m.model_dump() == {'x': 1, 'y': 'a'} assert m.__pydantic_extra__ == {'y': 'a'} If extra was set to 'forbid' , this would fail. The configuration can take three values: 'ignore' : Providing extra data is ignored (the default). 'forbid' : Providing extra data is not permitted. 'allow' : Providing extra data is allowed",
+                "start": 7537,
+                "fragment_id": "e_fc0d8698a3429fe371336ca88c7020bb"
+              },
+              {
+                "end": 8291,
+                "text": "and stored in the __pydantic_extra__ dictionary attribute. The __pydantic_extra__ can explicitly be annotated to provide validation for extra fields. The validation methods (e.g. model_validate() ) have an optional extra argument that will override the extra configuration value of the model for that validation call. Any key that isn\u2019t used to populate a field is considered",
+                "start": 7916,
+                "fragment_id": "e_d63443b51a0a8ea2e256d59f1453a399"
+              },
+              {
+                "end": 8642,
+                "text": "extra data. This includes keys matching an alias of a field that ended up not being used, because an alias with a higher priority was provided: from pydantic import AliasChoices, BaseModel, ConfigDict, Field class User(BaseModel): model_config = ConfigDict(extra='allow') name: str = Field(validation_alias=AliasChoices('first_name', 'fname')) user =",
+                "start": 8292,
+                "fragment_id": "e_0ccebc8ccd06b4b6f4dc5064885d192f"
+              },
+              {
+                "end": 9002,
+                "text": "User.model_validate({'fname': 'J', 'first_name': 'John'}) print(user.name) #> John print(user.__pydantic_extra__) #> {'fname': 'J'} Extra data is validated after all the fields (see field ordering ). Pydantic dataclasses also support extra data (see the dataclass configuration section). For more details, refer to the extra API documentation. Nested models M",
+                "start": 8643,
+                "fragment_id": "e_50ac3ad4b7f8e8c892b581a093b62c24"
+              }
+            ],
+            "published": null,
+            "source_key": "s_c276b87cfde2fef9fe6939d9",
+            "focus_terms": [
+              "pydantic"
+            ],
+            "organization": "pydantic",
+            "retrieved_at": "2026-11-05T15:40:41.181711+00:00",
+            "content_sha256": "4a8b54b83d4ea952a953f8d27fab6c9b4b568c00387921e7fd3ce501ce316215",
+            "evidence_version": 1,
+            "raw_document_url": "https://pydantic.dev/docs/validation/latest/concepts/models/",
+            "retrieval_method": "official_document",
+            "organization_verified": true
+          },
+          {
+            "id": 168467038635331,
+            "url": "https://pydantic.dev/docs/validation/latest/concepts/strict_mode/",
+            "kind": "official_documentation",
+            "text": "Strict Mode API Documentation pydantic.types.Strict By default, Pydantic will attempt to coerce values to the desired type when possible. For example, you can pass the string '123' as the input for the int number type , and it will be converted to the value 123 . This coercion behavior is useful in many scenarios \u2014 think: UUIDs, URL parameters, HTTP headers, environment variables, dates, etc. However, there are also situations where this is not desirable, and you want Pydantic to error instead of coercing data. To better support this use case, Pydantic provides a \u201cstrict mode\u201d. When strict mode is enabled, Pydantic will be much less lenient when coercing data, and will instead error if the data is not of the correct type. Most of the time, strict mode will only allow instances of the type to be provided, although looser rules may apply to JSON input (for instance, the date and time types allow strings even in strict mode). The strict behavior for each type can be found in the standard library types documentation, and is summarized in the conversion table . Here is a brief example showing the validation behavior difference in strict and the default lax mode: from pydantic import BaseModel, ValidationError class MyModel(BaseModel): x: int print(MyModel.model_validate({'x': '123'})) # lax mode #> x=123 try: MyModel.model_validate({'x': '123'}, strict=True) # strict mode except ValidationError as exc: print(exc) \"\"\" 1 validation error for MyModel x Input should be a valid integer [type=int_type, input_value='123', input_type=str] \"\"\" One caveat when enabling strict mode on models an existing application relies on: inputs that were being quietly coerced will start failing. If you can\u2019t audit every caller, it helps to watch validation failures while you roll the change out. Logfire counts successful and failed validations as metrics, and can record the rejected values included in structured errors. Strict mode can be enabled in various ways: As a validation parameter , such as when using model_validate() , on Pydantic models. At the field level . At the configuration level (with the possibility to override at the field level). As a validation parameter Strict mode can be enabled on a per-validation-call basis, when using the validation methods on Pydantic models and type adapters . from datetime import date from pydantic import TypeAdapter, ValidationError print(TypeAdapter(date).validate_python('2000-01-01')) # OK: lax #> 2000-01-01 try: # Not OK: strict: TypeAdapter(date).validate_python('2000-01-01', strict=True) except ValidationError as exc: print(exc) \"\"\" 1 validation error for date Input should be a valid date [type=date_type, input_value='2000-01-01', input_type=str] \"\"\" TypeAdapter(date).validate_json('\"2000-01-01\"', strict=True) # (1) #> 2000-01-01 As mentioned, strict mode is looser when validating from JSON. At the field level Strict mode can be enabled on specific fields, by setting the strict parameter of the Field() function to True . Strict mode will be applied for such fields, even when the validation methods are called in lax mode. from pydantic import BaseModel, Field, ValidationError class User(BaseModel): name: str age: int = Field(strict=True) # (1) user = User(name='John', age=42) print(user) #> name='John' age=42 try: another_user = User(name='John', age='42') except ValidationError as e: print(e) \"\"\" 1 validation error for User age Input should be a valid integer [type=int_type, input_value='42', input_type=str] \"\"\" The strict constraint can also be applied using the annotated pattern : Annotated[int, Field(strict=True)] Using the Strict() metadata class API Documentation pydantic.types.Strict As an alternative to the Field() function, Pydantic provides the Strict metadata class, meant to be used with the annotated pattern . It also provides convenience aliases for the most common types (namely StrictBool , StrictInt , StrictFloat , StrictStr and StrictBytes ). from typing import Annotated from uuid import UUID from pydantic import BaseModel, Strict, StrictInt class User(BaseModel): id: Annotated[UUID, Strict()] age: StrictInt # (1) Equivalent to Annotated[int, Strict()] . As a configuration value Strict mode behavior can be controlled at the configuration level. When used on a Pydantic model (or model like class such as dataclasses ), strictness can still be overridden at the field level : from pydantic import BaseModel, ConfigDict, Field class User(BaseModel): model_config = ConfigDict(strict=True) name: str age: int = Field(strict=False) print(User(name='John', age='18')) #> name='John' age=18 Was this page helpful? Thanks for your feedback!",
+            "title": "Strict Mode API Documentation pydantic.types.Strict By default, Pydantic will attempt to coerce values to the desired type when possible. For example, you can p",
+            "language": "en",
+            "platform": "pydantic.dev",
+            "cache_hit": true,
+            "date_kind": "retrieved",
+            "fragments": [
+              {
+                "end": 372,
+                "text": "Strict Mode API Documentation pydantic.types.Strict By default, Pydantic will attempt to coerce values to the desired type when possible. For example, you can pass the string '123' as the input for the int number type , and it will be converted to the value 123 . This coercion behavior is useful in many scenarios \u2014 think: UUIDs, URL parameters, HTTP headers, environment",
+                "start": 0,
+                "fragment_id": "e_26a25fee6d43a24df6c973a440f00922"
+              },
+              {
+                "end": 749,
+                "text": "variables, dates, etc. However, there are also situations where this is not desirable, and you want Pydantic to error instead of coercing data. To better support this use case, Pydantic provides a \u201cstrict mode\u201d. When strict mode is enabled, Pydantic will be much less lenient when coercing data, and will instead error if the data is not of the correct type. Most of the time,",
+                "start": 373,
+                "fragment_id": "e_23a09027a58d613f12a964bcdb607e06"
+              },
+              {
+                "end": 1128,
+                "text": "strict mode will only allow instances of the type to be provided, although looser rules may apply to JSON input (for instance, the date and time types allow strings even in strict mode). The strict behavior for each type can be found in the standard library types documentation, and is summarized in the conversion table . Here is a brief example showing the validation behavior",
+                "start": 750,
+                "fragment_id": "e_ea61d4099c099dbce9648c0cfef4bfc9"
+              },
+              {
+                "end": 1500,
+                "text": "difference in strict and the default lax mode: from pydantic import BaseModel, ValidationError class MyModel(BaseModel): x: int print(MyModel.model_validate({'x': '123'})) # lax mode #> x=123 try: MyModel.model_validate({'x': '123'}, strict=True) # strict mode except ValidationError as exc: print(exc) \"\"\" 1 validation error for MyModel x Input should be a valid integer",
+                "start": 1129,
+                "fragment_id": "e_b15a1dc4e4eb260f921f0f65892dc6ea"
+              },
+              {
+                "end": 1878,
+                "text": "[type=int_type, input_value='123', input_type=str] \"\"\" One caveat when enabling strict mode on models an existing application relies on: inputs that were being quietly coerced will start failing. If you can\u2019t audit every caller, it helps to watch validation failures while you roll the change out. Logfire counts successful and failed validations as metrics, and can record the",
+                "start": 1501,
+                "fragment_id": "e_675afd31470446b00fcf073b44283256"
+              },
+              {
+                "end": 2258,
+                "text": "rejected values included in structured errors. Strict mode can be enabled in various ways: As a validation parameter , such as when using model_validate() , on Pydantic models. At the field level . At the configuration level (with the possibility to override at the field level). As a validation parameter Strict mode can be enabled on a per-validation-call basis, when using the",
+                "start": 1879,
+                "fragment_id": "e_25c0c46f0a0702d069c4cfc865ddadce"
+              },
+              {
+                "end": 2635,
+                "text": "validation methods on Pydantic models and type adapters . from datetime import date from pydantic import TypeAdapter, ValidationError print(TypeAdapter(date).validate_python('2000-01-01')) # OK: lax #> 2000-01-01 try: # Not OK: strict: TypeAdapter(date).validate_python('2000-01-01', strict=True) except ValidationError as exc: print(exc) \"\"\" 1 validation error for date Input",
+                "start": 2259,
+                "fragment_id": "e_cb40093eddc841023669fbdb73ef42a9"
+              },
+              {
+                "end": 3014,
+                "text": "should be a valid date [type=date_type, input_value='2000-01-01', input_type=str] \"\"\" TypeAdapter(date).validate_json('\"2000-01-01\"', strict=True) # (1) #> 2000-01-01 As mentioned, strict mode is looser when validating from JSON. At the field level Strict mode can be enabled on specific fields, by setting the strict parameter of the Field() function to True . Strict mode will",
+                "start": 2636,
+                "fragment_id": "e_b81bb29db3e9f6be513668bb91455a7a"
+              },
+              {
+                "end": 3393,
+                "text": "be applied for such fields, even when the validation methods are called in lax mode. from pydantic import BaseModel, Field, ValidationError class User(BaseModel): name: str age: int = Field(strict=True) # (1) user = User(name='John', age=42) print(user) #> name='John' age=42 try: another_user = User(name='John', age='42') except ValidationError as e: print(e) \"\"\" 1 validation",
+                "start": 3015,
+                "fragment_id": "e_877139930fd8fdce1fba077bad3db217"
+              },
+              {
+                "end": 3773,
+                "text": "error for User age Input should be a valid integer [type=int_type, input_value='42', input_type=str] \"\"\" The strict constraint can also be applied using the annotated pattern : Annotated[int, Field(strict=True)] Using the Strict() metadata class API Documentation pydantic.types.Strict As an alternative to the Field() function, Pydantic provides the Strict metadata class, meant",
+                "start": 3394,
+                "fragment_id": "e_b0e1cc55224c4dd62e59361307f9cb84"
+              },
+              {
+                "end": 4141,
+                "text": "to be used with the annotated pattern . It also provides convenience aliases for the most common types (namely StrictBool , StrictInt , StrictFloat , StrictStr and StrictBytes ). from typing import Annotated from uuid import UUID from pydantic import BaseModel, Strict, StrictInt class User(BaseModel): id: Annotated[UUID, Strict()] age: StrictInt # (1) Equivalent to",
+                "start": 3774,
+                "fragment_id": "e_35f566439bab0d73148559e07927c7e6"
+              },
+              {
+                "end": 4521,
+                "text": "Annotated[int, Strict()] . As a configuration value Strict mode behavior can be controlled at the configuration level. When used on a Pydantic model (or model like class such as dataclasses ), strictness can still be overridden at the field level : from pydantic import BaseModel, ConfigDict, Field class User(BaseModel): model_config = ConfigDict(strict=True) name: str age: int",
+                "start": 4142,
+                "fragment_id": "e_7da722f7c279d6b04faf66e1aed55123"
+              },
+              {
+                "end": 4649,
+                "text": "= Field(strict=False) print(User(name='John', age='18')) #> name='John' age=18 Was this page helpful? Thanks for your feedback!",
+                "start": 4522,
+                "fragment_id": "e_e0a1f7c64b39f3317c1eaf2e740ecacb"
+              }
+            ],
+            "published": null,
+            "source_key": "s_993849fe85438ba9a51bd1f4",
+            "organization": "pydantic",
+            "retrieved_at": "2026-11-05T15:40:41.181711+00:00",
+            "content_sha256": "4d97e1bb91d7762b5590d699ddfd63d3f8ef5c62c3c5c3cf63301995475d7231",
+            "evidence_version": 1,
+            "retrieval_method": "official_document",
+            "organization_verified": true
+          }
+        ],
+        "reviewed_metadata_evidence": [
+          {
+            "quote": "Strict Mode API Documentation pydantic.types.Strict By default, Pydantic will attempt to coerce values to the desired type when possible. For example, you can pass the string '123' as the input for the int number type , and it will be converted to the value 123 . This coercion behavior is useful in many scenarios \u2014 think: UUIDs, URL parameters, HTTP headers, environment",
+            "source_id": 168467038635331
+          },
+          {
+            "quote": "Models API Documentation pydantic.main.BaseModel One of the primary ways of defining schema in Pydantic is via models. Models are simply classes which inherit from BaseModel and define fields as annotated attributes. You can think of models as similar to structs in languages like C, or as the requirements of a single endpoint in an API. Models share many similarities with",
+            "source_id": 213815157128674
+          },
+          {
+            "quote": "Annotated[int, Strict()] . As a configuration value Strict mode behavior can be controlled at the configuration level. When used on a Pydantic model (or model like class such as dataclasses ), strictness can still be overridden at the field level : from pydantic import BaseModel, ConfigDict, Field class User(BaseModel): model_config = ConfigDict(strict=True) name: str age: int",
+            "source_id": 168467038635331
+          },
+          {
+            "quote": "be applied for such fields, even when the validation methods are called in lax mode. from pydantic import BaseModel, Field, ValidationError class User(BaseModel): name: str age: int = Field(strict=True) # (1) user = User(name='John', age=42) print(user) #> name='John' age=42 try: another_user = User(name='John', age='42') except ValidationError as e: print(e) \"\"\" 1 validation",
+            "source_id": 168467038635331
+          },
+          {
+            "quote": "the resultant model instance will conform to the field types defined on the model. Basic model usage from pydantic import BaseModel, ConfigDict class User(BaseModel): id: int name: str = 'Jane Doe' model_config = ConfigDict(str_max_length=10) # (1) Pydantic models support a variety of configuration values (see here for the available configuration values). In this example, User",
+            "source_id": 213815157128674
+          },
+          {
+            "quote": "ConfigDict(extra='allow') m = Model(x=1, y='a') # (1) assert m.model_dump() == {'x': 1, 'y': 'a'} assert m.__pydantic_extra__ == {'y': 'a'} If extra was set to 'forbid' , this would fail. The configuration can take three values: 'ignore' : Providing extra data is ignored (the default). 'forbid' : Providing extra data is not permitted. 'allow' : Providing extra data is allowed",
+            "source_id": 213815157128674
+          }
+        ],
+        "approved_checkpoint": "c5d97c76587437b89a3df030bf9055f5c8e60970610c18e04d0802eb2cbcf623",
+        "citations_bound_by_review": true,
+        "corrections_used": 0,
+        "pending_review": false,
+        "stage_checkpoints": {
+          "64510ef4adae1ee9c2d6f5676338d0f382eea388272cf9bd4dcb132e420a4a48": {
+            "at": "2026-11-05T15:42:01.149717+00:00",
+            "stage": "Draft",
+            "state": "response",
+            "usage": {
+              "input_tokens": 8936,
+              "total_tokens": 10823,
+              "output_tokens": 1887,
+              "input_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0
+              },
+              "output_tokens_details": {
+                "reasoning_tokens": 576
+              }
+            },
+            "ledger_key": "e47e757dceca7c8a8372bea50436f53ba410bb7b7a78480124b4747634fd2bf1",
+            "attempt_count": 1,
+            "editorial_date": "2026-11-05",
+            "maximum_microusd": 21169
+          },
+          "b272c067402887b6b61d317d79e9f2e68e6df9a59b259a570eaf2c7455615d70": {
+            "at": "2026-11-05T15:42:17.258514+00:00",
+            "stage": "Review",
+            "state": "response",
+            "usage": {
+              "input_tokens": 13714,
+              "total_tokens": 15674,
+              "output_tokens": 1960,
+              "input_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0
+              },
+              "output_tokens_details": {
+                "reasoning_tokens": 192
+              }
+            },
+            "ledger_key": "bf51831bdc02ef765456316e7aa49f360c7a3ed1591280924b30f8925958d794",
+            "attempt_count": 1,
+            "editorial_date": "2026-11-05",
+            "maximum_microusd": 21478
+          }
+        }
+      }
+    },
+    "created_at": "2026-10-24 21:19:25.319285+00:00",
+    "updated_at": "2026-11-05 15:42:18.037096+00:00"
+  },
+  "pydantic_article": {
+    "id": 16,
+    "slug": "validar-respuestas-ia-pydantic-esquema-limites",
+    "title": "Validar respuestas IA con Pydantic: esquema y l\u00edmites",
+    "summary": "C\u00f3mo imponer un contrato de esquema a respuestas estructuradas de un modelo usando Pydantic (extra='forbid' y strict), qu\u00e9 valida exactamente y qu\u00e9 conviene revisar fuera del esquema.",
+    "body": "## Qu\u00e9 valida un modelo Pydantic y por qu\u00e9 es \u00fatil para respuestas de IA\nPydantic permite declarar modelos (clases que heredan de BaseModel) que definen campos y sus tipos; al validar datos no confiables devuelve una instancia con campos que cumplen esos tipos y formatos, o lanza un ValidationError si falla la validaci\u00f3n. Esto convierte a los modelos en contratos \u00fatiles para respuestas estructuradas de IA: garantizan que el objeto que procesas tenga las claves y los tipos esperados antes de seguir con la l\u00f3gica de la aplicaci\u00f3n. [1]\n\n## Rechazar campos adicionales: la opci\u00f3n extra y extra='forbid'\nPor defecto Pydantic ignora campos extra que no est\u00e9n declarados en el modelo, pero la configuraci\u00f3n model_config = ConfigDict(extra='forbid') hace que la validaci\u00f3n falle si aparecen claves no esperadas. Para respuestas de IA esto permite forzar un contrato estricto: si el modelo de generaci\u00f3n a\u00f1ade campos imprevistos, la validaci\u00f3n falla y puedes registrar o rechazar la respuesta en lugar de procesarla ciegamente. [1]\n\n## Evitar coerciones inesperadas: strict mode y opciones por campo o modelo\nPydantic, en su modo por defecto, intenta convertir tipos cuando es posible (por ejemplo, '123' \u2192 int). Si quieres que la validaci\u00f3n falle cuando el tipo no coincide exactamente, conviene activar strict mode: puede habilitarse a nivel de validaci\u00f3n, de campo (Field(strict=True) o tipos StrictInt/StrictStr) o a nivel de modelo con ConfigDict(strict=True). Esto reduce aceptaciones silenciosas de valores con tipos incorrectos, pero exige auditar los emisores de datos porque entradas previamente aceptadas pueden empezar a fallar. [2]\n\n## Qu\u00e9 queda fuera del contrato y recomendaciones editoriales de verificaci\u00f3n\nPydantic garantiza conformidad de forma y tipos, no la veracidad ni la coherencia sem\u00e1ntica del contenido. Es decir, la validaci\u00f3n asegura que 'title' sea una cadena y 'points' una lista, pero no comprueba que el texto sea correcto, actualizado o libre de invenci\u00f3n. Conviene combinar el esquema con comprobaciones adicionales: reglas de negocio (longitud m\u00ednima/m\u00e1xima), listas de valores permitidos, verificaciones sem\u00e1nticas externas o pasos humanos para casos cr\u00edticos. Recomendamos instrumentar m\u00e9tricas de validaci\u00f3n y tratar las validaciones estrictas como cambios desplegables con monitorizaci\u00f3n, porque activar strict puede provocar fallos en integraciones existentes. [2, 1]\n\n## Ejemplo de contrato y pruebas m\u00ednimas (patr\u00f3n verificado)\nUn contrato compacto y eficaz para respuestas tipo resumen declara model_config = ConfigDict(extra='forbid', strict=True), un t\u00edtulo str con l\u00edmites de longitud y una lista de puntos con tama\u00f1o controlado. El ejemplo verificado incluido demuestra la validaci\u00f3n de payloads v\u00e1lidos y la detecci\u00f3n de tres fallos t\u00edpicos: tipo incorrecto, lista vac\u00eda y campos extras. Usar pruebas unitarias que validen la aceptaci\u00f3n y el rechazo esperado ayuda a evitar regresiones al cambiar strict o la configuraci\u00f3n de campos. [2, 1]\n\n## Ejemplo reproducible\n\n```python\nfrom pydantic import BaseModel, ConfigDict, Field\n\nclass Summary(BaseModel):\n    model_config = ConfigDict(extra=\"forbid\", strict=True)\n    title: str = Field(min_length=3, max_length=120)\n    points: list[str] = Field(min_length=1, max_length=5)\n```\n\nEste fragmento ha superado pruebas autom\u00e1ticas en un entorno aislado. No se han llamado servicios externos durante esa comprobaci\u00f3n. Entorno comprobado: python 3.12.15, pydantic 2.14.1.\n\n## Para seguir aprendiendo\n\n- [M\u00e1s gu\u00edas de programacion](/programacion)\n- [Validar entradas de texto para una API de IA con FastAPI y Pydantic](/articulos/fastapi-validar-peticiones-ia)\n- [Validar un JSON generado por IA antes de procesarlo en Python](/articulos/validar-json-ia-python)\n\nNo se ha probado la interfaz ni un servicio externo; solo el ejemplo aislado si se proporciona.\n\nRedacci\u00f3n y revisi\u00f3n automatizadas con IA. Sin revisi\u00f3n humana previa.",
+    "section": "programacion",
+    "author_name": "Redacci\u00f3n automatizada \u00b7 IA",
+    "status": "archived",
+    "sources": [
+      {
+        "url": "https://pydantic.dev/docs/validation/latest/concepts/models/",
+        "title": "[1] Models API Documentation pydantic.main.BaseModel One of the primary ways of defining schema in Pydantic is via models. Models are simply classes which inherit f",
+        "language": "en"
+      },
+      {
+        "url": "https://pydantic.dev/docs/validation/latest/concepts/strict_mode/",
+        "title": "[2] Strict Mode API Documentation pydantic.types.Strict By default, Pydantic will attempt to coerce values to the desired type when possible. For example, you can p",
+        "language": "en"
+      }
+    ],
+    "media": {
+      "cover": {
+        "alt": "Ilustraci\u00f3n conceptual: Validar respuestas IA con Pydantic: esquema y l\u00edmites",
+        "src": "/api/article-assets/f10b57980896f12e1740f4ea4267b063-1200.png",
+        "width": 1200,
+        "credit": "Foro IA al D\u00eda \u00b7 composici\u00f3n original",
+        "height": 630,
+        "rights": "original",
+        "caption": "Composici\u00f3n original sobre el tema del art\u00edculo; no representa una fotograf\u00eda del acontecimiento.",
+        "variants": {
+          "480": "/api/article-assets/f10b57980896f12e1740f4ea4267b063-480.webp",
+          "800": "/api/article-assets/f10b57980896f12e1740f4ea4267b063-800.webp",
+          "1200": "/api/article-assets/f10b57980896f12e1740f4ea4267b063-1200.webp"
+        }
+      },
+      "charts": [],
+      "videos": [],
+      "version": "editorial-v3"
+    },
+    "created_at": "2026-11-05 15:42:01.483807+00:00",
+    "updated_at": "2026-11-05 15:42:18.033608+00:00",
+    "published_at": "2026-11-05 15:42:17.860893+00:00",
+    "reviewed_at": "2026-11-05 15:42:17.860880+00:00",
+    "reviewed_by": "automation",
+    "comments_enabled": true
+  },
+  "public_seo": [
+    {
+      "url": "https://foroiaaldia.com/articulos/agentic-commerce-anuncios-agentes-servicio-asia",
+      "status": 200,
+      "canonical_ok": true,
+      "robots": null,
+      "x_robots_tag": null,
+      "description": "Una lectura de dos trabajos sobre agentes de IA: qu\u00e9 dice una prueba de atenci\u00f3n al cliente y qu\u00e9 expresa el inter\u00e9s por delegar compras en el Sudeste\u2026",
+      "summary": "Una lectura de dos trabajos sobre agentes de IA: qu\u00e9 dice una prueba de atenci\u00f3n al cliente y qu\u00e9 expresa el inter\u00e9s por delegar compras en el Sudeste Asi\u00e1tico.",
+      "raw_equal": false
+    },
+    {
+      "url": "https://foroiaaldia.com/articulos/resumir-pdf-ia-comprobar-citas",
+      "status": 200,
+      "canonical_ok": true,
+      "robots": null,
+      "x_robots_tag": null,
+      "description": "Aprende a resumir un PDF con IA y revisar fechas, cifras y citas con un documento de ejemplo y una referencia que puedes comprobar.",
+      "summary": "Aprende a resumir un PDF con IA y revisar fechas, cifras y citas con un documento de ejemplo y una referencia que puedes comprobar.",
+      "raw_equal": true
+    },
+    {
+      "url": "https://foroiaaldia.com/articulos/notebooklm-pdf-fuentes-citas",
+      "status": 200,
+      "canonical_ok": true,
+      "robots": null,
+      "x_robots_tag": null,
+      "description": "Prepara un PDF como fuente en NotebookLM y aprende a revisar sus citas. Gu\u00eda documental con un ejercicio que puedes comprobar.",
+      "summary": "Prepara un PDF como fuente en NotebookLM y aprende a revisar sus citas. Gu\u00eda documental con un ejercicio que puedes comprobar.",
+      "raw_equal": true
+    },
+    {
+      "url": "https://foroiaaldia.com/articulos/extraer-texto-pdf-python",
+      "status": 200,
+      "canonical_ok": true,
+      "robots": null,
+      "x_robots_tag": null,
+      "description": "Extrae texto de un PDF con Python y pypdf, conserva las p\u00e1ginas y detecta casos sin texto antes de enviar el documento a una IA.",
+      "summary": "Extrae texto de un PDF con Python y pypdf, conserva las p\u00e1ginas y detecta casos sin texto antes de enviar el documento a una IA.",
+      "raw_equal": true
+    },
+    {
+      "url": "https://foroiaaldia.com/articulos/validar-json-ia-python",
+      "status": 200,
+      "canonical_ok": true,
+      "robots": null,
+      "x_robots_tag": null,
+      "description": "Pasos pr\u00e1cticos para detectar JSON malformado, limitar tama\u00f1o y comprobar tipos m\u00ednimos con la API json de la biblioteca est\u00e1ndar de Python antes de usar\u2026",
+      "summary": "Pasos pr\u00e1cticos para detectar JSON malformado, limitar tama\u00f1o y comprobar tipos m\u00ednimos con la API json de la biblioteca est\u00e1ndar de Python antes de usar una respuesta de IA; incluye advertencias sobre excepciones, valores especiales (NaN/Infinity) y l\u00edmites para evitar consumo excesivo de recursos.",
+      "raw_equal": false
+    },
+    {
+      "url": "https://foroiaaldia.com/articulos/convertir-json-csv-python-seguro",
+      "status": 200,
+      "canonical_ok": true,
+      "robots": null,
+      "x_robots_tag": null,
+      "description": "Gu\u00eda concisa para convertir una lista JSON en CSV con Python usando los m\u00f3dulos json y csv del est\u00e1ndar, cuidando comas y f\u00f3rmulas peligrosas en celdas\u2026",
+      "summary": "Gu\u00eda concisa para convertir una lista JSON en CSV con Python usando los m\u00f3dulos json y csv del est\u00e1ndar, cuidando comas y f\u00f3rmulas peligrosas en celdas, y aprovechando DictWriter y newline='' para compatibilidad con hojas de c\u00e1lculo.",
+      "raw_equal": false
+    },
+    {
+      "url": "https://foroiaaldia.com/articulos/anthropic-s1-ipo-ant-2026-10",
+      "status": 200,
+      "canonical_ok": true,
+      "robots": null,
+      "x_robots_tag": null,
+      "description": "Anthropic ha registrado un formulario S\u20111 ante la SEC y anuncia su intenci\u00f3n de cotizar en el Nasdaq Global Select bajo el s\u00edmbolo ANT.",
+      "summary": "Anthropic ha registrado un formulario S\u20111 ante la SEC y anuncia su intenci\u00f3n de cotizar en el Nasdaq Global Select bajo el s\u00edmbolo ANT.",
+      "raw_equal": true
+    },
+    {
+      "url": "https://foroiaaldia.com/articulos/microsoft-presenta-copilot-harness-foundry",
+      "status": 200,
+      "canonical_ok": true,
+      "robots": null,
+      "x_robots_tag": null,
+      "description": "Copilot harness lleva a Foundry una capa de orquestaci\u00f3n para agentes. Qu\u00e9 hace, c\u00f3mo se integra y qu\u00e9 afirma Microsoft sobre su rendimiento.",
+      "summary": "Copilot harness lleva a Foundry una capa de orquestaci\u00f3n para agentes. Qu\u00e9 hace, c\u00f3mo se integra y qu\u00e9 afirma Microsoft sobre su rendimiento.",
+      "raw_equal": true
+    },
+    {
+      "url": "https://foroiaaldia.com/articulos/organizar-instrucciones-claude-documentos",
+      "status": 200,
+      "canonical_ok": true,
+      "robots": null,
+      "x_robots_tag": null,
+      "description": "La documentaci\u00f3n de Claude indica supuestos previos para trabajar en prompt engineering (criterios de \u00e9xito, formas de evaluar y un primer borrador de\u2026",
+      "summary": "La documentaci\u00f3n de Claude indica supuestos previos para trabajar en prompt engineering (criterios de \u00e9xito, formas de evaluar y un primer borrador de prompt) y remite a una referencia viva de buenas pr\u00e1cticas y a tutoriales interactivos.",
+      "raw_equal": false
+    },
+    {
+      "url": "https://foroiaaldia.com/articulos/separar-instrucciones-contexto-datos-openai-gemini-claude",
+      "status": 200,
+      "canonical_ok": true,
+      "robots": null,
+      "x_robots_tag": null,
+      "description": "Comparaci\u00f3n pr\u00e1ctica de las pautas oficiales de OpenAI, Google Gemini y Anthropic Claude sobre c\u00f3mo estructurar prompts: qu\u00e9 se considera \u2018instrucci\u00f3n\u2019\u2026",
+      "summary": "Comparaci\u00f3n pr\u00e1ctica de las pautas oficiales de OpenAI, Google Gemini y Anthropic Claude sobre c\u00f3mo estructurar prompts: qu\u00e9 se considera \u2018instrucci\u00f3n\u2019, qu\u00e9 va como \u2018input\u2019 o documento, y qu\u00e9 herramientas formales ofrecen (roles, par\u00e1metros o esquemas). Indica qu\u00e9 cambia para desarrolladores y qu\u00e9.",
+      "raw_equal": false
+    },
+    {
+      "url": "https://foroiaaldia.com/articulos/fastapi-validar-peticiones-ia",
+      "status": 200,
+      "canonical_ok": true,
+      "robots": null,
+      "x_robots_tag": null,
+      "description": "C\u00f3mo usar modelos Pydantic en FastAPI para declarar y validar el cuerpo de peticiones (tipos, longitudes y metadatos), qu\u00e9 errores devuelve la API y qu\u00e9\u2026",
+      "summary": "C\u00f3mo usar modelos Pydantic en FastAPI para declarar y validar el cuerpo de peticiones (tipos, longitudes y metadatos), qu\u00e9 errores devuelve la API y qu\u00e9 aspectos no cubre la validaci\u00f3n autom\u00e1tica.",
+      "raw_equal": false
+    }
+  ]
+}

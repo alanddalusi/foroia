@@ -1,0 +1,10 @@
+[Unit]
+Description=Refresh editorial code verification before daily research
+
+[Timer]
+OnCalendar=*-*-* 22:20:00 Europe/Madrid
+Persistent=true
+Unit=foroia-editorial-examples.service
+
+[Install]
+WantedBy=timers.target

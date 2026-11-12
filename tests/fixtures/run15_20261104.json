@@ -1,0 +1,1369 @@
+{
+ "run_id": 15,
+ "note": "Ejecución 15 (04/11/2026): borradores y revisiones reales; sin secretos ni llamadas.",
+ "attempts": [
+  {
+   "engine": "evergreen",
+   "lane_candidate_id": 4,
+   "candidate_id": 3,
+   "reason": "editorial_review_rejected",
+   "policy": {
+    "kind": "tutorial",
+    "topic": "Cómo guardar respuestas de un asistente de IA en SQLite sin duplicados",
+    "candidate_id": 3,
+    "min_organizations": 1
+   },
+   "correction_feedback": {
+    "code": "review_rejected",
+    "reasons": []
+   },
+   "versions": [
+    {
+     "draft": {
+      "slug": "guardar-resumenes-asistente-sqlite-python",
+      "title": "Guardar resúmenes de un asistente en SQLite sin duplicados (guía práctica en Python)",
+      "section": "programacion",
+      "summary": "Cómo almacenar resúmenes devueltos por un asistente como datos no confiables en una tabla SQLite, usando consultas parametrizadas y una clave primaria para evitar duplicados; incluye las garantías básicas de sqlite3 (conexión, placeholders, commit) y limitaciones a tener en cuenta.",
+      "paragraphs": [
+       {
+        "text": "Cuando un asistente genera un resumen conviene tratar ese texto como dato no confiable: puede contener errores, formato inesperado o caracteres que rompan consultas si se concatenan al SQL. La estrategia recomendada es almacenar el contenido recibido usando consultas parametrizadas y mantener una única fila por tema para evitar duplicados —por ejemplo, usando el campo topic como clave primaria— en lugar de concatenar resultados en una sola columna o construir SQL por interpolación.",
+        "heading": "Qué problema resuelve y qué se entiende por “datos no confiables”",
+        "evidence": [
+         {
+          "quote": "bind Python values to SQL statements, to avoid SQL injection attacks (see How to use placeholders to bind values in SQL queries for more details). We can verify that the new rows were inserted by executing a SELECT query, this time iterating over the results of the query: >>> for row in cur . execute ( \"SELECT year, title FROM movie ORDER BY year\" ): ... print ( row ) (1971,",
+          "source_id": 148403841297109
+         },
+         {
+          "quote": "create a connection to the database tutorial.db in the current working directory, implicitly creating it if it does not exist: import sqlite3 con = sqlite3 . connect ( \"tutorial.db\" ) The returned Connection object con represents the connection to the on-disk database. In order to execute SQL statements and fetch results from SQL queries, we will need to use a database cursor.",
+          "source_id": 148403841297109
+         }
+        ]
+       },
+       {
+        "text": "El módulo sqlite3 de la biblioteca estándar crea una conexión a una base de datos local con sqlite3.connect(). Ese objeto Connection sirve para ejecutar sentencias SQL y controlar transacciones; los cambios hechos por INSERT se guardan tras llamar a commit() en la conexión. También es buena práctica crear la tabla si no existe antes de insertar datos.",
+        "heading": "Principios básicos con el módulo sqlite3",
+        "evidence": [
+         {
+          "quote": "isolation_level = 'DEFERRED' , check_same_thread = True , factory = sqlite3.Connection , cached_statements = 128 , uri = False , * , autocommit = sqlite3.LEGACY_TRANSACTION_CONTROL ) ¶ Open a connection to an SQLite database. Parameters : database ( path-like object ) – The path to the database file to be opened. You can pass \":memory:\" to create an SQLite database existing",
+          "source_id": 148403841297109
+         },
+         {
+          "quote": ") The INSERT statement implicitly opens a transaction, which needs to be committed before changes are saved in the database (see Transaction control for details). Call con.commit() on the connection object to commit the transaction: con . commit () We can verify that the data was inserted correctly by executing a SELECT query. Use the now-familiar cur.execute(...) to assign",
+          "source_id": 148403841297109
+         },
+         {
+          "quote": "create a connection to the database tutorial.db in the current working directory, implicitly creating it if it does not exist: import sqlite3 con = sqlite3 . connect ( \"tutorial.db\" ) The returned Connection object con represents the connection to the on-disk database. In order to execute SQL statements and fetch results from SQL queries, we will need to use a database cursor.",
+          "source_id": 148403841297109
+         }
+        ]
+       },
+       {
+        "text": "SQLite y el módulo sqlite3 admiten marcadores de posición (placeholders) para enlazar valores en consultas. Siempre emplea placeholders en lugar de construir cadenas SQL mediante concatenación; además de prevenir inyección, el enlazado maneja comillas y caracteres especiales que el texto del asistente pueda contener.",
+        "heading": "Usar placeholders para evitar inyección y problemas de formato",
+        "evidence": [
+         {
+          "quote": "bind Python values to SQL statements, to avoid SQL injection attacks (see How to use placeholders to bind values in SQL queries for more details). We can verify that the new rows were inserted by executing a SELECT query, this time iterating over the results of the query: >>> for row in cur . execute ( \"SELECT year, title FROM movie ORDER BY year\" ): ... print ( row ) (1971,",
+          "source_id": 148403841297109
+         }
+        ]
+       },
+       {
+        "text": "Una forma práctica es crear la tabla con topic como PRIMARY KEY y usar INSERT OR REPLACE (o una operación equivalente) para escribir el resumen: así, una segunda inserción con el mismo topic actualiza el registro en lugar de añadir una fila nueva. Esa aproximación mantiene una única fila por tema sin necesidad de lógica adicional de deduplicación.",
+        "heading": "Estratégia sencilla para evitar duplicados",
+        "evidence": [
+         {
+          "quote": "the CREATE TABLE statement by calling cur.execute(...) : cur . execute ( \"CREATE TABLE movie(title, year, score)\" ) We can verify that the new table has been created by querying the sqlite_master table built-in to SQLite, which should now contain an entry for the movie table definition (see The Schema Table for details). Execute that query by calling cur.execute(...) , assign",
+          "source_id": 148403841297109
+         },
+         {
+          "quote": "bind Python values to SQL statements, to avoid SQL injection attacks (see How to use placeholders to bind values in SQL queries for more details). We can verify that the new rows were inserted by executing a SELECT query, this time iterating over the results of the query: >>> for row in cur . execute ( \"SELECT year, title FROM movie ORDER BY year\" ): ... print ( row ) (1971,",
+          "source_id": 148403841297109
+         }
+        ]
+       },
+       {
+        "text": "Este patrón cubre la inserción segura y la prevención de duplicados en SQLite, pero no aborda la validación del contenido del resumen (veracidad, esquema, tamaños extremos), la gestión de concurrencia entre hilos si la conexión se comparte, ni el versionado histórico de resúmenes. Para concurrencia se debe revisar check_same_thread y serializar escrituras si es necesario; para auditoría o historial conviene separar tabla de versiones en vez de sobrescribir.",
+        "heading": "Limitaciones y riesgos que quedan sin resolver por esta guía",
+        "evidence": [
+         {
+          "quote": "check_same_thread ( bool ) – If True (default), ProgrammingError will be raised if the database connection is used by a thread other than the one that created it. If False , the connection may be accessed in multiple threads; write operations may need to be serialized by the user to avoid data corruption. See threadsafety for more information. factory ( Connection ) – A custom",
+          "source_id": 148403841297109
+         },
+         {
+          "quote": "handle specific tasks. Explanation provides in-depth background on transaction control. See also https://www.sqlite.org The SQLite web page; the documentation describes the syntax and the available data types for the supported SQL dialect. https://www.w3schools.com/sql/ Tutorial, reference and examples for learning SQL syntax. PEP 249 - Database API Specification 2.0 PEP",
+          "source_id": 148403841297109
+         }
+        ]
+       },
+       {
+        "text": "Para equipos que integran respuestas de asistentes en aplicaciones locales o prototipos, esta guía propone un método sencillo y reproducible: usar sqlite3, placeholders y una clave primaria por tema para almacenar resúmenes sin duplicados. Es apropiado para prototipos, pipelines offline o herramientas de revisión humana; no sustituye controles de calidad ni procesos de validación cuando el dato se vaya a publicar o alimentar sistemas críticos.",
+        "heading": "Qué cambia y para quién",
+        "evidence": [
+         {
+          "quote": "isolation_level = 'DEFERRED' , check_same_thread = True , factory = sqlite3.Connection , cached_statements = 128 , uri = False , * , autocommit = sqlite3.LEGACY_TRANSACTION_CONTROL ) ¶ Open a connection to an SQLite database. Parameters : database ( path-like object ) – The path to the database file to be opened. You can pass \":memory:\" to create an SQLite database existing",
+          "source_id": 148403841297109
+         },
+         {
+          "quote": "bind Python values to SQL statements, to avoid SQL injection attacks (see How to use placeholders to bind values in SQL queries for more details). We can verify that the new rows were inserted by executing a SELECT query, this time iterating over the results of the query: >>> for row in cur . execute ( \"SELECT year, title FROM movie ORDER BY year\" ): ... print ( row ) (1971,",
+          "source_id": 148403841297109
+         }
+        ]
+       }
+      ]
+     },
+     "review": {
+      "checks": [
+       {
+        "supported": true,
+        "target_id": "title",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_1252a91b0802745f55464b024475b17e",
+         "e_80d09cbe91f7092fc0a7f44a44915a74",
+         "e_849ce6ced0693522aeade70cd25bec6f",
+         "e_94a0a735a4e91b584b2f095f79182f67",
+         "e_c4986dc2c5770668dfc44ad64f9165bf"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "summary",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_1252a91b0802745f55464b024475b17e",
+         "e_80d09cbe91f7092fc0a7f44a44915a74",
+         "e_849ce6ced0693522aeade70cd25bec6f",
+         "e_94a0a735a4e91b584b2f095f79182f67",
+         "e_c4986dc2c5770668dfc44ad64f9165bf"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p1.heading",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_c4986dc2c5770668dfc44ad64f9165bf"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p1.s1",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p1.s2",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_c4986dc2c5770668dfc44ad64f9165bf"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p2.heading",
+        "fragment_ids": [
+         "e_1252a91b0802745f55464b024475b17e",
+         "e_c4986dc2c5770668dfc44ad64f9165bf",
+         "e_eedbf619199817780379d678a0c70170"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p2.s1",
+        "fragment_ids": [
+         "e_1252a91b0802745f55464b024475b17e",
+         "e_c4986dc2c5770668dfc44ad64f9165bf"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p2.s2",
+        "fragment_ids": [
+         "e_eedbf619199817780379d678a0c70170",
+         "e_1252a91b0802745f55464b024475b17e"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p2.s3",
+        "fragment_ids": [
+         "e_c4986dc2c5770668dfc44ad64f9165bf",
+         "e_849ce6ced0693522aeade70cd25bec6f"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p3.heading",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p3.s1",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p3.s2",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p4.heading",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_849ce6ced0693522aeade70cd25bec6f"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p4.s1",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_849ce6ced0693522aeade70cd25bec6f"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p4.s2",
+        "fragment_ids": [
+         "e_849ce6ced0693522aeade70cd25bec6f",
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p5.heading",
+        "fragment_ids": [
+         "e_80d09cbe91f7092fc0a7f44a44915a74",
+         "e_94a0a735a4e91b584b2f095f79182f67"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p5.s1",
+        "fragment_ids": [
+         "e_80d09cbe91f7092fc0a7f44a44915a74",
+         "e_94a0a735a4e91b584b2f095f79182f67"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p5.s2",
+        "fragment_ids": [
+         "e_80d09cbe91f7092fc0a7f44a44915a74",
+         "e_94a0a735a4e91b584b2f095f79182f67"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p6.heading",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_1252a91b0802745f55464b024475b17e"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p6.s1",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_1252a91b0802745f55464b024475b17e"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p6.s2",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_1252a91b0802745f55464b024475b17e"
+        ]
+       }
+      ],
+      "useful": true,
+      "natural": true,
+      "reasons": [],
+      "spanish": true,
+      "approved": true,
+      "original": false,
+      "supported": true,
+      "safe_topic": true,
+      "non_repetitive": true,
+      "well_structured": true,
+      "attribution_clear": true,
+      "no_invented_experience": true
+     }
+    },
+    {
+     "draft": {
+      "slug": "guardar-resumenes-asistente-sqlite-python",
+      "title": "Guardar resúmenes de un asistente en SQLite sin duplicados (guía práctica en Python)",
+      "section": "programacion",
+      "summary": "Cómo almacenar resúmenes devueltos por un asistente como datos no confiables en una tabla SQLite: usar sqlite3, consultas parametrizadas (placeholders) y una clave primaria por tema para evitar duplicados; incluye garantías básicas sobre conexión, transacciones y limitaciones que quedan sin resolver",
+      "paragraphs": [
+       {
+        "text": "Las respuestas generadas por un asistente deben tratarse como datos no confiables: pueden contener errores, formato inesperado o caracteres que rompan consultas si se concatenan directamente en SQL. En lugar de concatenar texto en sentencias, conviene almacenar cada resumen usando consultas parametrizadas y diseñar la tabla para mantener una única fila por tema (por ejemplo, topic como clave primaria) para evitar duplicados.",
+        "heading": "Qué problema resuelve y qué se entiende por “datos no confiables”",
+        "evidence": [
+         {
+          "quote": "bind Python values to SQL statements, to avoid SQL injection attacks (see How to use placeholders to bind values in SQL queries for more details). We can verify that the new rows were inserted by executing a SELECT query, this time iterating over the results of the query: >>> for row in cur . execute ( \"SELECT year, title FROM movie ORDER BY year\" ): ... print ( row ) (1971,",
+          "source_id": 148403841297109
+         },
+         {
+          "quote": "create a connection to the database tutorial.db in the current working directory, implicitly creating it if it does not exist: import sqlite3 con = sqlite3 . connect ( \"tutorial.db\" ) The returned Connection object con represents the connection to the on-disk database. In order to execute SQL statements and fetch results from SQL queries, we will need to use a database cursor.",
+          "source_id": 148403841297109
+         }
+        ]
+       },
+       {
+        "text": "El módulo sqlite3 crea una conexión a una base de datos local con sqlite3.connect(). El objeto Connection representa la conexión al fichero de base de datos y se usa para ejecutar sentencias SQL y controlar transacciones; los cambios realizados por INSERT se guardan definitivamente tras llamar a commit() en la conexión. También es buena práctica crear la tabla si no existe antes de insertar datos.",
+        "heading": "Principios básicos con el módulo sqlite3",
+        "evidence": [
+         {
+          "quote": "create a connection to the database tutorial.db in the current working directory, implicitly creating it if it does not exist: import sqlite3 con = sqlite3 . connect ( \"tutorial.db\" ) The returned Connection object con represents the connection to the on-disk database. In order to execute SQL statements and fetch results from SQL queries, we will need to use a database cursor.",
+          "source_id": 148403841297109
+         },
+         {
+          "quote": ") The INSERT statement implicitly opens a transaction, which needs to be committed before changes are saved in the database (see Transaction control for details). Call con.commit() on the connection object to commit the transaction: con . commit () We can verify that the data was inserted correctly by executing a SELECT query. Use the now-familiar cur.execute(...) to assign",
+          "source_id": 148403841297109
+         },
+         {
+          "quote": "the CREATE TABLE statement by calling cur.execute(...) : cur . execute ( \"CREATE TABLE movie(title, year, score)\" ) We can verify that the new table has been created by querying the sqlite_master table built-in to SQLite, which should now contain an entry for the movie table definition (see The Schema Table for details). Execute that query by calling cur.execute(...) , assign",
+          "source_id": 148403841297109
+         }
+        ]
+       },
+       {
+        "text": "sqlite3 soporta marcadores de posición (placeholders) para enlazar valores a las consultas. Usar placeholders en lugar de construir cadenas SQL previene inyección y delega en la librería el manejo de comillas y caracteres especiales que puedan incluir los textos generados por un asistente.",
+        "heading": "Usar placeholders para evitar inyección y problemas de formato",
+        "evidence": [
+         {
+          "quote": "bind Python values to SQL statements, to avoid SQL injection attacks (see How to use placeholders to bind values in SQL queries for more details). We can verify that the new rows were inserted by executing a SELECT query, this time iterating over the results of the query: >>> for row in cur . execute ( \"SELECT year, title FROM movie ORDER BY year\" ): ... print ( row ) (1971,",
+          "source_id": 148403841297109
+         }
+        ]
+       },
+       {
+        "text": "Una aproximación práctica es declarar topic como PRIMARY KEY y escribir los resúmenes con una operación tipo INSERT OR REPLACE (u otra equivalente): así, una inserción posterior con el mismo topic actualiza la fila existente en vez de añadir otra. Esta estrategia mantiene una única fila por tema sin lógica adicional de deduplicación en la aplicación.",
+        "heading": "Estrategia sencilla para evitar duplicados",
+        "evidence": [
+         {
+          "quote": "the CREATE TABLE statement by calling cur.execute(...) : cur . execute ( \"CREATE TABLE movie(title, year, score)\" ) We can verify that the new table has been created by querying the sqlite_master table built-in to SQLite, which should now contain an entry for the movie table definition (see The Schema Table for details). Execute that query by calling cur.execute(...) , assign",
+          "source_id": 148403841297109
+         },
+         {
+          "quote": "bind Python values to SQL statements, to avoid SQL injection attacks (see How to use placeholders to bind values in SQL queries for more details). We can verify that the new rows were inserted by executing a SELECT query, this time iterating over the results of the query: >>> for row in cur . execute ( \"SELECT year, title FROM movie ORDER BY year\" ): ... print ( row ) (1971,",
+          "source_id": 148403841297109
+         }
+        ]
+       },
+       {
+        "text": "El patrón descrito cubre inserción segura y prevención básica de duplicados en SQLite, pero no aborda la validación del contenido (veracidad, esquema, tamaños extremos), el versionado histórico de resúmenes ni la concurrencia avanzada entre hilos si la misma conexión se comparte. Para concurrencia hay que revisar el parámetro check_same_thread y serializar escrituras si es necesario; para auditoría o historial conviene una tabla separada de versiones en vez de sobrescribir.",
+        "heading": "Limitaciones y riesgos que quedan sin resolver por esta guía",
+        "evidence": [
+         {
+          "quote": "check_same_thread ( bool ) – If True (default), ProgrammingError will be raised if the database connection is used by a thread other than the one that created it. If False , the connection may be accessed in multiple threads; write operations may need to be serialized by the user to avoid data corruption. See threadsafety for more information. factory ( Connection ) – A custom",
+          "source_id": 148403841297109
+         },
+         {
+          "quote": "isolation_level = 'DEFERRED' , check_same_thread = True , factory = sqlite3.Connection , cached_statements = 128 , uri = False , * , autocommit = sqlite3.LEGACY_TRANSACTION_CONTROL ) ¶ Open a connection to an SQLite database. Parameters : database ( path-like object ) – The path to the database file to be opened. You can pass \":memory:\" to create an SQLite database existing",
+          "source_id": 148403841297109
+         }
+        ]
+       },
+       {
+        "text": "Para equipos que integran respuestas de asistentes en prototipos o herramientas de revisión, esta guía propone un método simple y reproducible: usar sqlite3 con placeholders y una clave primaria por tema para almacenar resúmenes sin duplicados. Es apropiado para pipelines offline, prototipos y procesos con supervisión humana; no sustituye controles de calidad ni validación cuando el dato se vaya a publicar o alimentar sistemas críticos.",
+        "heading": "Qué cambia y para quién",
+        "evidence": [
+         {
+          "quote": "create a connection to the database tutorial.db in the current working directory, implicitly creating it if it does not exist: import sqlite3 con = sqlite3 . connect ( \"tutorial.db\" ) The returned Connection object con represents the connection to the on-disk database. In order to execute SQL statements and fetch results from SQL queries, we will need to use a database cursor.",
+          "source_id": 148403841297109
+         },
+         {
+          "quote": "bind Python values to SQL statements, to avoid SQL injection attacks (see How to use placeholders to bind values in SQL queries for more details). We can verify that the new rows were inserted by executing a SELECT query, this time iterating over the results of the query: >>> for row in cur . execute ( \"SELECT year, title FROM movie ORDER BY year\" ): ... print ( row ) (1971,",
+          "source_id": 148403841297109
+         }
+        ]
+       }
+      ]
+     },
+     "review": {
+      "checks": [
+       {
+        "supported": false,
+        "target_id": "title",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_1252a91b0802745f55464b024475b17e",
+         "e_80d09cbe91f7092fc0a7f44a44915a74",
+         "e_849ce6ced0693522aeade70cd25bec6f",
+         "e_c4986dc2c5770668dfc44ad64f9165bf",
+         "e_eedbf619199817780379d678a0c70170"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "summary",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_1252a91b0802745f55464b024475b17e",
+         "e_80d09cbe91f7092fc0a7f44a44915a74",
+         "e_849ce6ced0693522aeade70cd25bec6f",
+         "e_c4986dc2c5770668dfc44ad64f9165bf",
+         "e_eedbf619199817780379d678a0c70170"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p1.heading",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_c4986dc2c5770668dfc44ad64f9165bf"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p1.s1",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_c4986dc2c5770668dfc44ad64f9165bf"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p1.s2",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_c4986dc2c5770668dfc44ad64f9165bf"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p2.heading",
+        "fragment_ids": [
+         "e_849ce6ced0693522aeade70cd25bec6f",
+         "e_c4986dc2c5770668dfc44ad64f9165bf",
+         "e_eedbf619199817780379d678a0c70170"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p2.s1",
+        "fragment_ids": [
+         "e_849ce6ced0693522aeade70cd25bec6f",
+         "e_c4986dc2c5770668dfc44ad64f9165bf",
+         "e_eedbf619199817780379d678a0c70170"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p2.s2",
+        "fragment_ids": [
+         "e_849ce6ced0693522aeade70cd25bec6f",
+         "e_c4986dc2c5770668dfc44ad64f9165bf",
+         "e_eedbf619199817780379d678a0c70170"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p2.s3",
+        "fragment_ids": [
+         "e_849ce6ced0693522aeade70cd25bec6f",
+         "e_c4986dc2c5770668dfc44ad64f9165bf",
+         "e_eedbf619199817780379d678a0c70170"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p3.heading",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p3.s1",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p3.s2",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p4.heading",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_849ce6ced0693522aeade70cd25bec6f"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p4.s1",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_849ce6ced0693522aeade70cd25bec6f"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p4.s2",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_849ce6ced0693522aeade70cd25bec6f"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p5.heading",
+        "fragment_ids": [
+         "e_1252a91b0802745f55464b024475b17e",
+         "e_80d09cbe91f7092fc0a7f44a44915a74"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p5.s1",
+        "fragment_ids": [
+         "e_1252a91b0802745f55464b024475b17e",
+         "e_80d09cbe91f7092fc0a7f44a44915a74"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p5.s2",
+        "fragment_ids": [
+         "e_1252a91b0802745f55464b024475b17e",
+         "e_80d09cbe91f7092fc0a7f44a44915a74"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p6.heading",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_c4986dc2c5770668dfc44ad64f9165bf"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p6.s1",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_c4986dc2c5770668dfc44ad64f9165bf"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p6.s2",
+        "fragment_ids": [
+         "e_10749d4eb760ad2f1c8d8a66ce54eeeb",
+         "e_c4986dc2c5770668dfc44ad64f9165bf"
+        ]
+       }
+      ],
+      "useful": false,
+      "natural": true,
+      "reasons": [
+       "Faltan comprobaciones de afirmaciones o evidencias citadas válidas. Revisar: title, summary, p1.heading, p1.s1, p1.s2, p4.heading, p4.s1, p4.s2, p5.heading, p5.s1, p5.s2, p6.heading.",
+       "Varias afirmaciones editoriales (qué son “datos no confiables”, alcance práctico para equipos, y recomendaciones sobre clave primaria/UPSERT) no están íntegramente respaldadas por los fragmentos de la documentación citada; el borrador mezcla buenas prácticas extraídas de la documentación con afirmaciones de producto/alcance que requieren evidencia adicional.",
+       "El título y el resumen afirman que la guía evita duplicados. El documento muestra ejemplos de INSERT y placeholders, pero no aporta en las evidencias proporcionadas una referencia explícita a la instrucción SQLite \"INSERT OR REPLACE\" ni a la lógica de declarar una columna como PRIMARY KEY para obtener el comportamiento descrito.",
+       "El apartado de limitaciones menciona validación de contenido, versionado histórico y concurrencia avanzada. La documentación citada cubre el parámetro check_same_thread y threadsafety, pero no soporta íntegramente la lista de limitaciones ni la recomendación concreta de usar una tabla separada de versiones.",
+       "Varios objetivos (p1.heading, p1.s1, p1.s2, p4.*, p5.*, p6.* y el título/summary) contienen afirmaciones que no están completamente verificadas por los fragmentos citados. Hay solapamiento entre recomendaciones prácticas y contenidos de la documentación oficial, pero no coincidencia total frase por frase."
+      ],
+      "spanish": true,
+      "approved": false,
+      "original": true,
+      "supported": false,
+      "safe_topic": true,
+      "non_repetitive": true,
+      "well_structured": false,
+      "attribution_clear": true,
+      "no_invented_experience": true
+     }
+    }
+   ]
+  },
+  {
+   "engine": "evergreen",
+   "lane_candidate_id": 4,
+   "candidate_id": 4,
+   "reason": "editorial_review_rejected",
+   "policy": {
+    "kind": "tutorial",
+    "topic": "Cómo comparar respuestas de IA sin errores por espacios y Unicode",
+    "candidate_id": 4,
+    "min_organizations": 1
+   },
+   "correction_feedback": {
+    "code": "editorial_style_rejected",
+    "details": [
+     {
+      "code": "oversegmented",
+      "message": "Agrupa los apartados breves relacionados en menos secciones con desarrollo suficiente."
+     }
+    ],
+    "reasons": [
+     "Corrige el fallo determinista sin inventar evidencias."
+    ]
+   },
+   "versions": [
+    {
+     "draft": {
+      "slug": "comparar-respuestas-ia-unicode-python",
+      "title": "Cómo comparar variantes textuales de respuestas de un asistente: normalización vs equivalencia",
+      "section": "programacion",
+      "summary": "Explica por qué la normalización Unicode evita falsos negativos al comparar respuestas textuales y cuándo no basta para considerar dos respuestas realmente equivalentes.",
+      "paragraphs": [
+       {
+        "text": "Las respuestas de un asistente pueden diferir por caracteres Unicode visualmente iguales (por ejemplo, letras con combinantes o caracteres de compatibilidad), por tipos de mayúsculas/minúsculas o por espacios redundantes. La normalización Unicode reescribe cadenas según formas estándar (NFC, NFD, NFKC, NFKD) para que representaciones distintas que son equivalentes según Unicode pasen a una forma comparable, reduciendo falsos negativos en comparaciones automáticas.",
+        "heading": "Qué problema resuelve la normalización",
+        "evidence": [
+         {
+          "quote": "defined. unicodedata. normalize ( form , unistr ) ¶ Return the normal form form for the Unicode string unistr . Valid values for form are ‘NFC’, ‘NFKC’, ‘NFD’, and ‘NFKD’. The Unicode standard defines various normalization forms of a Unicode string, based on the definition of canonical equivalence and compatibility equivalence. In Unicode, several characters can be expressed",
+          "source_id": 244707787091437
+         },
+         {
+          "quote": "in various way. For example, the character U+00C7 (LATIN CAPITAL LETTER C WITH CEDILLA) can also be expressed as the sequence U+0043 (LATIN CAPITAL LETTER C) U+0327 (COMBINING CEDILLA). For each character, there are two normal forms: normal form C and normal form D. Normal form D (NFD) is also known as canonical decomposition, and translates each character into its decomposed",
+          "source_id": 244707787091437
+         }
+        ]
+       },
+       {
+        "text": "Una función de comparación útil convierte texto a una forma canónica y elimina ruido que no aporta significado: normalizar con NFKC, bajar a una forma insensible a mayúsculas y colapsar espacios. El ejemplo incluido muestra exactamente esa idea y viene con tests que comprueban casos como caracteres de ancho completo y espacios múltiples.",
+        "heading": "Una clave práctica de comparación (ejemplo verificado)",
+        "evidence": [
+         {
+          "quote": "defined. unicodedata. normalize ( form , unistr ) ¶ Return the normal form form for the Unicode string unistr . Valid values for form are ‘NFC’, ‘NFKC’, ‘NFD’, and ‘NFKD’. The Unicode standard defines various normalization forms of a Unicode string, based on the definition of canonical equivalence and compatibility equivalence. In Unicode, several characters can be expressed",
+          "source_id": 244707787091437
+         },
+         {
+          "quote": "unicodedata — Unicode Database — Python 3.12.16 documentation Navigation index modules | next | previous | Python » 3.12.16 Documentation » The Python Standard Library » Text Processing Services » unicodedata — Unicode Database | Theme Auto Light Dark | unicodedata — Unicode Database ¶ This module provides access to the Unicode Character Database (UCD) which defines character",
+          "source_id": 244707787091437
+         }
+        ]
+       },
+       {
+        "text": "La normalización garantiza que distintas representaciones Unicode canónicas o de compatibilidad se transformen a formas estándar (NFC/NFD/NFKC/NFKD), pero no convierte automáticamente entidades lingüísticas diferentes en equivalentes: dos cadenas normalizadas que parecen iguales al lector pueden seguir sin ser iguales según ciertas reglas de comparación o por diferencias semánticas (por ejemplo, 'año' frente a 'ano' son distintos).",
+        "heading": "Qué hace y qué no hace la normalización",
+        "evidence": [
+         {
+          "quote": "form. Normal form C (NFC) first applies a canonical decomposition, then composes pre-combined characters again. In addition to these two forms, there are two additional normal forms based on compatibility equivalence. In Unicode, certain characters are supported which normally would be unified with other characters. For example, U+2160 (ROMAN NUMERAL ONE) is really the same",
+          "source_id": 244707787091437
+         },
+         {
+          "quote": "composition. Even if two unicode strings are normalized and look the same to a human reader, if one has combining characters and the other doesn’t, they may not compare equal. unicodedata. is_normalized ( form , unistr ) ¶ Return whether the Unicode string unistr is in the normal form form . Valid values for form are ‘NFC’, ‘NFKC’, ‘NFD’, and ‘NFKD’. Added in version 3.8. In",
+          "source_id": 244707787091437
+         }
+        ]
+       },
+       {
+        "text": "Normalizar y comparar reduce errores técnicos pero no reemplaza la evaluación humana cuando importa el significado: apartados como segundas palabras, diacríticos que cambian sentido, números mostrados con formatos distintos o entidades colocadas en distinto orden requieren reglas adicionales o revisión. Además, la normalización no decide si dos frases con distinto vocabulario son equivalentes en intención o calidad.",
+        "heading": "Limitaciones y casos en que hay que revisar manualmente",
+        "evidence": [
+         {
+          "quote": "composition. Even if two unicode strings are normalized and look the same to a human reader, if one has combining characters and the other doesn’t, they may not compare equal. unicodedata. is_normalized ( form , unistr ) ¶ Return whether the Unicode string unistr is in the normal form form . Valid values for form are ‘NFC’, ‘NFKC’, ‘NFD’, and ‘NFKD’. Added in version 3.8. In",
+          "source_id": 244707787091437
+         },
+         {
+          "quote": "Built-in Types — Python 3.12.16 documentation Navigation index modules | next | previous | Python » 3.12.16 Documentation » The Python Standard Library » Built-in Types | Theme Auto Light Dark | Built-in Types ¶ The following sections describe the standard types that are built into the interpreter. The principal built-in types are numerics, sequences, mappings, classes,",
+          "source_id": 17947676985423
+         }
+        ]
+       },
+       {
+        "text": "1) Decide qué diferencias son irrelevantes (mayúsculas, espacios, compatibilidad Unicode) y aplícales normalización. 2) Añade transformaciones controladas (p. ej. un mapa de abreviaturas o normalización de fechas) sólo si tienes reglas verificadas. 3) Mantén tests que cubran ejemplos representativos (la función de ejemplo incluye aserciones). 4) Reserva muestreo humano para cambios en significado o casos límite.",
+        "heading": "Checklist práctica antes de automatizar comparaciones",
+        "evidence": [
+         {
+          "quote": "defined. unicodedata. normalize ( form , unistr ) ¶ Return the normal form form for the Unicode string unistr . Valid values for form are ‘NFC’, ‘NFKC’, ‘NFD’, and ‘NFKD’. The Unicode standard defines various normalization forms of a Unicode string, based on the definition of canonical equivalence and compatibility equivalence. In Unicode, several characters can be expressed",
+          "source_id": 244707787091437
+         },
+         {
+          "quote": "unicodedata — Unicode Database — Python 3.12.16 documentation Navigation index modules | next | previous | Python » 3.12.16 Documentation » The Python Standard Library » Text Processing Services » unicodedata — Unicode Database | Theme Auto Light Dark | unicodedata — Unicode Database ¶ This module provides access to the Unicode Character Database (UCD) which defines character",
+          "source_id": 244707787091437
+         }
+        ]
+       }
+      ]
+     },
+     "validation_error": "editorial_style_rejected",
+     "validation_details": [
+      {
+       "code": "oversegmented",
+       "message": "Agrupa los apartados breves relacionados en menos secciones con desarrollo suficiente."
+      }
+     ]
+    },
+    {
+     "draft": {
+      "slug": "comparar-respuestas-ia-unicode-python",
+      "title": "Cómo comparar variantes textuales de respuestas de un asistente: normalización vs equivalencia",
+      "section": "programacion",
+      "summary": "Explica por qué la normalización Unicode evita falsos negativos al comparar respuestas textuales y cuándo no basta para considerar dos respuestas realmente equivalentes.",
+      "paragraphs": [
+       {
+        "text": "Unicode permite representar el mismo carácter de distintas formas (por ejemplo, una letra precombinada o la letra base más un combinante). Las funciones de la biblioteca unicodedata transforman una cadena a formas normalizadas (NFC, NFD, NFKC, NFKD) para que representaciones equivalentes según Unicode pasen a una forma estándar. Aplicar normalización antes de comparar reduce falsos negativos que aparecen por diferencias de codificación o por variantes de compatibilidad.",
+        "heading": "Qué es la normalización Unicode y por qué importa",
+        "evidence": [
+         {
+          "quote": "defined. unicodedata. normalize ( form , unistr ) ¶ Return the normal form form for the Unicode string unistr . Valid values for form are ‘NFC’, ‘NFKC’, ‘NFD’, and ‘NFKD’. The Unicode standard defines various normalization forms of a Unicode string, based on the definition of canonical equivalence and compatibility equivalence. In Unicode, several characters can be expressed",
+          "source_id": 244707787091437
+         },
+         {
+          "quote": "in various way. For example, the character U+00C7 (LATIN CAPITAL LETTER C WITH CEDILLA) can also be expressed as the sequence U+0043 (LATIN CAPITAL LETTER C) U+0327 (COMBINING CEDILLA). For each character, there are two normal forms: normal form C and normal form D. Normal form D (NFD) is also known as canonical decomposition, and translates each character into its decomposed",
+          "source_id": 244707787091437
+         }
+        ]
+       },
+       {
+        "text": "Una clave simple y práctica es transformar el texto a una forma de comparación determinista: aplicar normalización de compatibilidad (NFKC) para unificar caracteres de compatibilidad, convertir a minúsculas de forma Unicode (casefold) y colapsar espacios redundantes. El ejemplo verificado acompaña tests que cubren casos como caracteres de ancho completo y espacios múltiples.",
+        "heading": "Clave práctica: una función de comparación verificada",
+        "evidence": [
+         {
+          "quote": "defined. unicodedata. normalize ( form , unistr ) ¶ Return the normal form form for the Unicode string unistr . Valid values for form are ‘NFC’, ‘NFKC’, ‘NFD’, and ‘NFKD’. The Unicode standard defines various normalization forms of a Unicode string, based on the definition of canonical equivalence and compatibility equivalence. In Unicode, several characters can be expressed",
+          "source_id": 244707787091437
+         },
+         {
+          "quote": "unicodedata — Unicode Database — Python 3.12.16 documentation Navigation index modules | next | previous | Python » 3.12.16 Documentation » The Python Standard Library » Text Processing Services » unicodedata — Unicode Database | Theme Auto Light Dark | unicodedata — Unicode Database ¶ This module provides access to the Unicode Character Database (UCD) which defines character",
+          "source_id": 244707787091437
+         }
+        ]
+       },
+       {
+        "text": "La normalización garantiza uniformidad en la representación de caracteres canónicos y de compatibilidad, pero no convierte diferencias semánticas o contextuales en equivalencias. Incluso tras normalizar, dos cadenas que parecen iguales al lector pueden seguir sin compararse como iguales por detalles sintácticos o porque su significado difiere (p. ej. palabras con o sin tilde que cambian sentido).",
+        "heading": "Qué normalización resuelve y qué no",
+        "evidence": [
+         {
+          "quote": "composition. Even if two unicode strings are normalized and look the same to a human reader, if one has combining characters and the other doesn’t, they may not compare equal. unicodedata. is_normalized ( form , unistr ) ¶ Return whether the Unicode string unistr is in the normal form form . Valid values for form are ‘NFC’, ‘NFKC’, ‘NFD’, and ‘NFKD’. Added in version 3.8. In",
+          "source_id": 244707787091437
+         },
+         {
+          "quote": "form. Normal form C (NFC) first applies a canonical decomposition, then composes pre-combined characters again. In addition to these two forms, there are two additional normal forms based on compatibility equivalence. In Unicode, certain characters are supported which normally would be unified with other characters. For example, U+2160 (ROMAN NUMERAL ONE) is really the same",
+          "source_id": 244707787091437
+         }
+        ]
+       },
+       {
+        "text": "1) Decide y documenta qué diferencias consideras irrelevantes (mayúsculas, espacios, compatibilidad Unicode) y aplica normalización apropiada. 2) Añade transformaciones controladas (mapas de abreviaturas, normalización de formatos numéricos/fechas) sólo con reglas verificadas. 3) Mantén tests que cubran ejemplos representativos; el ejemplo verificado incluye aserciones que detectan regresiones. 4) Reserva muestreo humano o reglas adicionales para casos donde el significado o el orden importen: la normalización no reemplaza la revisión semántica ni reglas de negocio.",
+        "heading": "Checklist antes de automatizar comparaciones",
+        "evidence": [
+         {
+          "quote": "defined. unicodedata. normalize ( form , unistr ) ¶ Return the normal form form for the Unicode string unistr . Valid values for form are ‘NFC’, ‘NFKC’, ‘NFD’, and ‘NFKD’. The Unicode standard defines various normalization forms of a Unicode string, based on the definition of canonical equivalence and compatibility equivalence. In Unicode, several characters can be expressed",
+          "source_id": 244707787091437
+         },
+         {
+          "quote": "equal. The == operator is always defined but for some object types (for example, class objects) is equivalent to is . The < , <= , > and >= operators are only defined where they make sense; for example, they raise a TypeError exception when one of the arguments is a complex number. Non-identical instances of a class normally compare as non-equal unless the class defines the",
+          "source_id": 17947676985423
+         }
+        ]
+       }
+      ]
+     },
+     "review": {
+      "checks": [
+       {
+        "supported": true,
+        "target_id": "title",
+        "fragment_ids": [
+         "e_120c3adc040f31f20876ca684c4daaf4",
+         "e_60893190fdf71b09ebbc53f14f6e8547",
+         "e_71136fb7b220679ce8debce04a230d05",
+         "e_b9d0a3d9d4d8175877d962a14b913024",
+         "e_f03f764d20f2b0ad9a3f9fc5a4d7dd61",
+         "e_f92504efa75aefcc3662a065f2a5d8d5"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "summary",
+        "fragment_ids": [
+         "e_120c3adc040f31f20876ca684c4daaf4",
+         "e_60893190fdf71b09ebbc53f14f6e8547",
+         "e_71136fb7b220679ce8debce04a230d05",
+         "e_b9d0a3d9d4d8175877d962a14b913024",
+         "e_f03f764d20f2b0ad9a3f9fc5a4d7dd61",
+         "e_f92504efa75aefcc3662a065f2a5d8d5"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p1.heading",
+        "fragment_ids": [
+         "e_b9d0a3d9d4d8175877d962a14b913024",
+         "e_f92504efa75aefcc3662a065f2a5d8d5"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p1.s1",
+        "fragment_ids": [
+         "e_b9d0a3d9d4d8175877d962a14b913024",
+         "e_f92504efa75aefcc3662a065f2a5d8d5"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p1.s2",
+        "fragment_ids": [
+         "e_b9d0a3d9d4d8175877d962a14b913024",
+         "e_f92504efa75aefcc3662a065f2a5d8d5"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p1.s3",
+        "fragment_ids": [
+         "e_b9d0a3d9d4d8175877d962a14b913024",
+         "e_71136fb7b220679ce8debce04a230d05"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p2.heading",
+        "fragment_ids": [
+         "e_60893190fdf71b09ebbc53f14f6e8547",
+         "e_b9d0a3d9d4d8175877d962a14b913024"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p2.s1",
+        "fragment_ids": [
+         "e_60893190fdf71b09ebbc53f14f6e8547",
+         "e_b9d0a3d9d4d8175877d962a14b913024"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p2.s2",
+        "fragment_ids": [
+         "test_f034ac1df06e92da76d9d82da3a3ab7bda8bd7e402340f80de3c4610dbc8f171",
+         "e_60893190fdf71b09ebbc53f14f6e8547"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p3.heading",
+        "fragment_ids": [
+         "e_71136fb7b220679ce8debce04a230d05",
+         "e_f03f764d20f2b0ad9a3f9fc5a4d7dd61"
+        ]
+       },
+       {
+        "supported": true,
+        "target_id": "p3.s1",
+        "fragment_ids": [
+         "e_71136fb7b220679ce8debce04a230d05",
+         "e_f03f764d20f2b0ad9a3f9fc5a4d7dd61"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p3.s2",
+        "fragment_ids": [
+         "e_71136fb7b220679ce8debce04a230d05",
+         "e_f03f764d20f2b0ad9a3f9fc5a4d7dd61"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p4.heading",
+        "fragment_ids": [
+         "e_120c3adc040f31f20876ca684c4daaf4",
+         "e_b9d0a3d9d4d8175877d962a14b913024"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p4.s1",
+        "fragment_ids": [
+         "e_120c3adc040f31f20876ca684c4daaf4",
+         "e_b9d0a3d9d4d8175877d962a14b913024"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p4.s2",
+        "fragment_ids": [
+         "e_120c3adc040f31f20876ca684c4daaf4",
+         "e_b9d0a3d9d4d8175877d962a14b913024"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p4.s3",
+        "fragment_ids": [
+         "e_120c3adc040f31f20876ca684c4daaf4",
+         "e_b9d0a3d9d4d8175877d962a14b913024"
+        ]
+       },
+       {
+        "supported": false,
+        "target_id": "p4.s4",
+        "fragment_ids": [
+         "e_120c3adc040f31f20876ca684c4daaf4",
+         "e_b9d0a3d9d4d8175877d962a14b913024"
+        ]
+       }
+      ],
+      "useful": false,
+      "natural": true,
+      "reasons": [
+       "Faltan comprobaciones de afirmaciones o evidencias citadas válidas. Revisar: p2.s1, p3.s2, p4.heading, p4.s1, p4.s2, p4.s3, p4.s4.",
+       "Faltan evidencias para varias afirmaciones prácticas claves. Por ejemplo, el texto recomienda usar casefold() y colapsar espacios, pero ninguno de los fragmentos proporcionados contiene literalmente la referencia a str.casefold() ni a la estrategia de colapsar espacios; hay que añadir la documentación de str.casefold() y/o fragmentos que muestren ejemplos de normalización combinada con casefold o manipulación de espacios.",
+       "El apartado 'El ejemplo verificado acompaña tests...' afirma cobertura concreta (caracteres de ancho completo y espacios múltiples). Esa cobertura sí está presente en el test verificado, pero el test no está referenciado entre los fragmentos iniciales para ese objetivo; incluya el fragmento del test verificado junto a la afirmación para que quede respaldada.",
+       "La frase 'Incluso tras normalizar, dos cadenas que parecen iguales al lector pueden seguir sin compararse como iguales por detalles sintácticos o porque su significado difiere (p. ej. palabras con o sin tilde que cambian sentido)' no está respaldada por las fuentes aportadas. Para mantenerla debe añadirse una referencia que ejemplifique diferencias semánticas persistentes tras normalizar (p. ej. documentación lingüística o ejemplos verificables), o reescribir la frase para limitarse a la observación técnica que sí aparece en la documentación.",
+       "Las cuatro entradas de la checklist contienen recomendaciones operacionales (documentar reglas irrelevantes, añadir transformaciones controladas, mantener tests, reservar muestreo humano). Estas prácticas son sensatas, pero no están respaldadas por los fragmentos de documentación técnica incluidos. Para publicar este checklist como verificado, incorpore fuentes adicionales (p. ej. guías de pruebas de software o secciones de la documentación que recomienden testing y muestreo humano) o marque las recomendaciones como opinión editorial no verificada.",
+       "Estructura: el borrador mezcla afirmaciones directamente respaldadas por la documentación de unicodedata (normalización y sus formas) con consejos prácticos que no tienen citas pertinentes. Para aprobarlo, se debe separar claramente lo que está documentado (con sus citas literales en evidence.quote) y lo que es recomendación del autor, añadiendo las referencias que respalden esas recomendaciones."
+      ],
+      "spanish": true,
+      "approved": false,
+      "original": true,
+      "supported": false,
+      "safe_topic": true,
+      "non_repetitive": true,
+      "well_structured": false,
+      "attribution_clear": true,
+      "no_invented_experience": true
+     }
+    }
+   ]
+  },
+  {
+   "engine": "news",
+   "lane_candidate_id": 33,
+   "candidate_id": 32,
+   "reason": "official_attribution_missing",
+   "policy": {
+    "kind": "news",
+    "candidate_id": 32,
+    "official_name": "Google",
+    "min_organizations": 1,
+    "verification_mode": "official_announcement",
+    "official_organization": "google"
+   },
+   "correction_feedback": {
+    "code": "insufficient_content",
+    "details": [],
+    "reasons": [
+     "Corrige el fallo determinista sin inventar evidencias."
+    ]
+   },
+   "versions": [
+    {
+     "draft": {
+      "slug": "que-anuncio-google-cloud-en-ia-este-mes",
+      "title": "Qué anunció Google Cloud en IA este mes",
+      "section": "actualidad",
+      "summary": "Google ha publicado un resumen mensual en su blog de Google Cloud sobre las novedades en IA para empresas: entre lo anunciado están la disponibilidad de Gemini 4 Argon en Google Cloud, nuevas opciones de despliegue para modelos Claude, acceso a modelos de OpenAI desde la plataforma, soluciones para.",
+      "paragraphs": [
+       {
+        "text": "El resumen proviene del blog oficial de Google Cloud y recoge las principales novedades del mes en productos, guías y lanzamientos relacionados con IA para empresas.",
+        "heading": "Fuente y alcance del anuncio",
+        "evidence": [
+         {
+          "quote": "AI & Machine Learning What Google Cloud announced in AI this month November 3, 2026 Andrea Morange Editor, Google Cloud Try Gemini today The front door to AI in the workplace Try now Editor’s note : Want to keep up with the latest from Google Cloud? Check back here for a monthly recap of our latest updates, announcements, resources, events, learning opportunities, and more.",
+          "source_id": 199970496641714
+         },
+         {
+          "quote": "This October, we took massive leaps forward in delivering flexible, open, and powerful enterprise AI solutions. From bringing Gemini 4 Argon to Google Cloud to expanding choice and flexibility, we’re giving organizations the tools they need to bring complex, multi-agent AI workflows into production safely. Here’s a quick look at the major milestones, expert insights, and",
+          "source_id": 199970496641714
+         }
+        ]
+       },
+       {
+        "text": "Entre las novedades, Google Cloud destaca la disponibilidad de Gemini 4 Argon en la plataforma, la expansión de opciones de despliegue para los modelos Claude, la incorporación de modelos de OpenAI en su oferta unificada de IA y el lanzamiento de Gemini para servicios gubernamentales en vista previa. Además, Google anuncia que Gemini Robotics Embodied Reasoning 2 (ER 2) está ahora disponible en Google Cloud para escenarios de robótica.",
+        "heading": "Principales lanzamientos destacados",
+        "evidence": [
+         {
+          "quote": "practical developer guides to read through and save. Top announcements Gemini 4 Argon available on Google Cloud, built to help solve your business’ hardest problems: We trained Argon to work with both depth and precision, which allows it to maintain context across long, multi-step tasks which are reinforced with strong domain expertise along the way. Whether your team is",
+          "source_id": 199970496641714
+         },
+         {
+          "quote": "running complex software builds, handling detailed financial and legal work, or deploying cybersecurity tools like CodeMender, Argon helps your teams maintain focus from start to finish. Expanding Claude availability and deployment choice on Google Cloud: We announced the general availability of an Anthropic-managed deployment option for Claude Models on Google Cloud. This",
+          "source_id": 199970496641714
+         },
+         {
+          "quote": "gives teams more choice in how they run their models, helping them consolidate AI workloads on Google Cloud alongside our existingGoogle-managed deployment option. Google Cloud expands model choice and flexibility, bringing OpenAI models to customers: Google Cloud is now the only hyperscale cloud provider offering access to all three leading closed source LLMs, alongside more",
+          "source_id": 199970496641714
+         }
+        ]
+       },
+       {
+        "text": "El artículo incluye además recursos para desarrolladores y empresas: guías prácticas para implementar aplicaciones en Gemini, herramientas de seguridad y detección de vulnerabilidades como CodeMender, y referencias a Google Antigravity y otras capacidades de plataforma pensadas para orquestar agentes y gestionar ciclos de vida de modelos.",
+        "heading": "Herramientas, guías y ecosistema",
+        "evidence": [
+         {
+          "quote": "can break down for visual, multi-step work, where every adjustment costs another slow chat turn. This guide takes you through implementation in Gemini. Four evaluation engineering lessons learned from building agent plugins : Here are four eval lessons we learned from building the new plugin that you can apply to your own builds. Who judges the judge? Three helpful ways to",
+          "source_id": 199970496641714
+         },
+         {
+          "quote": "fix software vulnerabilities with CodeMender : As adversarial AI threats accelerate attacks on code, security teams must counter them with machine-speed defenses that can automate code remediation and fight AI with AI. You can learn more about CodeMender and review the documentation here . Solve harder problems with AlphaEvolve, now available to everyone on Google Cloud :",
+          "source_id": 199970496641714
+         },
+         {
+          "quote": "management of Google Cloud — making it easier to simulate, evaluate, and deploy safe, adaptive physical AI at scale. Thought leadership (editor’s pick) A new gear: How startups are advancing robotics with Google AI: We marked a major milestone in physical AI with the launch of Gemini Robotics Embodied Reasoning 2 (ER 2) on the Gemini platform and AI Studio, bringing Google",
+          "source_id": 199970496641714
+         }
+        ]
+       }
+      ]
+     },
+     "validation_error": "insufficient_content",
+     "validation_details": []
+    },
+    {
+     "draft": {
+      "slug": "que-anuncio-google-cloud-en-ia-este-mes",
+      "title": "Qué anunció Google Cloud en IA este mes",
+      "section": "actualidad",
+      "summary": "Google Cloud publicó en su blog un resumen mensual de novedades en IA para empresas: entre lo anunciado figuran la disponibilidad de Gemini 4 Argon en Google Cloud, nuevas opciones de despliegue para modelos Claude, acceso a modelos de OpenAI desde la plataforma y la llegada de Gemini Robotics Embod",
+      "paragraphs": [
+       {
+        "text": "El resumen procede del blog oficial de Google Cloud y reúne las principales novedades del mes sobre productos, guías y lanzamientos relacionados con IA empresarial, presentadas como un recopilatorio mensual de anuncios y recursos.",
+        "heading": "Fuente y alcance del anuncio",
+        "evidence": [
+         {
+          "quote": "AI & Machine Learning What Google Cloud announced in AI this month November 3, 2026 Andrea Morange Editor, Google Cloud Try Gemini today The front door to AI in the workplace Try now Editor’s note : Want to keep up with the latest from Google Cloud? Check back here for a monthly recap of our latest updates, announcements, resources, events, learning opportunities, and more.",
+          "source_id": 199970496641714
+         },
+         {
+          "quote": "This October, we took massive leaps forward in delivering flexible, open, and powerful enterprise AI solutions. From bringing Gemini 4 Argon to Google Cloud to expanding choice and flexibility, we’re giving organizations the tools they need to bring complex, multi-agent AI workflows into production safely. Here’s a quick look at the major milestones, expert insights, and",
+          "source_id": 199970496641714
+         }
+        ]
+       },
+       {
+        "text": "Google Cloud destaca como anuncios principales la disponibilidad de Gemini 4 Argon en la plataforma, la ampliación de opciones de despliegue para los modelos Claude (incluida una opción gestionada por Anthropic), la inclusión de modelos de OpenAI en su catálogo unificado de IA y una vista previa de Gemini para servicios gubernamentales.",
+        "heading": "Principales lanzamientos destacados",
+        "evidence": [
+         {
+          "quote": "practical developer guides to read through and save. Top announcements Gemini 4 Argon available on Google Cloud, built to help solve your business’ hardest problems: We trained Argon to work with both depth and precision, which allows it to maintain context across long, multi-step tasks which are reinforced with strong domain expertise along the way. Whether your team is",
+          "source_id": 199970496641714
+         },
+         {
+          "quote": "running complex software builds, handling detailed financial and legal work, or deploying cybersecurity tools like CodeMender, Argon helps your teams maintain focus from start to finish. Expanding Claude availability and deployment choice on Google Cloud: We announced the general availability of an Anthropic-managed deployment option for Claude Models on Google Cloud. This",
+          "source_id": 199970496641714
+         },
+         {
+          "quote": "gives teams more choice in how they run their models, helping them consolidate AI workloads on Google Cloud alongside our existingGoogle-managed deployment option. Google Cloud expands model choice and flexibility, bringing OpenAI models to customers: Google Cloud is now the only hyperscale cloud provider offering access to all three leading closed source LLMs, alongside more",
+          "source_id": 199970496641714
+         }
+        ]
+       },
+       {
+        "text": "El artículo también enumera recursos para desarrolladores y empresas: herramientas de seguridad como CodeMender, agentes y utilidades para orquestar flujos multiagente, guías prácticas para implementar aplicaciones en Gemini y la disponibilidad en Google Cloud de Gemini Robotics Embodied Reasoning 2 (ER 2) para escenarios de robótica.",
+        "heading": "Herramientas, guías y ecosistema",
+        "evidence": [
+         {
+          "quote": "fix software vulnerabilities with CodeMender : As adversarial AI threats accelerate attacks on code, security teams must counter them with machine-speed defenses that can automate code remediation and fight AI with AI. You can learn more about CodeMender and review the documentation here . Solve harder problems with AlphaEvolve, now available to everyone on Google Cloud :",
+          "source_id": 199970496641714
+         },
+         {
+          "quote": "can break down for visual, multi-step work, where every adjustment costs another slow chat turn. This guide takes you through implementation in Gemini. Four evaluation engineering lessons learned from building agent plugins : Here are four eval lessons we learned from building the new plugin that you can apply to your own builds. Who judges the judge? Three helpful ways to",
+          "source_id": 199970496641714
+         },
+         {
+          "quote": "the systems agencies already run, and specialized partner agents, with governance running underneath it all. Gemini Robotics Embodied Reasoning 2 is now available on Google Cloud: For the first time, organizations can pair Google DeepMind’s latest embodied reasoning model for robotics with the enterprise-grade security, multi-agent orchestration, and end-to-end lifecycle",
+          "source_id": 199970496641714
+         }
+        ]
+       }
+      ]
+     },
+     "validation_error": "official_attribution_missing",
+     "validation_details": []
+    }
+   ]
+  },
+  {
+   "engine": "news",
+   "lane_candidate_id": 33,
+   "candidate_id": 33,
+   "reason": "editorial_style_rejected",
+   "policy": {
+    "kind": "news",
+    "candidate_id": 33,
+    "official_name": "NVIDIA",
+    "min_organizations": 1,
+    "verification_mode": "official_announcement",
+    "official_organization": "nvidia"
+   },
+   "correction_feedback": {
+    "code": "official_scope_requires_corroboration",
+    "details": [],
+    "reasons": [
+     "Corrige el fallo determinista sin inventar evidencias."
+    ]
+   },
+   "versions": [
+    {
+     "draft": {
+      "slug": "nvidia-physical-agentic-ai-ciudades",
+      "title": "NVIDIA anuncia despliegue de «Physical» y «Agentic AI» para ciudades",
+      "section": "actualidad",
+      "summary": "NVIDIA comunica la expansión de su catálogo de soluciones de \"Physical AI\" y \"Agentic AI\" para que ciudades y organizaciones locales construyan servicios basados en visión, agentes conversacionales y gemelos digitales sobre infraestructura compartida y acelerada por GPU.",
+      "paragraphs": [
+       {
+        "text": "NVIDIA publicó en su blog corporativo una entrada que describe la expansión mundial de iniciativas de \"Physical AI\" y \"Agentic AI\" orientadas a ciudades, con ejemplos de despliegues, socios y referencias a herramientas como Nemotron, Omniverse, Cosmos y Metropolis.",
+        "heading": "Fuente y alcance del anuncio",
+        "evidence": [
+         {
+          "quote": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action — for planning, maintenance and public services — remains a challenge. Physical and agentic AI offer new ways to close that gap, from digital twins for infrastructure planning to vision and service agents, while keeping local governments in control of how",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "sensitive data is processed and used. Building on initiatives announced at GTC Berlin , NVIDIA and its partners are expanding physical AI and AI agents to cities worldwide. Shared computing infrastructure gives city departments, neighboring municipalities and local developers a common foundation to build on — extending services without each organization having to acquire and",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "Paolo Guglielmini will deliver a keynote address followed by a panel moderated by Charbel Aoun, director of smart city and spaces for EMEA at NVIDIA. Categories: AI Tags: Agentic AI AI Factory Artificial Intelligence Cosmos Customer Stories Digital Twin Events Metropolis Nemotron NVIDIA Blueprints Omniverse Open Source Physical AI Public Sector Smart Spaces Sovereign AI",
+          "source_id": 146503853682635
+         }
+        ]
+       },
+       {
+        "text": "La propuesta combina infraestructuras compartidas aceleradas por GPU con modelos y bibliotecas —NVIDIA Nemotron, Cosmos, Omniverse y Metropolis— para convertir flujos de datos urbanos (cámaras, sensores y sistemas operativos) en servicios como agentes de atención ciudadana, análisis de vídeo y gemelos digitales para planificación y operación.",
+        "heading": "Qué propone NVIDIA y por qué importa",
+        "evidence": [
+         {
+          "quote": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action — for planning, maintenance and public services — remains a challenge. Physical and agentic AI offer new ways to close that gap, from digital twins for infrastructure planning to vision and service agents, while keeping local governments in control of how",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "manage resources of their own. Agentic AI for Cities From resident services to vision agents, cities are adopting NVIDIA agentic AI to deliver faster, more responsive public services. City teams don’t need a massive infrastructure investment to get started building these AI services: depending on the workload, NVIDIA RTX workstations or a small GPU system may be enough. In",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "Metropolis Blueprint for video search and summarization (VSS) to transform existing camera streams into actionable intelligence for mobility, safety and event response — using the same infrastructure across several city functions. In Malaysia , ITMAX bundles infrastructure and agentic AI applications into long-term managed services for cities, including for traffic management.",
+          "source_id": 146503853682635
+         }
+        ]
+       },
+       {
+        "text": "NVIDIA menciona implementaciones y socios concretos: 1) proyectos en España que combinan modelos de código abierto y Nemotron para agentes de atención municipal; 2) un caso en el área de la Bahía de San Francisco con Cosmos, Nemotron y Omniverse para agentes conversacionales en espacios públicos; y 3) en Wrocław y Malasia, integraciones de Metropolis y soluciones gestionadas para visión urbana y gestión del tráfico.",
+        "heading": "Ejemplos citados por NVIDIA",
+        "evidence": [
+         {
+          "quote": "Spain, 1MillionBot combines open source ALIA models trained at the Barcelona Supercomputing Center with NVIDIA Nemotron and other models in resident-service agents for Madrid Digital (Comunidad de Madrid), Administració Oberta de Catalunya and 150+ deployments across Spain, handling municipal procedures, appointment requests, urban-planning incidents and service inquiries. In",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "the San Francisco Bay Area , LiveX is bringing its AI City vision to life with NVIDIA Cosmos world models and Nemotron open models, and Omniverse and Metropolis libraries on NVIDIA RTX PRO GPUs. The interactive, conversational AI hosts understand people’s needs, provide answers and take action, and can be tailored to local languages and service needs in airports, hospitals,",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "Metropolis Blueprint for video search and summarization (VSS) to transform existing camera streams into actionable intelligence for mobility, safety and event response — using the same infrastructure across several city functions. In Malaysia , ITMAX bundles infrastructure and agentic AI applications into long-term managed services for cities, including for traffic management.",
+          "source_id": 146503853682635
+         }
+        ]
+       },
+       {
+        "text": "El comunicado atribuye efectos operativos específicos: visión por vídeo para búsqueda y resumen, agentes residentes que gestionan trámites y citas, y gemelos digitales para acelerar iteraciones de diseño urbano. También se citan métricas y objetivos de escalado por parte de proveedores (por ejemplo, soporte a decenas de miles de cámaras y reducciones de tiempo en simulaciones), consignadas como declaraciones de los socios y NVIDIA.",
+        "heading": "Casos de uso y resultados declarados",
+        "evidence": [
+         {
+          "quote": "local events and other public spaces. Vision AI agents can turn existing city camera feeds into operational insights, helping teams identify mobility and safety issues and coordinate emergency responses across city services. In Wrocław, Poland , K2K is building shared AI infrastructure using NVIDIA accelerated computing, NVIDIA Cosmos world reasoning models, and NVIDIA",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "Built with reference to Cosmos, Nemotron and the Metropolis VSS blueprint, ITMAX’s SamurAI V2 vision agents are scaling on NVIDIA RTX PRO 6000 GPUs to support 17,000+ cameras by 2027. ITMAX integrates TeraSim, an open source traffic simulation platform from Laplace Intelligence , to test signal timing, reducing peak-hour corridor travel times by up to 26%. Plan and Operate",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "performance. In Taiwan , Linker Vision and Dutch architecture firm MVRDV are using NVIDIA Omniverse and Nemotron to build environmental, social and governance agents that can assess the environmental impact of various urban planning scenarios, simulating 15-year outcomes of an urban forest canopy in 10 minutes — increasing design iteration speed from two weeks per iteration to",
+          "source_id": 146503853682635
+         }
+        ]
+       },
+       {
+        "text": "NVIDIA plantea que la infraestructura compartida y los servicios gestionados permiten a departamentos municipales y desarrolladores locales empezar sin grandes inversiones directas en hardware, aprovechando desde estaciones RTX hasta sistemas GPU más pequeños según la carga de trabajo.",
+        "heading": "Cómo afecta a gobiernos locales y desarrolladores",
+        "evidence": [
+         {
+          "quote": "sensitive data is processed and used. Building on initiatives announced at GTC Berlin , NVIDIA and its partners are expanding physical AI and AI agents to cities worldwide. Shared computing infrastructure gives city departments, neighboring municipalities and local developers a common foundation to build on — extending services without each organization having to acquire and",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "manage resources of their own. Agentic AI for Cities From resident services to vision agents, cities are adopting NVIDIA agentic AI to deliver faster, more responsive public services. City teams don’t need a massive infrastructure investment to get started building these AI services: depending on the workload, NVIDIA RTX workstations or a small GPU system may be enough. In",
+          "source_id": 146503853682635
+         }
+        ]
+       },
+       {
+        "text": "El texto es un anuncio oficial de NVIDIA y atribuye a la empresa y sus socios los beneficios, métricas y previsiones citadas; la publicación no presenta pruebas independientes ni auditorías externas en el propio comunicado. No hay en el anuncio un análisis público de costes totales, impacto en privacidad más allá de mención al control local de datos, ni evaluaciones comparativas frente a otras soluciones.",
+        "heading": "Límites y qué no está verificado",
+        "evidence": [
+         {
+          "quote": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action — for planning, maintenance and public services — remains a challenge. Physical and agentic AI offer new ways to close that gap, from digital twins for infrastructure planning to vision and service agents, while keeping local governments in control of how",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "sensitive data is processed and used. Building on initiatives announced at GTC Berlin , NVIDIA and its partners are expanding physical AI and AI agents to cities worldwide. Shared computing infrastructure gives city departments, neighboring municipalities and local developers a common foundation to build on — extending services without each organization having to acquire and",
+          "source_id": 146503853682635
+         }
+        ]
+       },
+       {
+        "text": "NVIDIA indica que ampliará la difusión de estas iniciativas en el Smart City Expo World Congress (3–5 de noviembre en Barcelona), donde miembros de la compañía participarán en ponencias y paneles para exponer la estrategia y casos de uso.",
+        "heading": "Dónde se presentó y próximos pasos",
+        "evidence": [
+         {
+          "quote": "and training. BSC AI Factory also supports research and innovation for startups — spanning agriculture, medical imaging, knowledge access and speech services. Learn how NVIDIA and its ecosystem are bringing physical AI, agentic AI and local AI factories to cities worldwide at Smart City Expo World Congress, running Nov. 3-5 in Barcelona, where NVIDIA Vice President of EMEA",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "Paolo Guglielmini will deliver a keynote address followed by a panel moderated by Charbel Aoun, director of smart city and spaces for EMEA at NVIDIA. Categories: AI Tags: Agentic AI AI Factory Artificial Intelligence Cosmos Customer Stories Digital Twin Events Metropolis Nemotron NVIDIA Blueprints Omniverse Open Source Physical AI Public Sector Smart Spaces Sovereign AI",
+          "source_id": 146503853682635
+         }
+        ]
+       }
+      ]
+     },
+     "validation_error": "official_scope_requires_corroboration",
+     "validation_details": []
+    },
+    {
+     "draft": {
+      "slug": "nvidia-physical-agentic-ai-ciudades",
+      "title": "NVIDIA anuncia despliegue de “Physical” y “Agentic AI” para ciudades",
+      "section": "actualidad",
+      "summary": "NVIDIA publicó un comunicado en su blog oficial sobre la expansión mundial de iniciativas de “Physical AI” y “Agentic AI” para ciudades.",
+      "paragraphs": [
+       {
+        "text": "NVIDIA publicó en su blog corporativo una entrada que explica su estrategia para llevar soluciones de “Physical AI” y “Agentic AI” a ciudades de todo el mundo, mostrando socios, ejemplos de despliegue y referencias a tecnologías propias y del ecosistema.",
+        "heading": "Fuente y alcance del anuncio",
+        "evidence": [
+         {
+          "quote": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action — for planning, maintenance and public services — remains a challenge. Physical and agentic AI offer new ways to close that gap, from digital twins for infrastructure planning to vision and service agents, while keeping local governments in control of how",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "Paolo Guglielmini will deliver a keynote address followed by a panel moderated by Charbel Aoun, director of smart city and spaces for EMEA at NVIDIA. Categories: AI Tags: Agentic AI AI Factory Artificial Intelligence Cosmos Customer Stories Digital Twin Events Metropolis Nemotron NVIDIA Blueprints Omniverse Open Source Physical AI Public Sector Smart Spaces Sovereign AI",
+          "source_id": 146503853682635
+         }
+        ]
+       },
+       {
+        "text": "La nota plantea que combinar infraestructuras compartidas aceleradas por GPU con modelos y bibliotecas (Nemotron, Cosmos, Omniverse, Metropolis) puede convertir flujos urbanos —cámaras, sensores y sistemas operativos— en servicios como agentes de atención a residentes, análisis de vídeo y gemelos digitales para planificación y operación.",
+        "heading": "Qué propone NVIDIA y por qué lo presenta como importante",
+        "evidence": [
+         {
+          "quote": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action — for planning, maintenance and public services — remains a challenge. Physical and agentic AI offer new ways to close that gap, from digital twins for infrastructure planning to vision and service agents, while keeping local governments in control of how",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "sensitive data is processed and used. Building on initiatives announced at GTC Berlin , NVIDIA and its partners are expanding physical AI and AI agents to cities worldwide. Shared computing infrastructure gives city departments, neighboring municipalities and local developers a common foundation to build on — extending services without each organization having to acquire and",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "the San Francisco Bay Area , LiveX is bringing its AI City vision to life with NVIDIA Cosmos world models and Nemotron open models, and Omniverse and Metropolis libraries on NVIDIA RTX PRO GPUs. The interactive, conversational AI hosts understand people’s needs, provide answers and take action, and can be tailored to local languages and service needs in airports, hospitals,",
+          "source_id": 146503853682635
+         }
+        ]
+       },
+       {
+        "text": "El comunicado recoge casos y socios concretos: implementaciones en España que combinan modelos de código abierto con Nemotron para agentes municipales; un proyecto en el área de la Bahía de San Francisco que usa Cosmos, Nemotron y Omniverse; y despliegues en Wrocław y Malasia que integran Metropolis y servicios gestionados para visión urbana y gestión del tráfico.",
+        "heading": "Ejemplos citados por NVIDIA",
+        "evidence": [
+         {
+          "quote": "Spain, 1MillionBot combines open source ALIA models trained at the Barcelona Supercomputing Center with NVIDIA Nemotron and other models in resident-service agents for Madrid Digital (Comunidad de Madrid), Administració Oberta de Catalunya and 150+ deployments across Spain, handling municipal procedures, appointment requests, urban-planning incidents and service inquiries. In",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "the San Francisco Bay Area , LiveX is bringing its AI City vision to life with NVIDIA Cosmos world models and Nemotron open models, and Omniverse and Metropolis libraries on NVIDIA RTX PRO GPUs. The interactive, conversational AI hosts understand people’s needs, provide answers and take action, and can be tailored to local languages and service needs in airports, hospitals,",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "Metropolis Blueprint for video search and summarization (VSS) to transform existing camera streams into actionable intelligence for mobility, safety and event response — using the same infrastructure across several city functions. In Malaysia , ITMAX bundles infrastructure and agentic AI applications into long-term managed services for cities, including for traffic management.",
+          "source_id": 146503853682635
+         }
+        ]
+       },
+       {
+        "text": "NVIDIA y sus socios describen usos como indexado y resumen de vídeo para movilidad y seguridad, agentes conversacionales para trámites municipales y gemelos digitales para acelerar iteraciones de diseño. El comunicado incluye métricas y objetivos de escalado aportados por socios (por ejemplo, soporte a decenas de miles de cámaras y reducciones declaradas en tiempos de simulación).",
+        "heading": "Casos de uso y resultados consignados en el anuncio",
+        "evidence": [
+         {
+          "quote": "local events and other public spaces. Vision AI agents can turn existing city camera feeds into operational insights, helping teams identify mobility and safety issues and coordinate emergency responses across city services. In Wrocław, Poland , K2K is building shared AI infrastructure using NVIDIA accelerated computing, NVIDIA Cosmos world reasoning models, and NVIDIA",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "Built with reference to Cosmos, Nemotron and the Metropolis VSS blueprint, ITMAX’s SamurAI V2 vision agents are scaling on NVIDIA RTX PRO 6000 GPUs to support 17,000+ cameras by 2027. ITMAX integrates TeraSim, an open source traffic simulation platform from Laplace Intelligence , to test signal timing, reducing peak-hour corridor travel times by up to 26%. Plan and Operate",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "performance. In Taiwan , Linker Vision and Dutch architecture firm MVRDV are using NVIDIA Omniverse and Nemotron to build environmental, social and governance agents that can assess the environmental impact of various urban planning scenarios, simulating 15-year outcomes of an urban forest canopy in 10 minutes — increasing design iteration speed from two weeks per iteration to",
+          "source_id": 146503853682635
+         }
+        ]
+       },
+       {
+        "text": "NVIDIA indica que la infraestructura compartida y los servicios gestionados permiten a departamentos municipales y desarrolladores locales empezar sin grandes inversiones en hardware, aprovechando desde estaciones RTX hasta sistemas GPU pequeños según la carga de trabajo.",
+        "heading": "Cómo afecta a gobiernos locales y desarrolladores",
+        "evidence": [
+         {
+          "quote": "manage resources of their own. Agentic AI for Cities From resident services to vision agents, cities are adopting NVIDIA agentic AI to deliver faster, more responsive public services. City teams don’t need a massive infrastructure investment to get started building these AI services: depending on the workload, NVIDIA RTX workstations or a small GPU system may be enough. In",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "sensitive data is processed and used. Building on initiatives announced at GTC Berlin , NVIDIA and its partners are expanding physical AI and AI agents to cities worldwide. Shared computing infrastructure gives city departments, neighboring municipalities and local developers a common foundation to build on — extending services without each organization having to acquire and",
+          "source_id": 146503853682635
+         }
+        ]
+       },
+       {
+        "text": "El texto es un anuncio oficial: atribuye a NVIDIA y a sus socios los beneficios, métricas y previsiones que cita. No presenta pruebas independientes ni auditorías en el propio comunicado; tampoco ofrece un desglose público de costes totales ni evaluaciones externas sobre privacidad o comparativas frente a otras soluciones.",
+        "heading": "Límites y qué no verifica el comunicado",
+        "evidence": [
+         {
+          "quote": "Cities generate enormous amounts of data from cameras, sensors and operational systems, but turning it into useful action — for planning, maintenance and public services — remains a challenge. Physical and agentic AI offer new ways to close that gap, from digital twins for infrastructure planning to vision and service agents, while keeping local governments in control of how",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "sensitive data is processed and used. Building on initiatives announced at GTC Berlin , NVIDIA and its partners are expanding physical AI and AI agents to cities worldwide. Shared computing infrastructure gives city departments, neighboring municipalities and local developers a common foundation to build on — extending services without each organization having to acquire and",
+          "source_id": 146503853682635
+         }
+        ]
+       },
+       {
+        "text": "NVIDIA señala que ampliará la difusión de estas iniciativas en el Smart City Expo World Congress (3–5 de noviembre en Barcelona), donde miembros de la compañía participarán en ponencias y paneles para exponer la estrategia y casos de uso.",
+        "heading": "Dónde se presentó y próximos pasos",
+        "evidence": [
+         {
+          "quote": "and training. BSC AI Factory also supports research and innovation for startups — spanning agriculture, medical imaging, knowledge access and speech services. Learn how NVIDIA and its ecosystem are bringing physical AI, agentic AI and local AI factories to cities worldwide at Smart City Expo World Congress, running Nov. 3-5 in Barcelona, where NVIDIA Vice President of EMEA",
+          "source_id": 146503853682635
+         },
+         {
+          "quote": "Paolo Guglielmini will deliver a keynote address followed by a panel moderated by Charbel Aoun, director of smart city and spaces for EMEA at NVIDIA. Categories: AI Tags: Agentic AI AI Factory Artificial Intelligence Cosmos Customer Stories Digital Twin Events Metropolis Nemotron NVIDIA Blueprints Omniverse Open Source Physical AI Public Sector Smart Spaces Sovereign AI",
+          "source_id": 146503853682635
+         }
+        ]
+       }
+      ]
+     },
+     "validation_error": "editorial_style_rejected",
+     "validation_details": [
+      {
+       "code": "oversegmented",
+       "message": "Agrupa los apartados breves relacionados en menos secciones con desarrollo suficiente."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

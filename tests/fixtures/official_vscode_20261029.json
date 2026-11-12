@@ -1,0 +1,292 @@
+{
+  "source": {
+    "id": 165153005830252,
+    "url": "https://blogs.microsoft.com/blog/2026/10/28/introducing-the-microsoft-copilot-harness-unlocking-the-potential-of-truly-multi-model-agentic-work/",
+    "text": "If you want to compete, you need to be multi-model. And if you want to take advantage of everything that different AI models have to offer, you need a great harness. But building one that works seamlessly across multiple models and surfaces is incredibly hard. You need to solve for performance, quality, and cost. And then you have to maintain it, which is even harder. Luckily, the GitHub engineering team built a best-in-class, truly multi-model harness , which we’ve adopted company-wide. The Microsoft Copilot harness powers Copilot Code, Copilot Studio, the GitHub Copilot app, the CLI, VS Code, and more. And today, we’re making that harness available through Microsoft Foundry . That gives developers and enterprise customers a fully managed way to build agents that reason, use tools, and complete complex, long-running tasks. You get the right model for the job without switching the harness or the rest of your tech stack. That frees up your time, energy, and resources to focus on your bottom line. What’s a harness, and why is it hard? If the model supplies the intelligence, the harness is everything around the model. It’s the orchestration layer that gives an agent the right instructions, context, execution environment, and controls to accomplish meaningful work. And a harness worth its salt has support for open standards like MCP and agent skills, as well as agent plugins. This is a fast-moving space. A frontier model today might fall behind tomorrow. And building your own harness or model router to keep up can be painful and slow. Now, you can build on the same harness Microsoft and GitHub ship in our own products, and you don’t have to maintain it. We invest in science and engineering work to continually improve and evolve the harness and ensure high-quality, efficient, and low-cost performance across a range of models and workloads. The benefits compound for us and our customers who use the harness to build and run their own agents. Improve the harness, and every surface it touches benefits. Born in GitHub, battle-tested at enterprise scale The Copilot harness was built by the same GitHub engineers behind new technologies like our multi-model orchestration . And those technologies are only possible because we built our own harness. Designed to be fast, token-efficient, and predictable, it was our original, high-quality harness. And it had the highest satisfaction among our most demanding audience: developers. That’s why we’re standardizing all of our Copilot experiences on the strongest foundation possible. The harness is built to perform across model families , with 20+ frontier models plus bring your own key, so you can use the right model for the right job. Instead of doing the work to keep up with and eval new models, lean on us to intelligently route work to the right model or models based on the task. Our harness is flexible and configurable to any type of app, agent, or service. We recently ported the harness runtime to Rust , which has resulted in industry-leading performance and reductions in both session overhead and time-to-first token. And because the Copilot harness powers surfaces across Microsoft, it’s battle-tested and proven performant at the scale of millions of users and hundreds of real-world use cases. A unified harness lets us ship faster, learn faster, and improve Copilot over time. And because the agents you build in Foundry can run on the same harness we’ve adopted across Microsoft, our continuous harness improvements will benefit your agents, too. Try it yourself The SDK is available to download , or you can run the harness in the cloud, all managed by Foundry. Our platforms remain open and interoperable, so you can continue to bring in any harness and framework you want, too. With the Copilot harness, Microsoft runs the agent loop and sandbox, with governance and optimization built in from day one. You bring the instructions, skills, tools, and model choice. This is an important step towards our vision of a stronger system around the model that preserves choice. It represents the best of GitHub, brought to the Microsoft platform and beyond. We’ll keep pushing the harness forward, so you can focus on what only you can build. Tags: GitHub , GitHub Copilot , Microsoft Copilot , Microsoft Foundry",
+    "title": "Introducing the Microsoft Copilot harness: Unlocking the potential of truly multi-model agentic work",
+    "language": "en",
+    "platform": "blogs.microsoft.com",
+    "fragments": [
+      {
+        "end": 379,
+        "text": "If you want to compete, you need to be multi-model. And if you want to take advantage of everything that different AI models have to offer, you need a great harness. But building one that works seamlessly across multiple models and surfaces is incredibly hard. You need to solve for performance, quality, and cost. And then you have to maintain it, which is even harder. Luckily,",
+        "start": 0,
+        "fragment_id": "e_f38fcf5adb3ed4dfbc6c850df066c4d6"
+      },
+      {
+        "end": 756,
+        "text": "the GitHub engineering team built a best-in-class, truly multi-model harness , which we’ve adopted company-wide. The Microsoft Copilot harness powers Copilot Code, Copilot Studio, the GitHub Copilot app, the CLI, VS Code, and more. And today, we’re making that harness available through Microsoft Foundry . That gives developers and enterprise customers a fully managed way to",
+        "start": 380,
+        "fragment_id": "e_94faef6e06b690fc86bbb1276b9ff45b"
+      },
+      {
+        "end": 1132,
+        "text": "build agents that reason, use tools, and complete complex, long-running tasks. You get the right model for the job without switching the harness or the rest of your tech stack. That frees up your time, energy, and resources to focus on your bottom line. What’s a harness, and why is it hard? If the model supplies the intelligence, the harness is everything around the model.",
+        "start": 757,
+        "fragment_id": "e_08aa00e2733f19f05a3563a8eefe6261"
+      },
+      {
+        "end": 1507,
+        "text": "It’s the orchestration layer that gives an agent the right instructions, context, execution environment, and controls to accomplish meaningful work. And a harness worth its salt has support for open standards like MCP and agent skills, as well as agent plugins. This is a fast-moving space. A frontier model today might fall behind tomorrow. And building your own harness or",
+        "start": 1133,
+        "fragment_id": "e_70d7f7d3c2e4f9551847d00ae206ecd8"
+      },
+      {
+        "end": 1879,
+        "text": "model router to keep up can be painful and slow. Now, you can build on the same harness Microsoft and GitHub ship in our own products, and you don’t have to maintain it. We invest in science and engineering work to continually improve and evolve the harness and ensure high-quality, efficient, and low-cost performance across a range of models and workloads. The benefits",
+        "start": 1508,
+        "fragment_id": "e_58c6c7724865bbacd2eeb2c551b42fa9"
+      },
+      {
+        "end": 2256,
+        "text": "compound for us and our customers who use the harness to build and run their own agents. Improve the harness, and every surface it touches benefits. Born in GitHub, battle-tested at enterprise scale The Copilot harness was built by the same GitHub engineers behind new technologies like our multi-model orchestration . And those technologies are only possible because we built",
+        "start": 1880,
+        "fragment_id": "e_d63e7b353b2e015449f452a67d6b3f44"
+      },
+      {
+        "end": 2635,
+        "text": "our own harness. Designed to be fast, token-efficient, and predictable, it was our original, high-quality harness. And it had the highest satisfaction among our most demanding audience: developers. That’s why we’re standardizing all of our Copilot experiences on the strongest foundation possible. The harness is built to perform across model families , with 20+ frontier models",
+        "start": 2257,
+        "fragment_id": "e_d5a95d24f9254dd8fbaf79fc3d4b53e0"
+      },
+      {
+        "end": 3011,
+        "text": "plus bring your own key, so you can use the right model for the right job. Instead of doing the work to keep up with and eval new models, lean on us to intelligently route work to the right model or models based on the task. Our harness is flexible and configurable to any type of app, agent, or service. We recently ported the harness runtime to Rust , which has resulted in",
+        "start": 2636,
+        "fragment_id": "e_b1f06d341ad568da67b19b352c416ba1"
+      },
+      {
+        "end": 3391,
+        "text": "industry-leading performance and reductions in both session overhead and time-to-first token. And because the Copilot harness powers surfaces across Microsoft, it’s battle-tested and proven performant at the scale of millions of users and hundreds of real-world use cases. A unified harness lets us ship faster, learn faster, and improve Copilot over time. And because the agents",
+        "start": 3012,
+        "fragment_id": "e_70783000679289584a0314a73cdb31db"
+      },
+      {
+        "end": 3768,
+        "text": "you build in Foundry can run on the same harness we’ve adopted across Microsoft, our continuous harness improvements will benefit your agents, too. Try it yourself The SDK is available to download , or you can run the harness in the cloud, all managed by Foundry. Our platforms remain open and interoperable, so you can continue to bring in any harness and framework you want,",
+        "start": 3392,
+        "fragment_id": "e_6999322396b5638345eafecb5186d8f3"
+      },
+      {
+        "end": 4145,
+        "text": "too. With the Copilot harness, Microsoft runs the agent loop and sandbox, with governance and optimization built in from day one. You bring the instructions, skills, tools, and model choice. This is an important step towards our vision of a stronger system around the model that preserves choice. It represents the best of GitHub, brought to the Microsoft platform and beyond.",
+        "start": 3769,
+        "fragment_id": "e_33fd8a4ce53fbcce97b7adbc18d49ec2"
+      },
+      {
+        "end": 4300,
+        "text": "We’ll keep pushing the harness forward, so you can focus on what only you can build. Tags: GitHub , GitHub Copilot , Microsoft Copilot , Microsoft Foundry",
+        "start": 4146,
+        "fragment_id": "e_5217c2f5248e9981bc724fd8302a5dfc"
+      }
+    ],
+    "published": "2026-10-28T16:51:35+00:00",
+    "references": [
+      "https://blogs.microsoft.com/blog/2026/10/28/introducing-the-microsoft-copilot-harness-unlocking-the-potential-of-truly-multi-model-agentic-work/",
+      "https://www.microsoft.com/en-us/store/b/business",
+      "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+      "https://www.microsoft.com/en-us/store/b/virtualreality",
+      "https://www.microsoft.com/en-us/store/b/certified-refurbished-products",
+      "https://www.microsoft.com/en-us/store/b/microsoft-trade-in",
+      "https://www.microsoft.com/en-us/ai",
+      "https://www.microsoft.com/en-us/security",
+      "https://www.microsoft.com/en-us/dynamics-365",
+      "https://www.microsoft.com/en-us/microsoft-365/business",
+      "https://www.microsoft.com/en-us/power-platform",
+      "https://www.microsoft.com/en-us/sovereignty",
+      "https://www.microsoft.com/en-us/download",
+      "https://www.microsoft.com/en-us/sitemap",
+      "https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry",
+      "https://blogs.microsoft.com/blog/tag/github-copilot/",
+      "https://blogs.microsoft.com/blog/tag/microsoft-copilot/",
+      "https://blogs.microsoft.com/blog/tag/microsoft-foundry/",
+      "https://www.microsoft.com/en-us/surface/devices/surface-laptop-ultra",
+      "https://www.microsoft.com/en-us/surface/devices/surface-rtx-spark-dev-box",
+      "https://www.microsoft.com/en-us/copilot",
+      "https://www.microsoft.com/en-us/microsoft-products-and-apps",
+      "https://www.microsoft.com/en-us/windows/apps-for-windows",
+      "https://www.microsoft.com/en-us/store/b/order-tracking",
+      "https://www.microsoft.com/en-us/store/b/why-microsoft-store",
+      "https://www.microsoft.com/en-us/store/b/payment-financing-options",
+      "https://www.microsoft.com/en-us/education",
+      "https://www.microsoft.com/en-us/education/devices/overview",
+      "https://www.microsoft.com/en-us/education/products/teams",
+      "https://www.microsoft.com/en-us/education/products/microsoft-365",
+      "https://www.microsoft.com/en-us/store/b/education",
+      "https://www.microsoft.com/en-us/education/ai-in-education",
+      "https://www.microsoft.com/en-us/privacy",
+      "https://www.microsoft.com/en-us/diversity/default",
+      "https://www.microsoft.com/en-us/accessibility",
+      "https://www.microsoft.com/en-us/corporate-responsibility/sustainability"
+    ],
+    "source_key": "s_9634ae3f006c02d97fbf6536",
+    "organization": "microsoft",
+    "retrieved_at": "2026-10-29T22:17:23.587243+00:00",
+    "evidence_role": "official_statement",
+    "content_origin": "https://blogs.microsoft.com/blog/2026/10/28/introducing-the-microsoft-copilot-harness-unlocking-the-potential-of-truly-multi-model-agentic-work/",
+    "content_sha256": "f641952c553a90352d712ab99b32d21a7a7e04a1d897f37691dd51ae1043235e",
+    "official_videos": [],
+    "evidence_version": 1,
+    "retrieval_method": "page",
+    "publication_index": null,
+    "announcement_scope": "Microsoft releases the Copilot harness via Microsoft Foundry Microsoft published 'Copilot harness' (multi-model agent harness) and made it available through Microsoft Foundry for developers/enterprises",
+    "published_precision": "instant",
+    "event_correspondence": {
+      "code": "event_match",
+      "basis": "copilot_harness",
+      "related": true,
+      "target_entities": [
+        "microsoft"
+      ],
+      "document_entities": [
+        "microsoft"
+      ]
+    },
+    "organization_verified": true,
+    "corroboration_required": false
+  },
+  "draft": {
+    "slug": "microsoft-presenta-copilot-harness-foundry",
+    "title": "Microsoft presenta el Copilot harness: disponible a través de Microsoft Foundry",
+    "section": "actualidad",
+    "summary": "Según Microsoft, la empresa anuncia el Microsoft Copilot harness —un 'harness' multi‑modelo concebido para orquestar agentes— y lo pone a disposición de desarrolladores y clientes empresariales a través de Microsoft Foundry, con SDK y opción gestionada en la nube.",
+    "paragraphs": [
+      {
+        "text": "Según Microsoft, un 'harness' es la capa de orquestación que entrega a un agente las instrucciones, el contexto, el entorno de ejecución y los controles necesarios para realizar tareas complejas; y el Copilot harness permite construir agentes que razonan, usan herramientas y completan tareas largas y de alto grado de dificultad.",
+        "heading": "Según Microsoft, qué es y para qué sirve el Copilot harness",
+        "evidence": [
+          {
+            "quote": "It’s the orchestration layer that gives an agent the right instructions, context, execution environment, and controls to accomplish meaningful work. And a harness worth its salt has support for open standards like MCP and agent skills, as well as agent plugins. This is a fast-moving space. A frontier model today might fall behind tomorrow. And building your own harness or",
+            "source_id": 165153005830252
+          },
+          {
+            "quote": "build agents that reason, use tools, and complete complex, long-running tasks. You get the right model for the job without switching the harness or the rest of your tech stack. That frees up your time, energy, and resources to focus on your bottom line. What’s a harness, and why is it hard? If the model supplies the intelligence, the harness is everything around the model.",
+            "source_id": 165153005830252
+          }
+        ]
+      },
+      {
+        "text": "Según Microsoft, el Copilot harness ya está disponible a través de Microsoft Foundry: los desarrolladores y clientes empresariales pueden usarlo como una solución totalmente gestionada o descargar el SDK para integrarlo en sus propias plataformas.",
+        "heading": "Según Microsoft, disponibilidad y vías de uso",
+        "evidence": [
+          {
+            "quote": "the GitHub engineering team built a best-in-class, truly multi-model harness , which we’ve adopted company-wide. The Microsoft Copilot harness powers Copilot Code, Copilot Studio, the GitHub Copilot app, the CLI, VS Code, and more. And today, we’re making that harness available through Microsoft Foundry . That gives developers and enterprise customers a fully managed way to",
+            "source_id": 165153005830252
+          },
+          {
+            "quote": "you build in Foundry can run on the same harness we’ve adopted across Microsoft, our continuous harness improvements will benefit your agents, too. Try it yourself The SDK is available to download , or you can run the harness in the cloud, all managed by Foundry. Our platforms remain open and interoperable, so you can continue to bring in any harness and framework you want,",
+            "source_id": 165153005830252
+          }
+        ]
+      },
+      {
+        "text": "Según Microsoft, el harness ofrece en su opinión la capacidad de elegir 'el modelo adecuado para el trabajo' sin cambiar la capa de orquestación ni el resto de la pila tecnológica, lo que, según la empresa, reduce la carga de mantenimiento y permite centrar recursos en el negocio.",
+        "heading": "Según Microsoft, beneficios clave que se anuncian",
+        "evidence": [
+          {
+            "quote": "build agents that reason, use tools, and complete complex, long-running tasks. You get the right model for the job without switching the harness or the rest of your tech stack. That frees up your time, energy, and resources to focus on your bottom line. What’s a harness, and why is it hard? If the model supplies the intelligence, the harness is everything around the model.",
+            "source_id": 165153005830252
+          },
+          {
+            "quote": "model router to keep up can be painful and slow. Now, you can build on the same harness Microsoft and GitHub ship in our own products, and you don’t have to maintain it. We invest in science and engineering work to continually improve and evolve the harness and ensure high-quality, efficient, and low-cost performance across a range of models and workloads. The benefits",
+            "source_id": 165153005830252
+          }
+        ]
+      },
+      {
+        "text": "Según Microsoft, el Copilot harness nació en GitHub, fue probado a escala empresarial y alimenta productos como Copilot Code, Copilot Studio, la app de GitHub Copilot y extensiones en VS Code; Microsoft afirma además que estandariza sus experiencias Copilot sobre esta fundación.",
+        "heading": "Según Microsoft, origen y pruebas a escala",
+        "evidence": [
+          {
+            "quote": "the GitHub engineering team built a best-in-class, truly multi-model harness , which we’ve adopted company-wide. The Microsoft Copilot harness powers Copilot Code, Copilot Studio, the GitHub Copilot app, the CLI, VS Code, and more. And today, we’re making that harness available through Microsoft Foundry . That gives developers and enterprise customers a fully managed way to",
+            "source_id": 165153005830252
+          },
+          {
+            "quote": "compound for us and our customers who use the harness to build and run their own agents. Improve the harness, and every surface it touches benefits. Born in GitHub, battle-tested at enterprise scale The Copilot harness was built by the same GitHub engineers behind new technologies like our multi-model orchestration . And those technologies are only possible because we built",
+            "source_id": 165153005830252
+          }
+        ]
+      },
+      {
+        "text": "Según Microsoft, el harness está diseñado para ser rápido, eficiente en tokens y predecible; según la empresa soporta más de 20 modelos frontier, admite 'bring your own key' y es configurable para distintos tipos de aplicaciones, agentes y servicios. Microsoft afirma también que ha portado el runtime a Rust para mejorar rendimiento y reducir latencias.",
+        "heading": "Según Microsoft, características técnicas y compatibilidad",
+        "evidence": [
+          {
+            "quote": "our own harness. Designed to be fast, token-efficient, and predictable, it was our original, high-quality harness. And it had the highest satisfaction among our most demanding audience: developers. That’s why we’re standardizing all of our Copilot experiences on the strongest foundation possible. The harness is built to perform across model families , with 20+ frontier models",
+            "source_id": 165153005830252
+          },
+          {
+            "quote": "plus bring your own key, so you can use the right model for the right job. Instead of doing the work to keep up with and eval new models, lean on us to intelligently route work to the right model or models based on the task. Our harness is flexible and configurable to any type of app, agent, or service. We recently ported the harness runtime to Rust , which has resulted in",
+            "source_id": 165153005830252
+          },
+          {
+            "quote": "industry-leading performance and reductions in both session overhead and time-to-first token. And because the Copilot harness powers surfaces across Microsoft, it’s battle-tested and proven performant at the scale of millions of users and hundreds of real-world use cases. A unified harness lets us ship faster, learn faster, and improve Copilot over time. And because the agents",
+            "source_id": 165153005830252
+          }
+        ]
+      },
+      {
+        "text": "Según Microsoft, la plataforma mantiene gobernanza y optimizaciones desde el primer día mientras permite a los clientes traer instrucciones, skills, herramientas y la elección del modelo; Microsoft afirma que sus plataformas siguen siendo abiertas e interoperables con otros harnesses y frameworks.",
+        "heading": "Según Microsoft, gobernanza y apertura",
+        "evidence": [
+          {
+            "quote": "too. With the Copilot harness, Microsoft runs the agent loop and sandbox, with governance and optimization built in from day one. You bring the instructions, skills, tools, and model choice. This is an important step towards our vision of a stronger system around the model that preserves choice. It represents the best of GitHub, brought to the Microsoft platform and beyond.",
+            "source_id": 165153005830252
+          },
+          {
+            "quote": "If you want to compete, you need to be multi-model. And if you want to take advantage of everything that different AI models have to offer, you need a great harness. But building one that works seamlessly across multiple models and surfaces is incredibly hard. You need to solve for performance, quality, and cost. And then you have to maintain it, which is even harder. Luckily,",
+            "source_id": 165153005830252
+          }
+        ]
+      }
+    ]
+  },
+  "policy": {
+    "kind": "news",
+    "scope": "Report only this organization’s announcement; attribute every claim, including summary. No third-party claims, rumors, accusations or objective comparisons.",
+    "selection": {
+      "version": 1,
+      "candidates": [
+        {
+          "title": "Introducing the Microsoft Copilot harness: Unlocking the potential of truly multi-model agentic work",
+          "reason": "verified_official_announcement",
+          "status": "selected",
+          "topic_id": "t_9634ae3f006c02d97fbf6536",
+          "relations": [],
+          "source_ids": [
+            165153005830252
+          ],
+          "organizations": [
+            "microsoft"
+          ],
+          "verification_mode": "official_announcement"
+        }
+      ],
+      "selected_topic_id": "t_9634ae3f006c02d97fbf6536",
+      "verification_mode": "official_announcement",
+      "excluded_documents": [],
+      "rejected_candidates": 0,
+      "selected_source_ids": [
+        165153005830252
+      ],
+      "selected_organizations": [
+        "microsoft"
+      ],
+      "generation_calls_avoided": 0,
+      "generation_calls_started": 0,
+      "candidate_drafts_suppressed": 0
+    },
+    "candidate_id": 29,
+    "official_name": "Microsoft",
+    "internal_links": [
+      [
+        "Más guías de actualidad",
+        "/actualidad"
+      ]
+    ],
+    "min_organizations": 1,
+    "verification_mode": "official_announcement",
+    "attribution_prefix": "Según Microsoft,",
+    "official_organization": "microsoft"
+  }
+}

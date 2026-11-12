@@ -1,0 +1,83 @@
+name: checks
+on:
+  push:
+  pull_request:
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r api/requirements-dev.txt
+      - run: python -m compileall -q api/app
+      - run: PYTHONPATH=api pytest -q tests
+  editorial-postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_HOST_AUTH_METHOD: trust
+          POSTGRES_DB: foroia_lanes_phase12
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres -d foroia_lanes_phase12"
+          --health-interval 5s --health-timeout 5s --health-retries 12
+      redis:
+        image: redis:7-alpine
+        ports: ['6379:6379']
+    env:
+      DATABASE_URL: postgresql+asyncpg://postgres@127.0.0.1:5432/foroia_lanes_phase12
+      REDIS_URL: redis://127.0.0.1:6379/0
+      FOROIA_ISOLATED_DB: lanes-phase12
+      OPENAI_API_KEY: ''
+      PYTHONPATH: api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r api/requirements-dev.txt
+      - run: alembic upgrade head
+        working-directory: api
+        env:
+          PYTHONPATH: .
+      - run: pytest tests/test_editorial_lanes_postgres.py -q -p no:cacheprovider
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm install --global npm@11.21.1
+      - run: npm ci --no-audit --no-fund
+      - run: npm run typecheck
+      - run: node ../tests/analytics-plugin.cjs
+      - run: node ../tests/analytics-attribution.cjs
+      - run: node ../tests/article-inline.cjs
+      - run: node ../tests/article-blocks.cjs
+      - run: node ../tests/seo-presentation.cjs
+      - run: node ../tests/research-status.cjs
+      - run: npm run build
+      - run: test -z "$(find .output -path '*/node-forge/package.json' -print -quit)"
+  editorial-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: docker build -t foroia-example-check ./api
+      - run: python scripts/verify_editorial_examples.py --image "$(docker image inspect --format '{{.Id}}' foroia-example-check)" --receipt deploy/receipts/verified-examples.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-editorial-examples
+          path: deploy/receipts/verified-examples.json

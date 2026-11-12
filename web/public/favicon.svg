@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Foro IA al Día</title>
+  <rect width="64" height="64" rx="12" fill="#242420"/>
+  <path d="M10 18h14v4h-4v21h4v4H10v-4h4V22h-4z" fill="#f8f7f3"/>
+  <path d="M37 18h6l12 29H43v-4h4l-2-5H33l-2 5h4v4H24v-4h3zm2 8-4 8h8z" fill="#f8f7f3" fill-rule="evenodd"/>
+  <circle cx="52" cy="11" r="4" fill="#d2795e"/>
+</svg>

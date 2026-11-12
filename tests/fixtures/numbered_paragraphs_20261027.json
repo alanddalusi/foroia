@@ -1,0 +1,13 @@
+{
+  "provenance": "Exact generated paragraph text from the failed real publication on 2026-10-27; numbered list labels were incorrectly treated as factual quantities. No private data.",
+  "paragraphs": [
+    {
+      "heading": "Reglas básicas que aplicaremos (y por qué)",
+      "text": "1) Limitar la entrada a la estructura esperada (una lista pequeña de dicts con claves conocidas) reduce el riesgo de consumir recursos con JSON malicioso. 2) Abrir el fichero CSV con newline='' y usar csv.DictWriter asegura que el módulo gestione correctamente los finales de línea y el orden de columnas. 3) Rechazar celdas que empiecen por caracteres usados por hojas de cálculo como operadores (=, +, -, @) evita que se evalúen como fórmulas al abrir el CSV."
+    },
+    {
+      "heading": "Resumen rápido de pasos",
+      "text": "1) Deserializa con json.loads/json.load y valida tipo y tamaño. 2) Comprueba que cada elemento es un dict con las claves exactas y valores string. 3) Rechaza filas con celdas que empiecen por = + - @ (tras eliminar espacios y marca BOM). 4) Abre el fichero con newline='' y escribe con csv.DictWriter usando fieldnames y extrasaction='raise'."
+    }
+  ]
+}

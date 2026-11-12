@@ -1,0 +1,122 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Tres artículos para revisión · Foro IA al Día</title><style>body{max-width:800px;margin:30px auto;padding:0 22px;background:#f8f7f3;color:#242420;font:18px/1.75 Georgia,serif}a{color:#8b302a}h1{font-size:34px;line-height:1.2}h2{font-size:25px;line-height:1.3}article{border-top:2px solid;padding-top:24px;margin-top:50px;scroll-margin-top:20px}pre{padding:18px;background:#eeece5;overflow:auto;font:14px/1.6 monospace}nav,.notice{font:15px/1.6 Arial,sans-serif}.notice{padding:16px;border:1px solid}a:focus-visible{outline:3px solid #8b302a;outline-offset:3px}p,li{overflow-wrap:anywhere}</style></head><body><p class="notice">REVISIÓN LOCAL · Tres borradores sin publicar. No hay analítica, anuncios ni conexión a la API del blog.</p><nav aria-label="Artículos"><a href="#01-resumir-pdf">Artículo 1</a> · <a href="#02-notebooklm-fuentes">Artículo 2</a> · <a href="#03-extraer-pdf-python">Artículo 3</a></nav><article id="01-resumir-pdf"><h1>Cómo resumir un PDF con IA y comprobar sus citas</h1>
+<p>Un resumen puede sonar convincente y cambiar un plazo, omitir una condición o añadir algo que el documento nunca dice. Para usarlo con confianza, necesitas poder volver desde cada afirmación importante hasta el fragmento que la respalda.</p>
+<p>Este procedimiento propone separar tres tareas: comprobar que el PDF se lee, pedir un resumen acotado y contrastar sus datos. No exige una herramienta concreta ni presupone que la IA vaya a acertar.</p>
+<h2>1. Empieza por un archivo que puedas revisar</h2>
+<p>Utiliza un documento propio o que tengas permiso para tratar. Para practicar, tienes el <a href="resources/taller-ejemplo.pdf">PDF de ejemplo de dos páginas</a>, creado expresamente para esta guía. Describe un taller ficticio: no es una convocatoria real.</p>
+<p>Antes de subir un archivo a un servicio, revisa sus condiciones y el tipo de cuenta. Un contrato, unas notas médicas o una lista de alumnos no son buenos documentos para una primera prueba. El ejemplo evita datos personales y permite comprobar las respuestas sin conocimientos especializados.</p>
+<p>Abre el PDF e intenta seleccionar y copiar una frase. Si aparece texto reconocible, ya tienes una comprobación inicial; no demuestra que todas las páginas se extraigan bien. Si solo ves una imagen, puede hacer falta reconocimiento óptico de caracteres, llamado OCR. También existen documentos mixtos, con páginas de ambos tipos. La documentación de pypdf distingue estos casos y explica que extraer texto y hacer OCR no son lo mismo. [1]</p>
+<h2>2. Define qué necesitas del resumen</h2>
+<p>«Resume este PDF» deja abiertas demasiadas decisiones. Es más útil fijar una finalidad: recordar los requisitos de una actividad, localizar condiciones o preparar preguntas de repaso.</p>
+<p>Puedes adaptar esta petición:</p>
+<pre><code>Trabaja solo con el documento que he adjuntado.
+Resume su contenido en cinco puntos como máximo.
+Para cada dato importante, indica la página y el fragmento que lo respalda.
+Separa hechos del documento de recomendaciones tuyas.
+Si una información no aparece, escribe «no consta en el documento».
+No deduzcas fechas, importes ni requisitos que no estén escritos.</code></pre>
+<p>Es una instrucción de trabajo, no una garantía. La herramienta elegida puede no admitir archivos, no conservar la paginación o no ofrecer citas comprobables. Si solo trabaja con texto pegado, conserva marcadores de página, pero comprueba que no se hayan perdido tablas o notas.</p>
+<h2>3. Comprueba el ejemplo sin depender de una respuesta de IA</h2>
+<p>Estas son las respuestas que se pueden verificar leyendo directamente el PDF de práctica:</p>
+<ul>
+<li>Duración del taller: <strong>90 minutos</strong>, en la página 1.</li>
+<li>Fin de inscripción: <strong>12 de noviembre de 2026</strong>, en la página 1.</li>
+<li>Plazas: <strong>24</strong>, en la página 2.</li>
+<li>Material indicado: <strong>un portátil</strong>, en la página 2.</li>
+<li>Precio: <strong>no consta</strong>. La página 2 dice expresamente que el documento no indica un precio.</li>
+</ul>
+<p>Si un resumen afirma «el taller es gratuito», ha dado un salto injustificado. No indicar un precio no significa que el precio sea cero. Del mismo modo, el plazo de inscripción no es la fecha de celebración: ese día no figura en el ejemplo.</p>
+<p>Esta lista es una referencia preparada a partir del documento original, <strong>no una salida obtenida de un modelo</strong>. Puedes usarla para evaluar la herramienta que elijas sin tomar su respuesta como verdad de partida.</p>
+<h2>4. Revisa cifras, negaciones y condiciones</h2>
+<p>No hace falta comparar cada palabra del resumen. Empieza por los datos que podrían cambiar una decisión: fechas, cantidades, unidades, excepciones y obligaciones.</p>
+<p>Para cada uno, anota qué dice el resumen, dónde aparece en el PDF y si conserva su alcance. Una cita puede existir y, aun así, no respaldar la conclusión. Revisa el párrafo completo, no solo la coincidencia de una palabra.</p>
+<p>Si la herramienta proporciona referencias interactivas, ábrelas. La ayuda de NotebookLM —que actualmente puede aparecer como Gemini Notebook en la documentación— explica cómo consultar la cita y volver al contexto de la fuente. Esa posibilidad facilita la comprobación, pero no la sustituye. [2]</p>
+<h2>5. Corrige el resumen o vuelve al documento</h2>
+<p>Si detectas un error, pide una corrección concreta: «La página 2 no establece que sea gratis. Retira esa afirmación y señala que el precio no consta». Después revisa también la versión corregida.</p>
+<p>Cuando no puedas localizar el respaldo, conserva el dato como pendiente. Y si la extracción pierde páginas o mezcla columnas, resuelve ese problema antes de pedir más resúmenes. Una respuesta más larga no recupera información que nunca llegó al modelo.</p>
+<p>Para continuar, consulta la <a href="#02-notebooklm-fuentes">guía de fuentes y citas en NotebookLM</a> o el <a href="#03-extraer-pdf-python">ejemplo de extracción local con Python</a>. También puedes recorrer las secciones de <a href="https://foroiaaldia.com/tutoriales">Tutoriales</a> y <a href="https://foroiaaldia.com/programacion">Programación</a>.</p>
+<h2>Qué se ha comprobado en esta guía</h2>
+<p>Se ha creado el PDF original y se ha ejecutado su extracción con Python para contrastar los datos de las dos páginas. No se ha enviado a una IA ni se ha probado el rendimiento de un producto comercial. La petición propuesta y los criterios de revisión son un procedimiento editorial, no resultados experimentales de un modelo.</p>
+<h2>Fuentes</h2>
+<p>1. <a href="https://pypdf.readthedocs.io/en/stable/user/extract-text.html">pypdf: extracción de texto, PDFs escaneados y límites</a>. 2. <a href="https://support.google.com/gemininotebook/answer/16179559?hl=es">Ayuda de Google: conversación y revisión de citas</a>.</p>
+<p>Estado editorial: borrador pendiente de aprobación. Los enlaces a las otras dos guías son locales para esta revisión; las URLs públicas previstas figuran en el plan editorial.</p></article><article id="02-notebooklm-fuentes"><h1>NotebookLM con un PDF: prepara las fuentes y revisa las citas</h1>
+<p>Subir un archivo no basta para saber si una respuesta lo interpreta bien. Lo importante es poder identificar qué documento se usó y comprobar el fragmento que sostiene cada dato.</p>
+<p>Esta guía explica un recorrido basado en la ayuda oficial de NotebookLM. En las páginas consultadas, Google también utiliza el nombre <strong>Gemini Notebook</strong>. Los nombres y la disposición de los controles pueden variar entre versiones y cuentas. No hemos iniciado sesión en la aplicación ni realizado una prueba con una cuenta: los pasos se apoyan en documentación, y el ejercicio tiene una referencia que puedes comprobar por tu cuenta.</p>
+<h2>Qué preparar antes de abrir el cuaderno</h2>
+<p>Empieza en la versión web con un archivo propio y pequeño. Puedes utilizar nuestro <a href="resources/taller-ejemplo.pdf">PDF ficticio de un taller</a>. Mantén abierta una copia para consultar sus dos páginas.</p>
+<p>La ayuda de Google incluye PDF entre los formatos de fuente admitidos. Antes de trabajar con documentos extensos, consulta sus requisitos y los límites que correspondan a tu cuenta; esta guía no presupone un número de documentos o una cuota de preguntas. Tampoco evalúa diferencias entre planes. [1]</p>
+<p>No subas material privado solo para probar una función. Las condiciones de tratamiento pueden depender del servicio y de la cuenta. Revisa además qué compartes: un enlace a una vista simplificada del chat no debe tratarse como garantía de que los demás no puedan acceder a las fuentes del cuaderno. La documentación de creación y uso compartido explica los permisos disponibles. [2]</p>
+<h2>1. Crea un cuaderno para una sola tarea</h2>
+<p>La secuencia documentada por Google consiste en abrir el servicio, crear un cuaderno y añadir una fuente. Para este ejercicio, usa un nombre reconocible, como «Prueba de citas: taller ficticio», y añade únicamente el PDF de práctica. [2]</p>
+<p>Trabajar con una sola fuente al principio evita una duda frecuente: no saber si una cifra vino del documento que querías resumir o de otro material. No significa que los cuadernos con varias fuentes sean incorrectos; simplemente reduce el trabajo de comprobación inicial.</p>
+<p>Si no puedes cargar el archivo, comprueba primero su formato y las condiciones indicadas en la ayuda. Una extracción vacía puede requerir diagnóstico u OCR; no concluyas automáticamente que el problema es la cuenta o el modelo.</p>
+<h2>2. Selecciona la fuente y pregunta por hechos concretos</h2>
+<p>Según la ayuda del chat, puedes elegir las fuentes que se usarán para responder y consultar las citas asociadas a una respuesta. [3] En vez de empezar por un resumen abierto, plantea una pregunta con una respuesta fácil de comprobar:</p>
+<pre><code>Usando únicamente el PDF del taller:
+¿cuánto dura, cuándo termina la inscripción y cuántas plazas hay?
+Incluye una referencia de la fuente para cada dato.
+Si algo no está indicado, dilo expresamente.</code></pre>
+<p>La referencia manual del ejemplo es: 90 minutos y cierre de inscripción el 12 de noviembre de 2026 en la página 1; 24 plazas en la página 2. Esta es la solución de control del ejercicio, no una transcripción de una respuesta del servicio.</p>
+<p>No es necesario que la respuesta coincida palabra por palabra. Debe conservar las cantidades, el significado y el respaldo.</p>
+<h2>3. Abre la cita y lee su contexto</h2>
+<p>Google documenta que se puede mostrar el texto de una referencia y seleccionarla para revisar el contexto. [3] Comprueba que el fragmento citado contiene el dato y que no pertenece a otra condición.</p>
+<p>Por ejemplo, una respuesta podría citar la fecha de inscripción correctamente y presentarla como fecha del taller. La cita existiría, pero la interpretación sería incorrecta. En este PDF no hay fecha de celebración, de modo que ese dato debe quedar como no indicado.</p>
+<p>Si una respuesta no aporta referencias útiles, no la conviertas en una conclusión confirmada. Reformula la pregunta o busca el dato directamente en el documento.</p>
+<h2>4. Pon a prueba lo que el documento no dice</h2>
+<p>Una segunda pregunta ayuda a detectar inferencias no justificadas:</p>
+<pre><code>¿Cuál es el precio y qué día se celebra el taller?
+No deduzcas que es gratuito ni confundas la fecha de inscripción
+con la de celebración. Señala qué información no aparece.</code></pre>
+<p>La respuesta verificable es que <strong>ninguno de esos dos datos está establecido</strong>. Si el servicio ofrece una fecha o un precio, vuelve al PDF y exige el respaldo correspondiente. No hemos ejecutado esta pregunta en NotebookLM; la proponemos como comprobación reproducible para el lector.</p>
+<h2>5. Guarda una nota que siga siendo comprobable</h2>
+<p>Si decides conservar el resumen, incluye el nombre del documento, cuándo lo revisaste y los datos que quedaron pendientes. No guardes solo un texto fluido separado de sus fuentes: al reutilizarlo después, podrías olvidar qué se comprobó y qué era una sugerencia.</p>
+<p>Cuando cambie el archivo de origen, revisa cómo se actualiza ese tipo de fuente en el servicio. No presupongas que una copia subida refleja automáticamente todas las modificaciones posteriores. [1]</p>
+<p>La <a href="#01-resumir-pdf">guía para resumir PDFs y contrastar sus datos</a> amplía esta revisión. Si el archivo no ofrece texto reconocible, tienes un <a href="#03-extraer-pdf-python">procedimiento local con Python</a>. Las categorías relacionadas son <a href="https://foroiaaldia.com/herramientas">Herramientas</a> y <a href="https://foroiaaldia.com/tutoriales">Tutoriales</a>.</p>
+<h2>Alcance de la comprobación</h2>
+<p>Se han consultado las páginas oficiales citadas y se ha validado el contenido del documento de práctica. No hay capturas de una sesión, resultados medidos del producto ni una comparación con otro servicio. No prometemos exactitud por el hecho de que una respuesta lleve citas.</p>
+<h2>Fuentes</h2>
+<p>1. <a href="https://support.google.com/gemininotebook/answer/16215270?hl=es">Google: formatos, importación y actualización de fuentes</a>. 2. <a href="https://support.google.com/gemininotebook/answer/16206563?hl=es">Google: crear un cuaderno y permisos para compartir</a>. 3. <a href="https://support.google.com/gemininotebook/answer/16179559?hl=es">Google: conversación, selección de fuentes y citas</a>.</p>
+<p>Estado editorial: borrador pendiente de aprobación. Los enlaces a otras guías son locales para revisión, todavía no URLs publicadas.</p></article><article id="03-extraer-pdf-python"><h1>Extraer texto de un PDF con Python antes de usar IA</h1>
+<p>Si un resumen omite información, quizá el problema ocurrió antes de redactarlo: el texto del PDF pudo extraerse incompleto o en un orden distinto al que ves en pantalla.</p>
+<p>Con Python y pypdf puedes hacer una comprobación local, página por página, antes de enviar nada a un modelo. El programa de esta guía no utiliza una API, no hace OCR y no necesita una clave de IA.</p>
+<h2>Qué necesitas y qué límites tiene el ejemplo</h2>
+<p>Necesitas Python y un entorno donde puedas instalar pypdf. La ejecución que acompaña a esta guía utiliza <strong>Python 3.13 y pypdf 6.21.2</strong> en Windows, en un entorno virtual independiente del blog.</p>
+<p>Empieza con PDFs pequeños y de confianza. El script limita el tamaño a 5 MB y la longitud a 20 páginas, pero esos límites <strong>no son una protección completa frente a archivos maliciosos o consumos elevados de memoria</strong>. Un PDF comprimido puede requerir bastante más memoria al procesarse. No lo conviertas directamente en un servicio web de subida de archivos. [1]</p>
+<p>Además, obtener texto no demuestra que conserve correctamente columnas, tablas, notas o el orden de lectura. La revisión visual sigue siendo necesaria.</p>
+<h2>1. Prepara un entorno separado</h2>
+<p>En Windows PowerShell, desde una carpeta de trabajo:</p>
+<pre><code>python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install pypdf==6.21.2</code></pre>
+<p>Usamos una versión fijada para que el ejemplo sea reproducible. No necesitas cambiar las dependencias de ningún proyecto que ya tengas. Si tu instalación utiliza otro lanzador de Python, adapta el primer comando a ese entorno.</p>
+<p>Descarga en esa carpeta el <a href="resources/extraer_pdf.py">script extraer_pdf.py</a> y el <a href="resources/taller-ejemplo.pdf">PDF digital del taller ficticio</a>. También tienes un <a href="resources/solo-imagen.pdf">PDF sintético que contiene solo una imagen</a> para comprobar el caso sin capa de texto.</p>
+<h2>2. Entiende la parte principal del código</h2>
+<p>El programa completo incluye argumentos, errores básicos y protección contra sobrescritura. Su recorrido de extracción es este:</p>
+<pre><code>reader = PdfReader(path)
+parts, empty = [], []
+for number, page in enumerate(reader.pages, 1):
+    text = (page.extract_text() or &#x27;&#x27;).strip()
+    if not text:
+        empty.append(number)
+    parts.append(f&#x27;--- Página {number} ---\n{text}&#x27;)</code></pre>
+<p><code>PdfReader</code> abre el documento y <code>extract_text()</code> intenta recuperar el texto de cada página. Los marcadores permiten volver al PDF cuando revises una cifra. El fragmento anterior explica el núcleo; para ejecutarlo utiliza el archivo completo enlazado, que incorpora importaciones y controles.</p>
+<h2>3. Ejecuta la extracción del documento digital</h2>
+<pre><code>.\.venv\Scripts\python.exe extraer_pdf.py taller-ejemplo.pdf taller.txt</code></pre>
+<p>El programa crea un archivo UTF-8. Ábrelo junto al PDF y comprueba estos datos:</p>
+<ul>
+<li>Página 1: duración de 90 minutos y fin de inscripción el 12 de noviembre de 2026.</li>
+<li>Página 2: 24 plazas, un portátil como material y ausencia de precio indicado.</li>
+</ul>
+<p>En la ejecución local, el script recuperó esos textos y separó las dos páginas con sus marcadores. No se detectaron páginas vacías en ese documento. Es un resultado sobre un PDF original de ejemplo, no una medición de precisión con documentos reales variados.</p>
+<p>Si vuelves a usar <code>taller.txt</code> como salida, el programa se detiene para no sobrescribirlo. Elige otro nombre si necesitas conservar varias versiones.</p>
+<h2>4. Comprueba el caso de una página sin texto</h2>
+<pre><code>.\.venv\Scripts\python.exe extraer_pdf.py solo-imagen.pdf imagen.txt</code></pre>
+<p>En nuestra ejecución, la página 1 quedó señalada como sin texto extraíble. Ese archivo se ha generado como imagen sin capa de texto; no es un escaneo real ni una prueba de reconocimiento óptico.</p>
+<p>pypdf no reconoce por sí mismo las letras de una imagen. Para ese caso necesitas un paso de OCR y otra revisión de sus resultados. Tampoco conviene asumir que cualquier página vacía sea un escaneo: puede estar realmente en blanco o presentar un problema de extracción. [1]</p>
+<h2>5. Decide si el texto sirve para el siguiente paso</h2>
+<p>Antes de usar una IA, compara al menos una página con su original, revisa las cifras que importan y busca saltos extraños entre columnas o encabezados. Si la información salió mal, corrige la extracción o reduce el documento a las páginas necesarias.</p>
+<p>La salida conserva texto, no una representación completa del PDF. No prometemos reconstrucción fiel de tablas ni preservación de imágenes. Tampoco hace falta enviar todo el documento a un servicio externo para descubrir que una página está vacía.</p>
+<p>Cuando tengas una extracción revisada, puedes seguir el <a href="#01-resumir-pdf">procedimiento de resumen con comprobación de citas</a>. Si prefieres trabajar con una herramienta de fuentes documentales, consulta la <a href="#02-notebooklm-fuentes">guía de NotebookLM basada en documentación</a>. Encontrarás más contenidos de este tipo en <a href="https://foroiaaldia.com/programacion">Programación</a>.</p>
+<h2>Qué se ha ejecutado</h2>
+<p>Se han probado la extracción del PDF digital de dos páginas, el PDF de imagen sin texto, la negativa a sobrescribir una salida y un archivo inexistente. Puedes descargar también el <a href="resources/generar_ejemplos.py">generador de los PDFs de ejemplo</a> para repetir la comprobación. No se han evaluado OCR, PDFs cifrados de terceros, documentos enormes ni la calidad de respuestas de un modelo.</p>
+<h2>Fuente</h2>
+<p>1. <a href="https://pypdf.readthedocs.io/en/stable/user/extract-text.html">Documentación oficial de pypdf: extracción, dificultades del formato y OCR</a>.</p>
+<p>Estado editorial: borrador pendiente de aprobación. Los recursos y enlaces entre guías son locales para revisión; no se han publicado.</p></article></body></html>
